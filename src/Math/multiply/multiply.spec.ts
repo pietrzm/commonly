@@ -2,7 +2,7 @@ import multiply from "./multiply";
 
 
 describe(`Module "Math" -> Function "multiply"`, () => {
-    it("should preform addition of two numbers.", () => {
+    it("should preform multiplication of two given numbers.", () => {
         expect(multiply(2, 2))
             .toBe(4)
 

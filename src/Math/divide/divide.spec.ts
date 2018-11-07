@@ -1,8 +1,8 @@
 import divide from "./divide";
 
 
-describe(`Module "Math" -> Function "multiply"`, () => {
-    it("should preform addition of two numbers.", () => {
+describe(`Module "Math" -> Function "divide"`, () => {
+    it("should preform division of two given numbers.", () => {
         expect(divide(2, 2))
             .toBe(1)
 

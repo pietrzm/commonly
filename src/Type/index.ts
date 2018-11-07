@@ -6,6 +6,9 @@ import isNumber from "./isNumber/isNumber"
 import isString from "./isString/isString"
 import isSymbol from "./isSymbol/isSymbol"
 
+import isObject from "./isObject/isObject"
+import isArray from "./isArray/isArray"
+
 
 export {
     isUndefined,
@@ -14,5 +17,8 @@ export {
     isBoolean,
     isNumber,
     isString,
-    isSymbol
+    isSymbol,
+
+    isObject,
+    isArray
 }

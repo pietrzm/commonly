@@ -4,7 +4,7 @@ import xor from "./xor";
 describe(`Module "Logic" -> Function "xor"`, () => {
     it("should preform an exclusive logical disjunction of two given boolean values.", () => {
         expect(xor(false, false))
-            .toBe(true)
+            .toBe(false)
 
         expect(xor(false, true))
             .toBe(true)

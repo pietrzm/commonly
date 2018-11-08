@@ -8,6 +8,7 @@ import isSymbol from "./isSymbol/isSymbol"
 import isPrimitive from "./isPrimitive/isPrimitive"
 
 import isObject from "./isObject/isObject"
+import isFunction from "./isFunction/isFunction"
 import isArray from "./isArray/isArray"
 
 import isSet from "./isSet/isSet"
@@ -31,6 +32,7 @@ export {
     isPrimitive,
 
     isObject,
+    isFunction,
     isArray,
 
     isSet,

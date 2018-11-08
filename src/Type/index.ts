@@ -10,6 +10,7 @@ import isObject from "./isObject/isObject"
 import isArray from "./isArray/isArray"
 
 import isSet from "./isSet/isSet"
+import isMap from "./isMap/isMap"
 
 
 export {
@@ -24,5 +25,6 @@ export {
     isObject,
     isArray,
 
-    isSet
+    isSet,
+    isMap
 }

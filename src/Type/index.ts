@@ -16,6 +16,8 @@ import isError from "./isError/isError"
 import isArrayBuffer from "./isArrayBuffer/isArrayBuffer"
 import isTypedArray from "./isTypedArray/isTypedArray"
 
+import isPromise from "./isPromise/isPromise"
+
 
 export {
     isUndefined,
@@ -34,5 +36,7 @@ export {
     isMap,
     isError,
     isArrayBuffer,
-    isTypedArray
+    isTypedArray,
+
+    isPromise
 }

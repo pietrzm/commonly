@@ -11,6 +11,7 @@ import isArray from "./isArray/isArray"
 
 import isSet from "./isSet/isSet"
 import isMap from "./isMap/isMap"
+import isError from "./isError/isError"
 
 
 export {
@@ -26,5 +27,6 @@ export {
     isArray,
 
     isSet,
-    isMap
+    isMap,
+    isError
 }

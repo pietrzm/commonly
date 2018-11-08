@@ -4,6 +4,7 @@ import multiply from "./multiply/multiply"
 import divide from "./divide/divide"
 
 import isEven from "./isEven/isEven"
+import isOdd from "./isOdd/isOdd"
 
 
 export {
@@ -12,5 +13,6 @@ export {
     multiply,
     divide,
 
-    isEven
+    isEven,
+    isOdd
 }

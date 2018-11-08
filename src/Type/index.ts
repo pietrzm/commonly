@@ -5,6 +5,7 @@ import isBoolean from "./isBoolean/isBoolean"
 import isNumber from "./isNumber/isNumber"
 import isString from "./isString/isString"
 import isSymbol from "./isSymbol/isSymbol"
+import isPrimitive from "./isPrimitive/isPrimitive"
 
 import isObject from "./isObject/isObject"
 import isArray from "./isArray/isArray"
@@ -22,6 +23,7 @@ export {
     isNumber,
     isString,
     isSymbol,
+    isPrimitive,
 
     isObject,
     isArray,

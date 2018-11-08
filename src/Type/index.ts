@@ -9,6 +9,8 @@ import isSymbol from "./isSymbol/isSymbol"
 import isObject from "./isObject/isObject"
 import isArray from "./isArray/isArray"
 
+import isSet from "./isSet/isSet"
+
 
 export {
     isUndefined,
@@ -20,5 +22,7 @@ export {
     isSymbol,
 
     isObject,
-    isArray
+    isArray,
+
+    isSet
 }

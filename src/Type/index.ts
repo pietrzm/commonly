@@ -17,6 +17,7 @@ import isArrayBuffer from "./isArrayBuffer/isArrayBuffer"
 import isTypedArray from "./isTypedArray/isTypedArray"
 
 import isPromise from "./isPromise/isPromise"
+import isRegExp from "./isRegExp/isRegExp"
 
 
 export {
@@ -38,5 +39,6 @@ export {
     isArrayBuffer,
     isTypedArray,
 
-    isPromise
+    isPromise,
+    isRegExp
 }

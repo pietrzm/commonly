@@ -10,6 +10,7 @@ import head from "./head/head"
 import tail from "./tail/tail"
 import last from "./last/last"
 import nth from "./nth/nth"
+import size from "./size/size"
 import pop from "./pop/pop"
 import push from "./push/push"
 
@@ -30,6 +31,7 @@ export {
     tail,
     last,
     nth,
+    size,
 
     push,
     pop

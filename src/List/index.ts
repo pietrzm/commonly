@@ -11,6 +11,7 @@ import tail from "./tail/tail"
 import last from "./last/last"
 import nth from "./nth/nth"
 import size from "./size/size"
+import isEmpty from "./isEmpty/isEmpty"
 import pop from "./pop/pop"
 import push from "./push/push"
 
@@ -32,6 +33,7 @@ export {
     last,
     nth,
     size,
+    isEmpty,
 
     push,
     pop

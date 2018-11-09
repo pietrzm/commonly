@@ -9,6 +9,7 @@ import reverse from "./reverse/reverse"
 import head from "./head/head"
 import tail from "./tail/tail"
 import last from "./last/last"
+import nth from "./nth/nth"
 import pop from "./pop/pop"
 import push from "./push/push"
 
@@ -28,6 +29,7 @@ export {
     head,
     tail,
     last,
+    nth,
 
     push,
     pop

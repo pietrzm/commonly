@@ -7,6 +7,7 @@ import find from "./find/find"
 import indexOf from "./indexOf/indexOf"
 import reverse from "./reverse/reverse"
 import head from "./head/head"
+import tail from "./tail/tail"
 import pop from "./pop/pop"
 import push from "./push/push"
 
@@ -24,6 +25,7 @@ export {
 
     reverse,
     head,
+    tail,
 
     push,
     pop

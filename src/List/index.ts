@@ -6,6 +6,7 @@ import some from "./some/some"
 import find from "./find/find"
 import indexOf from "./indexOf/indexOf"
 import reverse from "./reverse/reverse"
+import head from "./head/head"
 import pop from "./pop/pop"
 import push from "./push/push"
 
@@ -22,6 +23,7 @@ export {
     indexOf,
 
     reverse,
+    head,
 
     push,
     pop

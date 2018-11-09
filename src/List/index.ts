@@ -8,6 +8,7 @@ import indexOf from "./indexOf/indexOf"
 import reverse from "./reverse/reverse"
 import head from "./head/head"
 import tail from "./tail/tail"
+import last from "./last/last"
 import pop from "./pop/pop"
 import push from "./push/push"
 
@@ -26,6 +27,7 @@ export {
     reverse,
     head,
     tail,
+    last,
 
     push,
     pop

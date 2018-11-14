@@ -20,6 +20,8 @@ import isTypedArray from "./isTypedArray/isTypedArray"
 import isPromise from "./isPromise/isPromise"
 import isRegExp from "./isRegExp/isRegExp"
 
+import isHTMLElement from "./isHTMLElement/isHTMLElement"
+
 
 export {
     isUndefined,
@@ -42,5 +44,7 @@ export {
     isTypedArray,
 
     isPromise,
-    isRegExp
+    isRegExp,
+
+    isHTMLElement
 }

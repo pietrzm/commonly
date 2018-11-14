@@ -1,5 +1,8 @@
+import { slice, size } from "../../List"
+
+
 const tail = (xs) =>
-    xs.slice(1, xs.length)
+    slice(1, size(xs), xs)
 
 
 export default tail

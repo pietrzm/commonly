@@ -1,5 +1,8 @@
+import { nth } from "../../List"
+
+
 const head = (xs) =>
-    xs[0]
+    nth(0, xs)
 
 
 export default head

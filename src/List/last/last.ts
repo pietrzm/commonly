@@ -1,5 +1,8 @@
+import { nth, size } from "../../List"
+
+
 const last = (xs) =>
-    xs[xs.length - 1]
+    nth(size(xs) - 1, xs)
 
 
 export default last

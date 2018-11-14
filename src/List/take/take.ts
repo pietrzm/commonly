@@ -1,5 +1,8 @@
+import { slice } from "../../List"
+
+
 const take = (n, xs) =>
-    xs.slice(0, n)
+    slice(0, n, xs)
 
 
 export default take

@@ -1,8 +1,9 @@
 import { curry } from "../../Function"
+import { indexOf } from "../../List"
 
 
 const includes = (x, xs) =>
-    !!~xs.indexOf(x)
+    !!~indexOf(x, xs)
 
 
 export default curry(includes)

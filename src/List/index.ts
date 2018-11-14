@@ -15,6 +15,7 @@ import size from "./size/size"
 import isEmpty from "./isEmpty/isEmpty"
 import pop from "./pop/pop"
 import push from "./push/push"
+import append from "./append/append"
 
 
 export {
@@ -38,5 +39,7 @@ export {
     isEmpty,
 
     push,
-    pop
+    pop,
+
+    append
 }

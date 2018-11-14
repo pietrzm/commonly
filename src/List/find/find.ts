@@ -1,9 +1,15 @@
 import { curry } from "../../Function"
-import { filter, head } from "../../List"
 
 
-const find = (predicate, xs) =>
-    head(filter(predicate, xs))
+const find = (predicate, xs) => {
+    for (const [ i, x ] of xs.entries()) {
+        if (predicate(x, i)) {
+            return x
+        }
+    }
+
+    return undefined
+}
 
 
 export default curry(find)

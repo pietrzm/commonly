@@ -1,9 +1,9 @@
 import { curry } from "../../Function"
-import { filter } from "../../List"
+import { filter, head } from "../../List"
 
 
 const find = (predicate, xs) =>
-    filter(predicate, xs)[0]
+    head(filter(predicate, xs))
 
 
 export default curry(find)

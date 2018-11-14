@@ -10,6 +10,7 @@ import head from "./head/head"
 import tail from "./tail/tail"
 import last from "./last/last"
 import take from "./take/take"
+import slice from "./slice/slice"
 import nth from "./nth/nth"
 import size from "./size/size"
 import isEmpty from "./isEmpty/isEmpty"
@@ -35,6 +36,7 @@ export {
     tail,
     last,
     take,
+    slice,
     nth,
     size,
     isEmpty,

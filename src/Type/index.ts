@@ -20,6 +20,7 @@ import isTypedArray from "./isTypedArray/isTypedArray"
 import isPromise from "./isPromise/isPromise"
 import isRegExp from "./isRegExp/isRegExp"
 
+import isElement from "./isElement/isElement"
 import isHTMLElement from "./isHTMLElement/isHTMLElement"
 
 
@@ -46,5 +47,6 @@ export {
     isPromise,
     isRegExp,
 
+    isElement,
     isHTMLElement
 }

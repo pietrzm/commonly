@@ -6,11 +6,11 @@ const reduce = (reducer, xs, initialValue) => {
         i = 0
 
     for (const x of xs) {
-        accumulator = reducer(accumulator, x, i++)
+        accumulator = reducer(accumulator, x, i++, xs)
     }
 
     return accumulator
 }
 
 
-export default (reduce)
+export default curry(reduce)

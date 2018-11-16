@@ -8,12 +8,12 @@ describe(`Module "List" -> Function "reduce"`, () => {
         const list = [ 1, 2, 3, 5 ]
 
         it("should sum the numbers.", () => {
-            expect(reduce(add, list, 1))
+            expect(reduce(add, 1, list))
                 .toEqual(12)
         })
 
         it("should multiply the numbers.", () => {
-            expect(reduce(multiply, list, 1))
+            expect(reduce(multiply, 1, list))
                 .toEqual(30)
         })
     })
@@ -22,12 +22,12 @@ describe(`Module "List" -> Function "reduce"`, () => {
         const list = "1235"
 
         it("should sum the numbers.", () => {
-            expect(reduce(add, list, "1"))
+            expect(reduce(add, "1", list))
                 .toEqual("11235")
         })
 
         it("should multiply the numbers.", () => {
-            expect(reduce(multiply, list, "1"))
+            expect(reduce(multiply, "1", list))
                 .toEqual(30)
         })
     })
@@ -40,12 +40,12 @@ describe(`Module "List" -> Function "reduce"`, () => {
             .add(5)
 
         it("should sum the numbers.", () => {
-            expect(reduce(add, list, 1))
+            expect(reduce(add, 1, list))
                 .toEqual(12)
         })
 
         it("should multiply the numbers.", () => {
-            expect(reduce(multiply, list, 1))
+            expect(reduce(multiply, 1, list))
                 .toEqual(30)
         })
     })
@@ -58,12 +58,12 @@ describe(`Module "List" -> Function "reduce"`, () => {
             .set("d", 5)
 
         it("should sum the numbers.", () => {
-            expect(reduce(([, x ], [, y ]) => [, add(x, y) ], list, [, 1 ]))
+            expect(reduce(([, x ], [, y ]) => [, add(x, y) ], [, 1 ], list))
                 .toEqual([, 12 ])
         })
 
         it("should multiply the numbers.", () => {
-            expect(reduce(([, x ], [, y ]) => [, multiply(x, y) ], list, [, 1 ]))
+            expect(reduce(([, x ], [, y ]) => [, multiply(x, y) ], [, 1 ], list))
                 .toEqual([, 30 ])
         })
     })

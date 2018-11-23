@@ -5,6 +5,9 @@ import nand from "./nand/nand"
 import xor, { eor, exor } from "./xor/xor"
 import xnor from "./xnor/xnor"
 
+import cases from "./cases/cases"
+import when from "./when/when"
+
 
 export {
     and,
@@ -12,5 +15,8 @@ export {
     not,
     nand,
     xor, eor, exor,
-    xnor
+    xnor,
+
+    cases,
+    when
 }

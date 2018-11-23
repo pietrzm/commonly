@@ -1,9 +1,10 @@
 import { curry } from "../../Function"
-import { reduce, push } from "../../List"
+import * as Transducer from "../../Transducer"
+import seq from "../seq/seq"
 
 
 const filter = (predicate, xs) =>
-    reduce((ys, x) => (predicate(x) && push(x, ys), ys), [], xs)
+    seq(Transducer.filter(predicate), xs)
 
 
 export default curry(filter)

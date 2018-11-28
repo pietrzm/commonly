@@ -1,6 +1,7 @@
 import { curry } from "../../Function"
 
 
+
 const cases = (fs, x) => {
     for (const f of fs) {
         const fx = f(x)
@@ -9,6 +10,7 @@ const cases = (fs, x) => {
         }
     }
 }
+
 
 
 export default curry(cases)

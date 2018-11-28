@@ -1,8 +1,8 @@
-import map from "./map/map"
-import filter from "./filter/filter"
+import xmap from "./xmap/xmap"
+import xfilter from "./xfilter/xfilter"
 
 
 export {
-    map,
-    filter
+    xmap,
+    xfilter
 }

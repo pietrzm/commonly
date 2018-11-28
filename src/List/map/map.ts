@@ -1,10 +1,12 @@
 import { curry } from "../../Function"
 import seq from "../seq/seq"
-import * as Transducer from "../../Transducer"
+import { xmap } from "../../Transducer"
 
 
-const map = (xf, xs) =>
-    seq(Transducer.map(xf), xs)
+
+const map = (transformer, xs) =>
+    seq(xmap(transformer), xs)
+
 
 
 export default curry(map)

@@ -10,4 +10,5 @@ const isTypedArray = x =>
     x instanceof Float64Array
 
 
+
 export default isTypedArray

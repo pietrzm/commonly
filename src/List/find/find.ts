@@ -1,6 +1,7 @@
 import { curry } from "../../Function"
 
 
+
 const find = (predicate, xs) => {
     for (const [ i, x ] of xs.entries()) {
         if (predicate(x, i)) {
@@ -10,6 +11,7 @@ const find = (predicate, xs) => {
 
     return undefined
 }
+
 
 
 export default curry(find)

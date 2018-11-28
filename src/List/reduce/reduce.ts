@@ -1,15 +1,17 @@
 import { curry } from "../../Function"
 
 
-const reduce = (reducer, accumulator, xs) => {
+
+const reduce = (xf, accumulator, xs) => {
     let i = 0
 
     for (const x of xs) {
-        accumulator = reducer(accumulator, x, i++, xs)
+        accumulator = xf(accumulator, x, i++, xs)
     }
 
     return accumulator
 }
+
 
 
 export default curry(reduce)

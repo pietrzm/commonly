@@ -1,5 +1,6 @@
-const size = (xs) =>
+const size = xs =>
     xs.length
+
 
 
 export default size

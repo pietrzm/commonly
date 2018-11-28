@@ -14,6 +14,8 @@ const into = (accumulator, xf, xs) =>
             () => transduce(xf, (xs, x) => xs.add(x), accumulator, xs)),
         when(isMap,
             () => transduce(xf, (xs, x) => xs.set(...x), accumulator, xs)),
+        when((xs, xf, accumulator) => null,
+            (xs, x) => null)
     ], accumulator)
 
 

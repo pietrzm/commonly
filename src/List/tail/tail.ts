@@ -1,9 +1,10 @@
-import { slice, size } from "../../List"
+import { seq } from "../../List"
+import { xtail } from "../../Transducer"
 
 
 
 const tail = xs =>
-    slice(1, size(xs), xs)
+    seq(xtail, xs)
 
 
 

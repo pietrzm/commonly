@@ -8,5 +8,8 @@ describe(`Module "List" -> Function "slice"`, () => {
 
         expect(slice(0, 2, [ 5, 3, 2, 1 ]))
             .toEqual([ 5, 3 ])
+
+        expect(slice(1, 3, [ 1, 2, 3, 5 ]))
+            .toEqual([ 2, 3 ])
     })
 })

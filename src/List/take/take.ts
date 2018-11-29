@@ -1,10 +1,11 @@
-import { slice } from "../../List"
 import { curry } from "../../Function"
+import { seq } from "../../List"
+import { xtake } from "../../Transducer"
 
 
 
 const take = (n, xs) =>
-    slice(0, n, xs)
+    seq(xtake(n), xs)
 
 
 

@@ -1,5 +1,10 @@
+import { seq } from "../../List"
+import xslice from "../../Transducer/xslice/xslice"
+
+
+
 const slice = (a, b, xs) =>
-    xs.slice(a, b)
+    seq(xslice(a, b), xs)
 
 
 

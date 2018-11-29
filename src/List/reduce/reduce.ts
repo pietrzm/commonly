@@ -1,4 +1,5 @@
 import { curry } from "../../Function"
+import { isReduced, deref } from "../../Function"
 
 
 
@@ -7,6 +8,10 @@ const reduce = (xf, accumulator, xs) => {
 
     for (const x of xs) {
         accumulator = xf(accumulator, x, i++, xs)
+
+        if (isReduced(accumulator)) {
+            return deref(accumulator)
+        }
     }
 
     return accumulator

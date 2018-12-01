@@ -1,5 +1,5 @@
-import { seq } from "../../List"
-import xslice from "../../Transducer/xslice/xslice"
+import { seq } from "List"
+import { xslice } from "Transducer"
 
 
 

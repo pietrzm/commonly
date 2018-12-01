@@ -1,6 +1,7 @@
 import isSet from "./isSet"
 
 
+
 describe(`Module "Type" -> Function "isSet"`, () => {
     it("should preform a check if a given value is a Set.", () => {
         expect(isSet(undefined))

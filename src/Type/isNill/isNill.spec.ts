@@ -1,6 +1,7 @@
 import isNill from "./isNill"
 
 
+
 describe(`Module "Type" -> Function "isNill"`, () => {
     it("should preform a check if a given value is an undefined or null.", () => {
         expect(isNill(undefined))

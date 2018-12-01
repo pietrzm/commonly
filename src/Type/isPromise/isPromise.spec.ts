@@ -1,6 +1,7 @@
 import isPromise from "./isPromise"
 
 
+
 describe(`Module "Type" -> Function "isPromise"`, () => {
     it("should preform a check if a given value is a Promise.", () => {
         expect(isPromise(undefined))

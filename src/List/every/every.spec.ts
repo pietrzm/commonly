@@ -1,5 +1,6 @@
 import every from "./every"
-import { isEven, isOdd } from "../../Math"
+import { isEven, isOdd } from "Math"
+
 
 
 describe(`Module "List" -> Function "every"`, () => {

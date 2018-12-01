@@ -1,6 +1,7 @@
 import isPrimitive from "./isPrimitive"
 
 
+
 describe(`Module "Type" -> Function "isPrimitive"`, () => {
     it("should preform a check if a given value is an Object.", () => {
         expect(isPrimitive(undefined))

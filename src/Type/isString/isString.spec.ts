@@ -1,6 +1,7 @@
 import isString from "./isString"
 
 
+
 describe(`Module "Type" -> Function "isString"`, () => {
     it("should preform a check if a given value is a string.", () => {
         expect(isString(undefined))

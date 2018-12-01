@@ -1,6 +1,7 @@
 import tail from "./tail"
 
 
+
 describe(`Module "List" -> Function "tail"`, () => {
     it("should return a first value from the list.", () => {
         expect(tail([ 1, 2, 3, 5 ]))

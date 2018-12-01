@@ -1,6 +1,7 @@
 import isElement from "./isElement"
 
 
+
 describe(`Module "Type" -> Function "isElement"`, () => {
     it("should preform a check if a given value is an Element.", () => {
         expect(isElement(undefined))

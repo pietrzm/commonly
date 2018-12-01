@@ -1,6 +1,6 @@
-import { curry } from "../../Function"
-import { seq } from "../../List"
-import { xtake } from "../../Transducer"
+import { curry } from "Function"
+import { seq } from "List"
+import { xtake } from "Transducer"
 
 
 

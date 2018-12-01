@@ -1,6 +1,7 @@
 import isHTMLElement from "./isHTMLElement"
 
 
+
 describe(`Module "Type" -> Function "isHTMLElement"`, () => {
     it("should preform a check if a given value is a HTMLElement.", () => {
         expect(isHTMLElement(undefined))

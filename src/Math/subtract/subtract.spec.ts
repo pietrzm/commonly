@@ -1,6 +1,7 @@
 import subtract from "./subtract";
 
 
+
 describe(`Module "Math" -> Function "subtract"`, () => {
     it("should preform subtraction of two given numbers.", () => {
         expect(subtract(2, 2))

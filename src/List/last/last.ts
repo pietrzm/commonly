@@ -1,4 +1,4 @@
-import { nth, size } from "../../List"
+import { nth, size } from "List"
 
 
 

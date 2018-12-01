@@ -1,6 +1,7 @@
 import isUndefined from "./isUndefined"
 
 
+
 describe(`Module "Type" -> Function "isUndefined"`, () => {
     it("should preform a check if a given value is an undefined.", () => {
         expect(isUndefined(undefined))

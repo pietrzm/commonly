@@ -1,5 +1,6 @@
 import curry from "./curry"
-import { __ } from "../index"
+import { __ } from "Function"
+
 
 
 describe(`Module "Function" -> Function "curry"`, () => {

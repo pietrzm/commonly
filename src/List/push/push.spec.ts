@@ -1,6 +1,7 @@
 import push from "./push"
 
 
+
 describe(`Module "List" -> Function "push"`, () => {
     it("should add an item at the end of a existing list.", () => {
         const listA = [ 1, 2, 3, 5 ],

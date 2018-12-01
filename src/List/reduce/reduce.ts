@@ -1,5 +1,5 @@
-import { curry } from "../../Function"
-import { isReduced, deref } from "../../Function"
+import { curry } from "Function"
+import { isReduced, deref } from "Function"
 
 
 

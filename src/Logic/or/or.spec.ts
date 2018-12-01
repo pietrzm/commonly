@@ -1,6 +1,7 @@
 import or from "./or";
 
 
+
 describe(`Module "Logic" -> Function "or"`, () => {
     it("should preform a logical disjunction of two given boolean values.", () => {
         expect(or(false, false))

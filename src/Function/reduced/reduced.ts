@@ -1,4 +1,4 @@
-import { isReduced } from "../../Function"
+import { isReduced } from "Function"
 
 
 

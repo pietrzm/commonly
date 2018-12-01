@@ -1,4 +1,4 @@
-import { last } from "../../List"
+import { last } from "List"
 
 
 

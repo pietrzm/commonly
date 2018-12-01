@@ -1,6 +1,7 @@
 import take from "./take"
 
 
+
 describe(`Module "List" -> Function "take"`, () => {
     it("should return a N first values from the list.", () => {
         expect(take(3, [ 1, 2, 3, 5 ]))

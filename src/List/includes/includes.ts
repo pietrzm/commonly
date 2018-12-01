@@ -1,5 +1,5 @@
-import { curry } from "../../Function"
-import { indexOf } from "../../List"
+import { curry } from "Function"
+import { indexOf } from "List"
 
 
 

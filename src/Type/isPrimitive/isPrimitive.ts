@@ -1,4 +1,4 @@
-import { isNill, isBoolean, isNumber, isString, isSymbol } from "../../Type"
+import { isNill, isBoolean, isNumber, isString, isSymbol } from "Type"
 
 
 

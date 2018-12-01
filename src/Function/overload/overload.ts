@@ -1,4 +1,4 @@
-import { find } from "../../List"
+import { find } from "List"
 
 
 

@@ -1,4 +1,4 @@
-import { isUndefined, isNull } from "../../Type"
+import { isUndefined, isNull } from "Type"
 
 
 

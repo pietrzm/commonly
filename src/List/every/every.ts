@@ -1,6 +1,6 @@
-import { curry } from "../../Function"
-import { reduce } from "../../List"
-import { and } from "../../Logic"
+import { curry } from "Function"
+import { reduce } from "List"
+import { and } from "Logic"
 
 
 

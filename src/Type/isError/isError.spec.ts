@@ -1,6 +1,7 @@
 import isError from "./isError"
 
 
+
 describe(`Module "Type" -> Function "isError"`, () => {
     it("should preform a check if a given value is a Set.", () => {
         expect(isError(undefined))

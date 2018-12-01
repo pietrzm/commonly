@@ -1,6 +1,7 @@
 import isFunction from "./isFunction"
 
 
+
 describe(`Module "Type" -> Function "isFunction"`, () => {
     it("should preform a check if a given value is a Function.", () => {
         expect(isFunction(undefined))

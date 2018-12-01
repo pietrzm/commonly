@@ -1,5 +1,6 @@
 import some from "./some"
-import { isEven, isOdd } from "../../Math"
+import { isEven, isOdd } from "Math"
+
 
 
 describe(`Module "List" -> Function "some"`, () => {

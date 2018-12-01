@@ -1,4 +1,4 @@
-import { curry } from "../../Function/index"
+import { curry } from "Function"
 
 
 

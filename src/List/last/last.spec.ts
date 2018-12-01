@@ -1,6 +1,7 @@
 import last from "./last"
 
 
+
 describe(`Module "List" -> Function "head"`, () => {
     it("should return last value from the list.", () => {
         expect(last([ 1, 2, 3, 5 ]))

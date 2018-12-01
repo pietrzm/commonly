@@ -1,6 +1,8 @@
 import reduce from "./reduce/reduce"
 import transduce from "./transduce/transduce"
 import seq from "./seq/seq"
+import into from "./into/into"
+import seed from "./seed/seed"
 import map from "./push/push"
 import filter from "./filter/filter"
 import every from "./every/every"
@@ -27,6 +29,8 @@ export {
     reduce,
     transduce,
     seq,
+    into,
+    seed,
     map,
     filter,
 

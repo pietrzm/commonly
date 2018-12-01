@@ -1,5 +1,5 @@
-import { head } from "../../List"
-import { isArray } from "../../Type"
+import { head } from "List"
+import { isArray } from "Type"
 
 
 

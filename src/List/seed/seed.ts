@@ -1,5 +1,5 @@
-import { isArray, isString } from "../../Type"
-import { cases, when } from "../../Logic"
+import { isArray, isString } from "Type"
+import { cases, when } from "Logic"
 
 
 

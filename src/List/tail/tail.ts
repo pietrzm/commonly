@@ -1,5 +1,5 @@
-import { seq } from "../../List"
-import { xtail } from "../../Transducer"
+import { seq } from "List"
+import { xtail } from "Transducer"
 
 
 

@@ -1,5 +1,5 @@
-import { curry } from "../../Function/index"
-import { xor, not } from "../../Logic"
+import { curry } from "Function"
+import { xor, not } from "Logic"
 
 
 

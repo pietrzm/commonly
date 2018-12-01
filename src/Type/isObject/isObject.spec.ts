@@ -1,6 +1,7 @@
 import isObject from "./isObject"
 
 
+
 describe(`Module "Type" -> Function "isObject"`, () => {
     it("should preform a check if a given value is an Object.", () => {
         expect(isObject(undefined))

@@ -1,4 +1,4 @@
-import { size } from "../../List"
+import { size } from "List"
 
 
 

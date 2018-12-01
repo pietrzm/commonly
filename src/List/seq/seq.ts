@@ -1,6 +1,5 @@
-import { curry } from "../../Function"
-import into from "../into/into"
-import seed from "../seed/seed"
+import { curry } from "Function"
+import { into, seed } from "List"
 
 
 

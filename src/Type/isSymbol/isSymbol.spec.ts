@@ -1,6 +1,7 @@
 import isSymbol from "./isSymbol"
 
 
+
 describe(`Module "Type" -> Function "isSymbol"`, () => {
     it("should preform a check if a given value is a symbol.", () => {
         expect(isSymbol(undefined))

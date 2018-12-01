@@ -1,6 +1,7 @@
 import isEmpty from "./isEmpty"
 
 
+
 describe(`Module "List" -> Function "isEmpty"`, () => {
     it("should return a boolean whether the given list is empty.", () => {
         expect(isEmpty([]))

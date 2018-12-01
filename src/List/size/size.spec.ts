@@ -1,6 +1,7 @@
 import size from "./size"
 
 
+
 describe(`Module "List" -> Function "size"`, () => {
     it("should return a size of a given list.", () => {
         expect(size([]))

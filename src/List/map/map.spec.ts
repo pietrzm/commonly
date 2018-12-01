@@ -1,5 +1,6 @@
 import map from "./map"
-import { multiply } from "../../Math"
+import { multiply } from "Math"
+
 
 
 describe(`Module "List" -> Function "map"`, () => {

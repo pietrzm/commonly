@@ -1,5 +1,6 @@
 import find from "./find"
-import { isEven, isOdd } from "../../Math"
+import { isEven, isOdd } from "Math"
+
 
 
 describe(`Module "List" -> Function "find"`, () => {

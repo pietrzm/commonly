@@ -1,6 +1,7 @@
 import isTypedArray from "./isTypedArray"
 
 
+
 describe(`Module "Type" -> Function "isArray"`, () => {
     it("should preform a check if a given value is a TypedArray.", () => {
         expect(isTypedArray(undefined))

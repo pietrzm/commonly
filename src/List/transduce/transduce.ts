@@ -1,5 +1,5 @@
-import { curry } from "../../Function/index"
-import { reduce } from "../../List"
+import { curry } from "Function"
+import { reduce } from "List"
 
 
 

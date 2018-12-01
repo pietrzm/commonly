@@ -1,6 +1,7 @@
 import divide from "./divide";
 
 
+
 describe(`Module "Math" -> Function "divide"`, () => {
     it("should preform division of two given numbers.", () => {
         expect(divide(2, 2))

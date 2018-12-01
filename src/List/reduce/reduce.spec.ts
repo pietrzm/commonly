@@ -1,5 +1,6 @@
 import reduce from "./reduce"
-import { add, multiply } from "../../Math"
+import { add, multiply } from "Math"
+
 
 
 describe(`Module "List" -> Function "reduce"`, () => {

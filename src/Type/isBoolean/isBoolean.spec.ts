@@ -1,6 +1,7 @@
 import isBoolean from "./isBoolean"
 
 
+
 describe(`Module "Type" -> Function "isBoolean"`, () => {
     it("should preform a check if a given value is a boolean.", () => {
         expect(isBoolean(undefined))

@@ -1,7 +1,7 @@
-import { curry } from "../../Function"
-import { isArray, isString, isSet, isMap } from "../../Type"
-import { transduce } from "../../List"
-import { cases, when } from "../../Logic"
+import { curry } from "Function"
+import { isArray, isString, isSet, isMap } from "Type"
+import { transduce } from "List"
+import { cases, when } from "Logic"
 
 
 

@@ -1,6 +1,7 @@
 import isMap from "./isMap"
 
 
+
 describe(`Module "Type" -> Function "isMap"`, () => {
     it("should preform a check if a given value is a Set.", () => {
         expect(isMap(undefined))

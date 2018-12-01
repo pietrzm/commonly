@@ -1,6 +1,7 @@
 import xnor from "./xnor";
 
 
+
 describe(`Module "Logic" -> Function "xnor"`, () => {
     it("should preform a negated exclusive logical disjunction of two given boolean values.", () => {
         expect(xnor(false, false))

@@ -1,5 +1,5 @@
-import { curry } from "../../Function"
-import { and, not } from "../../Logic"
+import { curry } from "Function"
+import { and, not } from "Logic"
 
 
 

@@ -1,8 +1,10 @@
-import { curry } from "../../Function"
+import { curry } from "Function"
+
 
 
 const append = (x, xs) =>
     [ ...xs, x ]
+
 
 
 export default curry(append)

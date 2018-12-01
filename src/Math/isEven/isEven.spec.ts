@@ -1,6 +1,7 @@
 import isEven from "./isEven";
 
 
+
 describe(`Module "Math" -> Function "isEven"`, () => {
     it("should preform a check whether a given value is an even number.", () => {
         expect(isEven(2))

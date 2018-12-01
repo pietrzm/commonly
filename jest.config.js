@@ -9,5 +9,9 @@ module.exports = {
     },
     testMatch: [
         "**/?(*.)spec.ts"
+    ],
+
+    moduleDirectories: [
+        "src", "node_modules"
     ]
 }

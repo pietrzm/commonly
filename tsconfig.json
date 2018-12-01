@@ -2,11 +2,18 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "CommonJS",
+
     "outDir": "./bin/",
     "rootDir": "./src/",
     "sourceMap": true,
+
     "declaration": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+
+    "baseUrl": "./src/",
+    "paths": {
+      "*": [ "*" ]
+    }
   },
   "exclude": [
     "./node_modules/",

@@ -13,5 +13,10 @@ module.exports = {
 
     moduleDirectories: [
         "src", "node_modules"
+    ],
+
+
+    setupFiles: [
+        "jest-plugin-context/setup"
     ]
 }

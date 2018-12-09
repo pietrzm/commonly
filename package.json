@@ -20,11 +20,12 @@
   "homepage": "https://github.com/TheByteBits/commonly#readme",
   "devDependencies": {
     "@types/jest": "^23.3.9",
+    "@types/jest-plugin-context": "^2.9.0",
     "jest": "^23.6.0",
+    "jest-plugin-context": "^2.9.0",
     "typescript": "^3.1.6"
   },
   "dependencies": {
-    "@riim/curry": "^1.0.0",
-    "hm-def": "^1.0.2"
+    "@riim/curry": "^1.0.0"
   }
 }

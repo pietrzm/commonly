@@ -4,8 +4,8 @@ import { multiply } from "Math"
 
 
 
-describe(`(mapper, xs: Array)`, () => {
-    context(`when: isEmpty(xs)`, () => {
+describe(`function map(mapper, xs: Array)`, () => {
+    context(`case: isEmpty(xs)`, () => {
         it(`should return an empty Array`, () => {
             const subject = []
 
@@ -14,7 +14,7 @@ describe(`(mapper, xs: Array)`, () => {
         })
     })
 
-    context(`when: not(isEmpty(xs))`, () => {
+    context(`case: not(isEmpty(xs))`, () => {
         it(`should return an Array, where every value "x" is replaced by a value "f(x)"`, () => {
             const subject = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
 
@@ -23,7 +23,7 @@ describe(`(mapper, xs: Array)`, () => {
         })
     })
 
-    context(`what: in === out`, () => {
+    context(`case: in === out`, () => {
         it(`should return a new Array`, () => {
             const subjectA = [],
                 subjectB = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
@@ -42,8 +42,8 @@ describe(`(mapper, xs: Array)`, () => {
 })
 
 
-describe(`(mapper, xs: String)`, () => {
-    context(`when: isEmpty(xs)`, () => {
+describe(`function map(mapper, xs: String)`, () => {
+    context(`case: isEmpty(xs)`, () => {
         it(`should return an empty String`, () => {
             const subject = ""
 
@@ -52,7 +52,7 @@ describe(`(mapper, xs: String)`, () => {
         })
     })
 
-    context(`when: not(isEmpty(xs))`, () => {
+    context(`case: not(isEmpty(xs))`, () => {
         it(`should return a String, where every value "x" is replaced by a value "f(x)"`, () => {
             const subject = "0112358"
 
@@ -61,7 +61,7 @@ describe(`(mapper, xs: String)`, () => {
         })
     })
 
-    context(`what: in === out`, () => {
+    context(`case: in === out`, () => {
         it(`should return a new String`, () => {
             const subject = "0112358"
 
@@ -85,8 +85,8 @@ describe(`(mapper, xs: String)`, () => {
 })
 
 
-describe(`(mapper, xs: Set)`, () => {
-    context(`when: isEmpty(xs)`, () => {
+describe(`function map(mapper, xs: Set)`, () => {
+    context(`case: isEmpty(xs)`, () => {
         it(`should return an empty Set`, () => {
             const subject = new Set()
 
@@ -95,7 +95,7 @@ describe(`(mapper, xs: Set)`, () => {
         })
     })
 
-    context(`when: not(isEmpty(xs))`, () => {
+    context(`case: not(isEmpty(xs))`, () => {
         it(`should return a Set, where every value "x" is replaced by a value "f(x)"`, () => {
             const subject = new Set([ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ])
 
@@ -104,7 +104,7 @@ describe(`(mapper, xs: Set)`, () => {
         })
     })
 
-    context(`what: in === out`, () => {
+    context(`case: in === out`, () => {
         it(`should return a new Set`, () => {
             const subjectA = new Set(),
                 subjectB = new Set([ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ])
@@ -123,8 +123,8 @@ describe(`(mapper, xs: Set)`, () => {
 })
 
 
-describe(`(mapper, xs: Map)`, () => {
-    context(`when: isEmpty(xs)`, () => {
+describe(`function map(mapper, xs: Map)`, () => {
+    context(`case: isEmpty(xs)`, () => {
         it(`should return an empty Set`, () => {
             const subject = new Map()
 
@@ -133,7 +133,7 @@ describe(`(mapper, xs: Map)`, () => {
         })
     })
 
-    context(`when: not(isEmpty(xs))`, () => {
+    context(`case: not(isEmpty(xs))`, () => {
         it(`should return a Set, where every value "x" is replaced by a value "f(x)"`, () => {
             const subject = new Map([
                 [ "A", 0 ], [ "B", 1 ], [ "C", 1 ],  [ "D", 2 ],  [ "E", 3 ],
@@ -148,7 +148,7 @@ describe(`(mapper, xs: Map)`, () => {
         })
     })
 
-    context(`what: in === out`, () => {
+    context(`case: in === out`, () => {
         it(`should return a new Set`, () => {
             const subjectA = new Map(),
                 subjectB = new Map([

@@ -123,13 +123,13 @@ describe(`function every(mapper, xs: Map)`, () => {
 	context(`case: not(isEmpty(xs))`, () => {
 		it(`should return true`, () => {
 			const subjectA = new Map([
-					[ "A", 0 ], [ "D", 2 ],
-					[ "G", 8 ], [ "J", 34 ]
-				])
+				[ "A", 0 ], [ "D", 2 ],
+				[ "G", 8 ], [ "J", 34 ]
+			])
 			const subjectB = new Set([
-					[ "B", 1 ], [ "C", 1 ],  [ "E", 3 ],
-					[ "F", 5 ], [ "H", 13 ], [ "I", 21 ]
-				])
+				[ "B", 1 ], [ "C", 1 ],  [ "E", 3 ],
+				[ "F", 5 ], [ "H", 13 ], [ "I", 21 ]
+			])
 
 			expect(every(([ k, x ]) => isEven(x), subjectA))
 				.toEqual(true)

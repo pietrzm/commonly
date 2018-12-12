@@ -24,8 +24,5 @@
     "jest": "^23.6.0",
     "jest-plugin-context": "^2.9.0",
     "typescript": "^3.1.6"
-  },
-  "dependencies": {
-    "@riim/curry": "^1.0.0"
   }
 }

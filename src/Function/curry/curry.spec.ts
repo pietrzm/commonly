@@ -1,33 +1,51 @@
 import curry from "./curry"
-import { __ } from "Function"
 
 
 
-describe(`Module "Function" -> Function "curry"`, () => {
-    const curried = curry(
-        (a, b, c) =>
-            a * b ** 2 * c
-    )
+describe(`function autocurry(f)`, () => {
+	const nullary = () => null,
+		unary = (a) => a,
+		binary = (a, b) => a + b,
+		ternary = (a, b, c) => a + b * c
 
-    it("should curry an uncurried function.", () => {
-        expect(() => curried(1)(2)(3))
-            .not.toThrow()
 
-        expect(() => curried(1, 2)(3))
-            .not.toThrow()
+	context(`case: nullary function`, () => {
+		it(`should return a reference to the passed in function`, () => {
+			const subject = curry(nullary)
 
-        expect(() => curried(1)(2, 3))
-            .not.toThrow()
+			expect(subject)
+				.toBe(nullary)
+		})
+	})
 
-        expect(() => curried(1, 2, 3))
-            .not.toThrow()
-    })
+	context(`case: unary function`, () => {
+		it(`should return a reference to the passed in function`, () => {
+			const subject = curry(unary)
 
-    it("should skip placeholder values.", () => {
-        expect(() => curried(1)(__)(2)(3))
-            .not.toThrow()
+			expect(subject)
+				.toBe(unary)
+		})
+	})
 
-        expect(curried(1, 2, 3))
-            .toBe(curried(1, __, 3)(2))
-    })
+	context(`case: n-ary function`, () => {
+		it(`should return a new function`, () => {
+			const subjectA = curry(binary),
+				subjectB = curry(ternary)
+
+			expect(subjectA)
+				.not.toBe(binary)
+			expect(subjectB)
+				.not.toBe(ternary)
+		})
+
+		it(`should create a curried "f" function`, () => {
+			const subjectA = curry(binary),
+				subjectB = curry(ternary)
+
+			expect(subjectA(1)(2))
+				.toEqual(binary(1, 2))
+			expect(subjectB(1)(2)(3))
+				.toEqual(ternary(1, 2, 3))
+		})
+	})
 })

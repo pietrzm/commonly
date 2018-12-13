@@ -3,17 +3,18 @@ import size from "List/size/size"
 
 
 const curry = (f) => {
-	const arity = size(f)
-
-	if (arity < 2) {
+	if (size(f) < 2) {
 		return f
 	}
 
-	return function partial(...varargs) {
-		return (size(varargs) >= arity) ?
-			f(...varargs)
-			: (...rest) =>
-				partial(...varargs.concat(rest))
+	return curried.bind(null, f)
+}
+
+const curried = (f, ...varargs) => {
+	if (size(varargs) >= size(f)) {
+		return f(...varargs)
+	} else {
+		return curried.bind(null, f, ...varargs)
 	}
 }
 

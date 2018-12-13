@@ -2,19 +2,22 @@ import size from "List/size/size"
 
 
 
-const curry = (f) => {
-	if (size(f) < 2) {
+const curry = (f, thisArg = this) => {
+	if (size(f) < MINIMUM_ARITY) {
 		return f
 	}
 
-	return curried.bind(null, f)
+	return curried.bind(thisArg, f)
 }
 
-const curried = (f, ...varargs) => {
+
+const MINIMUM_ARITY = 2
+
+const curried = function (f, ...varargs) {
 	if (size(varargs) >= size(f)) {
 		return f(...varargs)
 	} else {
-		return curried.bind(null, f, ...varargs)
+		return curried.bind(this, f, ...varargs)
 	}
 }
 

@@ -1,11 +1,11 @@
 import { curry } from "Function"
 import { xfind } from "Transducer"
-import { seq } from "List"
+import { into, seq } from "List"
 
 
 
 const find = (predicate, xs) =>
-    seq(xfind(predicate), xs)
+    into(undefined, xfind(predicate), xs)
 
 
 

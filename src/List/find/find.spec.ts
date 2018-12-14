@@ -3,26 +3,150 @@ import { isEven, isOdd } from "Math"
 
 
 
-describe(`Module "List" -> Function "find"`, () => {
-    it(`should return the first value from the list which passes the predicate, otherwise return undefined.`, () => {
-        expect(find(isEven, [ 1, 3, 5 ]))
-            .toEqual(undefined)
+describe(`function find(predicate, xs: Array)`, () => {
+	context(`case: isEmpty(xs)`, () => {
+		it(`should return an undefined`, () => {
+			const subject = []
 
-        expect(find(isOdd, [ 1, 3, 5 ]))
-            .toEqual(1)
+			expect(find(isEven, subject))
+				.toBe(undefined)
+			expect(find(isOdd, subject))
+				.toBe(undefined)
+		})
+	})
+
+	context(`case: not(isEmpty(xs))`, () => {
+		it(`should return a first value that passes a given predicate`, () => {
+			const subject = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
+
+			expect(find(isEven, subject))
+				.toEqual(0)
+			expect(find(isOdd, subject))
+				.toEqual(1)
+		})
+
+		it(`should return an undefined if no value passes a given predicate`, () => {
+			const subjectA = [ 0, 2, 8, 34 ],
+				subjectB = [ 1, 1, 3, 5, 13, 21 ]
+
+			expect(find(isEven, subjectB))
+				.toEqual(undefined)
+			expect(find(isOdd, subjectA))
+				.toEqual(undefined)
+		})
+	})
+})
 
 
-        expect(find(isEven, [ 1, 2, 3, 4, 4, 6 ]))
-            .toEqual(2)
+describe(`function find(predicate, xs: String)`, () => {
+	context(`case: isEmpty(xs)`, () => {
+		it(`should return an undefined`, () => {
+			const subject = ""
 
-        expect(find(isOdd, [ 1, 2, 3, 4, 4, 6 ]))
-            .toEqual(1)
+			expect(find(isEven, subject))
+				.toEqual(undefined)
+			expect(find(isOdd, subject))
+				.toEqual(undefined)
+		})
+	})
+
+	context(`case: not(isEmpty(xs))`, () => {
+		it(`should return a first value that passes a given predicate`, () => {
+			const subject = "0112358"
+
+			expect(find(isEven, subject))
+				.toEqual("0")
+			expect(find(isOdd, subject))
+				.toEqual("1")
+		})
+
+		it(`should return an undefined if no value passes a given predicate`, () => {
+			const subjectA = "028",
+				subjectB = "1135"
+
+			expect(find(isEven, subjectB))
+				.toEqual(undefined)
+			expect(find(isOdd, subjectA))
+				.toEqual(undefined)
+		})
+	})
+})
 
 
-        expect(find(isEven, [ 2, 4, 6 ]))
-            .toEqual(2)
+describe(`function find(predicate, xs: Set)`, () => {
+	context(`case: isEmpty(xs)`, () => {
+		it(`should return an undefined`, () => {
+			const subject = new Set()
 
-        expect(find(isOdd, [ 2, 4, 6 ]))
-            .toEqual(undefined)
-    })
+			expect(find(isEven, subject))
+				.toEqual(undefined)
+			expect(find(isOdd, subject))
+				.toEqual(undefined)
+		})
+	})
+
+	context(`case: not(isEmpty(xs))`, () => {
+		it(`should return a first value that passes a given predicate`, () => {
+			const subject = new Set([ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ])
+
+			expect(find(isEven, subject))
+				.toEqual(0)
+			expect(find(isOdd, subject))
+				.toEqual(1)
+		})
+
+		it(`should return an undefined if no value passes a given predicate`, () => {
+			const subjectA =  new Set([ 0, 2, 8, 34 ]),
+				subjectB =  new Set([ 1, 1, 3, 5, 13, 21 ])
+
+			expect(find(isEven, subjectB))
+				.toEqual(undefined)
+			expect(find(isOdd, subjectA))
+				.toEqual(undefined)
+		})
+	})
+})
+
+
+describe(`function find(predicate, xs: Map)`, () => {
+	context(`case: isEmpty(xs)`, () => {
+		it(`should return an undefined`, () => {
+			const subject = new Map()
+
+			expect(find(([ k, x ]) => isEven(x), subject))
+				.toEqual(undefined)
+			expect(find(([ k, x ]) => isOdd(x), subject))
+				.toEqual(undefined)
+		})
+	})
+
+	context(`case: not(isEmpty(xs))`, () => {
+		it(`should return a first value that passes a given predicate`, () => {
+			const subject = new Map([
+				[ "A", 0 ], [ "B", 1 ], [ "C", 1 ],  [ "D", 2 ],  [ "E", 3 ],
+				[ "F", 5 ], [ "G", 8 ], [ "H", 13 ], [ "I", 21 ], [ "J", 34 ]
+			])
+
+			expect(find(([ k, x ]) => isEven(x), subject))
+				.toEqual([ "A", 0 ])
+			expect(find(([ k, x ]) => isOdd(x), subject))
+				.toEqual([ "B", 1 ])
+		})
+
+		it(`should return an undefined if no value passes a given predicate`, () => {
+			const subjectA = new Map([
+				[ "A", 0 ], [ "D", 2 ],
+				[ "G", 8 ], [ "J", 34 ]
+			])
+			const subjectB = new Map([
+				[ "B", 1 ], [ "C", 1 ],  [ "E", 3 ],
+				[ "F", 5 ], [ "H", 13 ], [ "I", 21 ]
+			])
+
+			expect(find(([ k, x ]) => isEven(x), subjectB))
+				.toEqual(undefined)
+			expect(find(([ k, x ]) => isOdd(x), subjectA))
+				.toEqual(undefined)
+		})
+	})
 })

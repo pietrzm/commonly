@@ -1,5 +1,5 @@
-import { curry } from "Function"
-import { isArray, isString, isSet, isMap } from "Type"
+import { curry, identity } from "Function"
+import { isArray, isString, isSet, isMap, isUndefined } from "Type"
 import { transduce } from "List"
 
 
@@ -14,6 +14,8 @@ const into = (accumulator, xf, xs) => {
             return transduce(xf, (xs, x) => xs.add(x), accumulator, xs);
         case isMap(accumulator):
             return transduce(xf, (xs, kx) => xs.set(kx[0], kx[1]), accumulator, xs);
+        case isUndefined(accumulator):
+            return transduce(xf, identity, accumulator, xs);
     }
 }
 

@@ -2,10 +2,10 @@ import { curry, reduced } from "Function"
 
 
 
-const xfind = (predicate, _) => (accumulator, x) =>
+const xfind = (predicate, reducer) => (accumulator, x) =>
     predicate(x) ?
         reduced(x)
-        : undefined
+        : reducer(undefined)
 
 
 

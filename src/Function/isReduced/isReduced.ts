@@ -2,8 +2,8 @@ import isObject from "Type/isObject/isObject"
 
 
 
-const isReduced = x =>
-    isObject(x) && x.isReduced
+const isReduced = (rx) =>
+	isObject(rx) && rx["@@reduce/reduced"]
 
 
 

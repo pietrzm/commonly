@@ -1,4 +1,4 @@
-import { isNull } from "Type"
+import isNull from "Type/isNull/isNull"
 
 
 

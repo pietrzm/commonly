@@ -1,4 +1,5 @@
-import { curry, reduced } from "Function"
+import curry from "Function/curry/curry"
+import reduced from "Function/reduced/reduced"
 
 
 

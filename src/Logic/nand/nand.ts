@@ -1,5 +1,6 @@
-import { curry } from "Function"
-import { and, not } from "Logic"
+import curry from "Function/curry/curry"
+import and from "Logic/and/and"
+import not from "Logic/not/not"
 
 
 

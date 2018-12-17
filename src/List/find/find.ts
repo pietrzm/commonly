@@ -1,6 +1,6 @@
-import { curry } from "Function"
-import { xfind } from "Transducer"
-import { into, seq } from "List"
+import curry from "Function/curry/curry"
+import into from "List/into/into"
+import xfind from "Transducer/xfind/xfind"
 
 
 

@@ -1,4 +1,4 @@
-import { reduce } from "List"
+import reduce from "List/reduce/reduce"
 
 
 

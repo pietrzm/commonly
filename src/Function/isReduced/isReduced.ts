@@ -1,10 +1,9 @@
-import { head } from "List"
-import { isArray } from "Type"
+import isObject from "Type/isObject/isObject"
 
 
 
 const isReduced = x =>
-    isArray(x) && isReduced === head(x)
+    isObject(x) && x.isReduced
 
 
 

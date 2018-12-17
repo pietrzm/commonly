@@ -1,6 +1,6 @@
-import { curry } from "Function"
-import { xfilter } from "Transducer"
-import { seq } from "List"
+import curry from "Function/curry/curry"
+import seq from "List/seq/seq"
+import xfilter from "Transducer/xfilter/xfilter"
 
 
 

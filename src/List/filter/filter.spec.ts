@@ -1,5 +1,6 @@
 import filter from "./filter"
-import { isEven, isOdd } from "Math"
+import isEven from "Math/isEven/isEven"
+import isOdd from "Math/isOdd/isOdd"
 
 
 

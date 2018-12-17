@@ -1,6 +1,11 @@
-import { curry, identity } from "Function"
-import { isArray, isString, isSet, isMap, isUndefined } from "Type"
-import { transduce } from "List"
+import curry from "Function/curry/curry"
+import identity from "Function/identity/identity"
+import transduce from "List/transduce/transduce"
+import isArray from "Type/isArray/isArray"
+import isMap from "Type/isMap/isMap"
+import isSet from "Type/isSet/isSet"
+import isString from "Type/isString/isString"
+import isUndefined from "Type/isUndefined/isUndefined"
 
 
 

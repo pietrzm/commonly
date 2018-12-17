@@ -1,9 +1,5 @@
-import { isReduced } from "Function"
-
-
-
 const reduced = x =>
-    [ isReduced, x ]
+	({ isReduced: true, value: x })
 
 
 

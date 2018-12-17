@@ -1,4 +1,5 @@
-import { isUndefined, isNull } from "Type"
+import isNull from "Type/isNull/isNull"
+import isUndefined from "Type/isUndefined/isUndefined"
 
 
 

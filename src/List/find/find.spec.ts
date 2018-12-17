@@ -1,5 +1,6 @@
 import find from "./find"
-import { isEven, isOdd } from "Math"
+import isEven from "Math/isEven/isEven"
+import isOdd from "Math/isOdd/isOdd"
 
 
 

@@ -1,5 +1,6 @@
 import reduce from "./reduce"
-import { add, multiply } from "Math"
+import add from "Math/add/add"
+import multiply from "Math/multiply/multiply"
 
 
 

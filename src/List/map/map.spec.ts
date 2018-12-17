@@ -1,6 +1,7 @@
 import map from "./map"
-import { identity } from "Function"
-import { multiply } from "Math"
+import identity from "Function/identity/identity"
+import multiply from "Math/multiply/multiply"
+
 
 
 

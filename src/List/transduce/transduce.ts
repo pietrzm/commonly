@@ -1,5 +1,5 @@
-import { curry } from "Function"
-import { reduce } from "List"
+import curry from "Function/curry/curry"
+import reduce from "List/reduce/reduce"
 
 
 

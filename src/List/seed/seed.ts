@@ -1,4 +1,5 @@
-import { isArray, isString } from "Type"
+import isArray from "Type/isArray/isArray"
+import isString from "Type/isString/isString"
 
 
 

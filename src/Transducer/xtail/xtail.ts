@@ -1,5 +1,5 @@
-import { curry } from "Function"
-import { xslice } from "Transducer"
+import curry from "Function/curry/curry"
+import xslice from "Transducer/xslice/xslice"
 
 
 

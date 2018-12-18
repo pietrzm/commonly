@@ -1,5 +1,5 @@
 import isBoolean from "Type/isBoolean/isBoolean"
-import isNill from "Type/isNill/isNill"
+import isNil from "Type/isNil/isNil"
 import isNumber from "Type/isNumber/isNumber"
 import isString from "Type/isString/isString"
 import isSymbol from "Type/isSymbol/isSymbol"
@@ -7,7 +7,7 @@ import isSymbol from "Type/isSymbol/isSymbol"
 
 
 const isPrimitive = x =>
-    isNill(x) || isBoolean(x) || isNumber(x) || isString(x) || isSymbol(x)
+    isNil(x) || isBoolean(x) || isNumber(x) || isString(x) || isSymbol(x)
 
 
 

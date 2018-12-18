@@ -2,26 +2,45 @@ import isString from "./isString"
 
 
 
-describe(`Module "Type" -> Function "isString"`, () => {
-    it("should preform a check if a given value is a string.", () => {
-        expect(isString(undefined))
-            .toBe(false)
-        expect(isString(null))
-            .toBe(false)
+describe(`function isSymbol(x)`, () => {
+    context(`x is an Symbol`, () => {
+        it(`should return true`, () => {
+            const subject = ""
 
-        expect(isString(0))
-            .toBe(false)
-        expect(isString(true))
-            .toBe(false)
-        expect(isString(""))
-            .toBe(true)
+            expect(isString(subject))
+                .toBe(true)
+        })
+    })
 
-        expect(isString(Symbol()))
-            .toBe(false)
+    context(`x is undefined`, () => {
+        it(`should return false`, () => {
+            expect(isString(undefined))
+                .toBe(false)
+        })
+    })
 
-        expect(isString([]))
-            .toBe(false)
-        expect(isString({}))
-            .toBe(false)
+    context(`x is null`, () => {
+        it(`should return false`, () => {
+            expect(isString(null))
+                .toBe(false)
+        })
+    })
+
+    context(`x is anything`, () => {
+        it(`should return false`, () => {
+            expect(isString(NaN))
+                .toBe(false)
+            expect(isString(true))
+                .toBe(false)
+
+            expect(isString({}))
+                .toBe(false)
+            expect(isString([]))
+                .toBe(false)
+            expect(isString(new Set()))
+                .toBe(false)
+            expect(isString(new Map()))
+                .toBe(false)
+        })
     })
 })

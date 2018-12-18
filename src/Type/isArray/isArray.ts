@@ -1,4 +1,4 @@
-const isArray = x =>
+const isArray = (x) =>
     Array.isArray(x)
 
 

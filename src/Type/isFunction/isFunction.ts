@@ -1,4 +1,4 @@
-const isFunction = x =>
+const isFunction = (x) =>
     typeof x === "function"
 
 

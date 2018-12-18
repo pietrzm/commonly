@@ -2,30 +2,47 @@ import isArrayBuffer from "./isArrayBuffer"
 
 
 
-describe(`Module "Type" -> Function "isArrayBuffer"`, () => {
-    it("should preform a check if a given value is a Set.", () => {
-        expect(isArrayBuffer(undefined))
-            .toBe(false)
-        expect(isArrayBuffer(null))
-            .toBe(false)
+describe(`function isArrayBuffer(x)`, () => {
+    context(`x is an ArrayBuffer`, () => {
+        it(`should return true`, () => {
+            const subject = new ArrayBuffer(0)
 
-        expect(isArrayBuffer(0))
-            .toBe(false)
-        expect(isArrayBuffer(true))
-            .toBe(false)
-        expect(isArrayBuffer(""))
-            .toBe(false)
+            expect(isArrayBuffer(subject))
+                .toBe(true)
+        })
+    })
 
-        expect(isArrayBuffer(Symbol()))
-            .toBe(false)
+    context(`x is undefined`, () => {
+        it(`should return false`, () => {
+            expect(isArrayBuffer(undefined))
+                .toBe(false)
+        })
+    })
 
-        expect(isArrayBuffer([]))
-            .toBe(false)
-        expect(isArrayBuffer({}))
-            .toBe(false)
+    context(`x is null`, () => {
+        it(`should return false`, () => {
+            expect(isArrayBuffer(null))
+                .toBe(false)
+        })
+    })
 
+    context(`x is anything`, () => {
+        it(`should return false`, () => {
+            expect(isArrayBuffer(NaN))
+                .toBe(false)
+            expect(isArrayBuffer(true))
+                .toBe(false)
+            expect(isArrayBuffer(""))
+                .toBe(false)
 
-        expect(isArrayBuffer(new ArrayBuffer(1)))
-            .toBe(true)
+            expect(isArrayBuffer({}))
+                .toBe(false)
+            expect(isArrayBuffer([]))
+                .toBe(false)
+            expect(isArrayBuffer(new Set()))
+                .toBe(false)
+            expect(isArrayBuffer(new Map()))
+                .toBe(false)
+        })
     })
 })

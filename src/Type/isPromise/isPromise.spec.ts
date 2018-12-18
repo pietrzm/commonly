@@ -1,30 +1,52 @@
+import identity from "Function/identity/identity"
 import isPromise from "./isPromise"
 
 
 
-describe(`Module "Type" -> Function "isPromise"`, () => {
-    it("should preform a check if a given value is a Promise.", () => {
-        expect(isPromise(undefined))
-            .toBe(false)
-        expect(isPromise(null))
-            .toBe(false)
+describe(`function isPromise(x)`, () => {
+    context(`x is a Promise`, () => {
+        it(`should return true`, () => {
+            const subjectA = new Promise(identity),
+                subjectB = Promise.resolve()
 
-        expect(isPromise(0))
-            .toBe(false)
-        expect(isPromise(true))
-            .toBe(false)
-        expect(isPromise(""))
-            .toBe(false)
+            expect(isPromise(subjectA))
+                .toBe(true)
+            expect(isPromise(subjectB))
+                .toBe(true)
+        })
+    })
 
-        expect(isPromise(Symbol()))
-            .toBe(false)
+    context(`x is undefined`, () => {
+        it(`should return false`, () => {
+            expect(isPromise(undefined))
+                .toBe(false)
+        })
+    })
 
-        expect(isPromise([]))
-            .toBe(false)
-        expect(isPromise({}))
-            .toBe(false)
+    context(`x is null`, () => {
+        it(`should return false`, () => {
+            expect(isPromise(null))
+                .toBe(false)
+        })
+    })
 
-        expect(isPromise(Promise.resolve(null)))
-            .toBe(true)
+    context(`x is anything`, () => {
+        it(`should return false`, () => {
+            expect(isPromise(NaN))
+                .toBe(false)
+            expect(isPromise(true))
+                .toBe(false)
+            expect(isPromise(""))
+                .toBe(false)
+
+            expect(isPromise({}))
+                .toBe(false)
+            expect(isPromise([]))
+                .toBe(false)
+            expect(isPromise(new Set()))
+                .toBe(false)
+            expect(isPromise(new Map()))
+                .toBe(false)
+        })
     })
 })

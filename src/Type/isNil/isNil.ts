@@ -3,9 +3,9 @@ import isUndefined from "Type/isUndefined/isUndefined"
 
 
 
-const isNill = x =>
+const isNil = (x) =>
     isUndefined(x) || isNull(x)
 
 
 
-export default isNill
+export default isNil

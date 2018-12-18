@@ -1,4 +1,4 @@
-const isArrayBuffer = x =>
+const isArrayBuffer = (x) =>
     x instanceof ArrayBuffer
 
 

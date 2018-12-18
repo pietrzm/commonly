@@ -2,7 +2,7 @@ import isNull from "Type/isNull/isNull"
 
 
 
-const isObject = x =>
+const isObject = (x) =>
     typeof x === "object" && !isNull(x)
 
 

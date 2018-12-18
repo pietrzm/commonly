@@ -1,4 +1,4 @@
-const isError = x =>
+const isError = (x) =>
     x instanceof Error
 
 

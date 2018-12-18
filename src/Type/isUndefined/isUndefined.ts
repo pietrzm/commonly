@@ -1,4 +1,4 @@
-const isUndefined = x =>
+const isUndefined = (x) =>
     x === undefined
 
 

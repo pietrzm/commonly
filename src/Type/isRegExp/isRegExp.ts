@@ -1,4 +1,4 @@
-const isRegExp = x =>
+const isRegExp = (x) =>
     x instanceof RegExp
 
 

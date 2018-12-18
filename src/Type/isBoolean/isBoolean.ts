@@ -1,4 +1,4 @@
-const isBoolean = x =>
+const isBoolean = (x) =>
     typeof x === "boolean"
 
 

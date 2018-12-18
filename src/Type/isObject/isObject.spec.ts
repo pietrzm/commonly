@@ -2,26 +2,49 @@ import isObject from "./isObject"
 
 
 
-describe(`Module "Type" -> Function "isObject"`, () => {
-    it("should preform a check if a given value is an Object.", () => {
-        expect(isObject(undefined))
-            .toBe(false)
-        expect(isObject(null))
-            .toBe(false)
+describe(`function isObject(x)`, () => {
+    context(`x is an Object`, () => {
+        it(`should return true`, () => {
+            expect(isObject({}))
+                .toBe(true)
+            expect(isObject(Object.create(null)))
+                .toBe(true)
+            expect(isObject(new Object(null)))
+                .toBe(true)
 
-        expect(isObject(0))
-            .toBe(false)
-        expect(isObject(true))
-            .toBe(false)
-        expect(isObject(""))
-            .toBe(false)
+            expect(isObject([]))
+                .toBe(true)
+            expect(isObject(new Set()))
+                .toBe(true)
+            expect(isObject(new Map()))
+                .toBe(true)
+        })
+    })
 
-        expect(isObject(Symbol()))
-            .toBe(false)
+    context(`x is undefined`, () => {
+        it(`should return false`, () => {
+            expect(isObject(undefined))
+                .toBe(false)
+        })
+    })
 
-        expect(isObject([]))
-            .toBe(true)
-        expect(isObject({}))
-            .toBe(true)
+    context(`x is null`, () => {
+        it(`should return false`, () => {
+            expect(isObject(null))
+                .toBe(false)
+        })
+    })
+
+    context(`x is anything`, () => {
+        it(`should return false`, () => {
+            expect(isObject(NaN))
+                .toBe(false)
+            expect(isObject(true))
+                .toBe(false)
+            expect(isObject(""))
+                .toBe(false)
+
+
+        })
     })
 })

@@ -2,26 +2,45 @@ import isBoolean from "./isBoolean"
 
 
 
-describe(`Module "Type" -> Function "isBoolean"`, () => {
-    it("should preform a check if a given value is a boolean.", () => {
-        expect(isBoolean(undefined))
-            .toBe(false)
-        expect(isBoolean(null))
-            .toBe(false)
+describe(`function isArray(x)`, () => {
+    context(`x is a boolean`, () => {
+        it(`should return true`, () => {
+            expect(isBoolean(true))
+                .toBe(true)
+            expect(isBoolean(false))
+                .toBe(true)
+        })
+    })
 
-        expect(isBoolean(0))
-            .toBe(false)
-        expect(isBoolean(true))
-            .toBe(true)
-        expect(isBoolean(""))
-            .toBe(false)
+    context(`x is undefined`, () => {
+        it(`should return false`, () => {
+            expect(isBoolean(undefined))
+                .toBe(false)
+        })
+    })
 
-        expect(isBoolean(Symbol()))
-            .toBe(false)
+    context(`x is null`, () => {
+        it(`should return false`, () => {
+            expect(isBoolean(null))
+                .toBe(false)
+        })
+    })
 
-        expect(isBoolean([]))
-            .toBe(false)
-        expect(isBoolean({}))
-            .toBe(false)
+    context(`x is anything`, () => {
+        it(`should return false`, () => {
+            expect(isBoolean(NaN))
+                .toBe(false)
+            expect(isBoolean(""))
+                .toBe(false)
+
+            expect(isBoolean({}))
+                .toBe(false)
+            expect(isBoolean([]))
+                .toBe(false)
+            expect(isBoolean(new Set()))
+                .toBe(false)
+            expect(isBoolean(new Map()))
+                .toBe(false)
+        })
     })
 })

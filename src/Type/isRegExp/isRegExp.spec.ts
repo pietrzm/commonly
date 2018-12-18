@@ -2,33 +2,50 @@ import isRegExp from "./isRegExp"
 
 
 
-describe(`Module "Type" -> Function "isRegExp"`, () => {
-    it("should preform a check if a given value is a RegExp.", () => {
-        expect(isRegExp(undefined))
-            .toBe(false)
-        expect(isRegExp(null))
-            .toBe(false)
+describe(`function isRegExp(x)`, () => {
+    context(`x is a RegExp`, () => {
+        it(`should return true`, () => {
+            const subjectA = new RegExp("ab+c"),
+                subjectB = /ab+c/
 
-        expect(isRegExp(0))
-            .toBe(false)
-        expect(isRegExp(true))
-            .toBe(false)
-        expect(isRegExp(""))
-            .toBe(false)
+            expect(isRegExp(subjectA))
+                .toBe(true)
+            expect(isRegExp(subjectB))
+                .toBe(true)
+        })
+    })
 
-        expect(isRegExp(Symbol()))
-            .toBe(false)
+    context(`x is undefined`, () => {
+        it(`should return false`, () => {
+            expect(isRegExp(undefined))
+                .toBe(false)
+        })
+    })
 
-        expect(isRegExp([]))
-            .toBe(false)
-        expect(isRegExp({}))
-            .toBe(false)
+    context(`x is null`, () => {
+        it(`should return false`, () => {
+            expect(isRegExp(null))
+                .toBe(false)
+        })
+    })
 
+    context(`x is anything`, () => {
+        it(`should return false`, () => {
+            expect(isRegExp(NaN))
+                .toBe(false)
+            expect(isRegExp(true))
+                .toBe(false)
+            expect(isRegExp(""))
+                .toBe(false)
 
-        expect(isRegExp(new RegExp("/(?:)/")))
-            .toBe(true)
-
-        expect(isRegExp(/(?:)/))
-            .toBe(true)
+            expect(isRegExp({}))
+                .toBe(false)
+            expect(isRegExp([]))
+                .toBe(false)
+            expect(isRegExp(new Set()))
+                .toBe(false)
+            expect(isRegExp(new Map()))
+                .toBe(false)
+        })
     })
 })

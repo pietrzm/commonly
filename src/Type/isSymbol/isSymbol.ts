@@ -1,4 +1,4 @@
-const isSymbol = x =>
+const isSymbol = (x) =>
     typeof x === "symbol"
 
 

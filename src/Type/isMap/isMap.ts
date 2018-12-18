@@ -1,4 +1,4 @@
-const isMap = x =>
+const isMap = (x) =>
     x instanceof Map
 
 

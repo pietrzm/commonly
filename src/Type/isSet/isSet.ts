@@ -1,4 +1,4 @@
-const isSet = x =>
+const isSet = (x) =>
     x instanceof Set
 
 

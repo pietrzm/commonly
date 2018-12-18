@@ -1,4 +1,4 @@
-const isElement = x =>
+const isElement = (x) =>
     x instanceof Element
 
 

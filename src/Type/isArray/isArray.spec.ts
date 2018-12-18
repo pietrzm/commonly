@@ -2,26 +2,48 @@ import isArray from "./isArray"
 
 
 
-describe(`Module "Type" -> Function "isArray"`, () => {
-    it("should preform a check if a given value is an Array.", () => {
-        expect(isArray(undefined))
-            .toBe(false)
-        expect(isArray(null))
-            .toBe(false)
+describe(`function isArray(x)`, () => {
+    context(`x is an Array`, () => {
+        it(`should return true`, () => {
+            const subjectA = [],
+                subjectB = new Array(0)
 
-        expect(isArray(0))
-            .toBe(false)
-        expect(isArray(true))
-            .toBe(false)
-        expect(isArray(""))
-            .toBe(false)
+            expect(isArray(subjectA))
+                .toBe(true)
+            expect(isArray(subjectB))
+                .toBe(true)
+        })
+    })
 
-        expect(isArray(Symbol()))
-            .toBe(false)
+    context(`x is undefined`, () => {
+        it(`should return false`, () => {
+            expect(isArray(undefined))
+                .toBe(false)
+        })
+    })
 
-        expect(isArray([]))
-            .toBe(true)
-        expect(isArray({}))
-            .toBe(false)
+    context(`x is null`, () => {
+        it(`should return false`, () => {
+            expect(isArray(null))
+                .toBe(false)
+        })
+    })
+
+    context(`x is anything`, () => {
+        it(`should return false`, () => {
+            expect(isArray(NaN))
+                .toBe(false)
+            expect(isArray(true))
+                .toBe(false)
+            expect(isArray(""))
+                .toBe(false)
+
+            expect(isArray({}))
+                .toBe(false)
+            expect(isArray(new Set()))
+                .toBe(false)
+            expect(isArray(new Map()))
+                .toBe(false)
+        })
     })
 })

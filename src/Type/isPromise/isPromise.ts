@@ -1,4 +1,4 @@
-const isPromise = x =>
+const isPromise = (x) =>
     x === Promise.resolve(x)
 
 

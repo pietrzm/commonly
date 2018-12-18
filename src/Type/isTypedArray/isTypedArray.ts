@@ -1,4 +1,4 @@
-const isTypedArray = x =>
+const isTypedArray = (x) =>
     x instanceof Int8Array          ||
     x instanceof Uint8Array         ||
     x instanceof Uint8ClampedArray  ||

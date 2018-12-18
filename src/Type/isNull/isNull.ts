@@ -1,4 +1,4 @@
-const isNull = x =>
+const isNull = (x) =>
     x === null
 
 

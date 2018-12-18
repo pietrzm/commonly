@@ -1,38 +1,38 @@
-import isNull from "./isNull"
+import isNil from "./isNil"
 
 
 
-describe(`function isNull(x)`, () => {
+describe(`function isNil(x)`, () => {
     context(`x is undefined`, () => {
-        it(`should return false`, () => {
-            expect(isNull(undefined))
-                .toBe(false)
+        it(`should return true`, () => {
+            expect(isNil(undefined))
+                .toBe(true)
         })
     })
 
     context(`x is null`, () => {
         it(`should return true`, () => {
-            expect(isNull(null))
+            expect(isNil(null))
                 .toBe(true)
         })
     })
 
     context(`x is anything`, () => {
         it(`should return false`, () => {
-            expect(isNull(NaN))
+            expect(isNil(NaN))
                 .toBe(false)
-            expect(isNull(true))
+            expect(isNil(true))
                 .toBe(false)
-            expect(isNull(""))
+            expect(isNil(""))
                 .toBe(false)
 
-            expect(isNull({}))
+            expect(isNil({}))
                 .toBe(false)
-            expect(isNull([]))
+            expect(isNil([]))
                 .toBe(false)
-            expect(isNull(new Set()))
+            expect(isNil(new Set()))
                 .toBe(false)
-            expect(isNull(new Map()))
+            expect(isNil(new Map()))
                 .toBe(false)
         })
     })

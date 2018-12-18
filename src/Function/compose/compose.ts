@@ -1,9 +1,11 @@
 import reduce from "List/reduce/reduce"
+import identity from "Function/identity/identity"
 
 
 
-const compose = (...fs) =>
-    reduce((accumulator, f) => (...vargs) => accumulator(f(...vargs)), x => x, fs)
+const compose = (...functions) =>
+    reduce((g, f) =>
+	    (...varargs) => g(f(...varargs)), identity, functions)
 
 
 

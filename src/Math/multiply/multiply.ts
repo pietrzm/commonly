@@ -2,8 +2,8 @@ import curry from "Function/curry/curry"
 
 
 
-const multiply = (a, b) =>
-    a * b;
+const multiply = (multiplier, multiplicand) =>
+    multiplier * multiplicand;
 
 
 

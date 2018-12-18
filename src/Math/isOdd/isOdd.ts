@@ -1,5 +1,10 @@
-const isOdd = x =>
-    !!(x % 2);
+import not from "Logic/not/not"
+import isEven from "Math/isEven/isEven"
+
+
+
+const isOdd = (number) =>
+    not(isEven(number));
 
 
 

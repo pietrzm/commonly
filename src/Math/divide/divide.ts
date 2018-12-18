@@ -2,8 +2,8 @@ import curry from "Function/curry/curry"
 
 
 
-const divide = (a, b) =>
-    a / b;
+const divide = (dividend, divisor) =>
+    dividend / divisor;
 
 
 

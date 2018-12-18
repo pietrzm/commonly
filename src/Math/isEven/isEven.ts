@@ -1,5 +1,9 @@
-const isEven = x =>
-    !(x % 2);
+import not from "Logic/not/not"
+
+
+
+const isEven = (number) =>
+    not((number % 2))
 
 
 

@@ -1,4 +1,4 @@
-const not = x =>
+const not = (x) =>
     !x
 
 

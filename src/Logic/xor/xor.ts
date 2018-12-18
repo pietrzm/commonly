@@ -3,7 +3,7 @@ import curry from "Function/curry/curry"
 
 
 const xor = (a, b) =>
-    !!(a ^ b)
+    a !== b
 
 
 

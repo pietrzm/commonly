@@ -3,23 +3,18 @@ import reduced from "Function/reduced/reduced"
 
 
 
-const xslice = (a, b, reducer) => (accumulator, x) => {
-    if (b === 0) {
-        return reduced(accumulator)
-    }
+const xslice = (i, j, reducer) => {
+    j = j - i
 
-    if (a > 0) {
-        a--
-        b--
-        return accumulator
-    } else {
-        const reduction = reducer(accumulator, x)
-
-        if (b > 1) {
-            b--
-            return reduction
+    return (accumulator, value) => {
+        if (i-- > 0) {
+            return accumulator
         } else {
-            return reduced(reduction)
+            if (j-- === 0) {
+                return reduced(accumulator)
+            }
+
+            return reducer(accumulator, value)
         }
     }
 }

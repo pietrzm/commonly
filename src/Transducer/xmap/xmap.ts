@@ -2,8 +2,9 @@ import curry from "Function/curry/curry"
 
 
 
-const xmap = (transformer, reducer) => (accumulator, x) =>
-    reducer(accumulator, transformer(x))
+const xmap = (mapper, reducer) =>
+	(accumulator, value) =>
+        reducer(accumulator, mapper(value))
 
 
 

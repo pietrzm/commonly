@@ -5,7 +5,7 @@ import isOdd from "Math/isOdd/isOdd"
 
 
 describe(`function find(predicate, xs: Array)`, () => {
-	context(`case: isEmpty(xs)`, () => {
+	context(`xs is empty`, () => {
 		it(`should return an undefined`, () => {
 			const subject = []
 
@@ -16,17 +16,22 @@ describe(`function find(predicate, xs: Array)`, () => {
 		})
 	})
 
-	context(`case: not(isEmpty(xs))`, () => {
-		it(`should return a first value that passes a given predicate`, () => {
+	context(`xs is not empty`, () => {
+		it(`should return a number 0`, () => {
 			const subject = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
 
 			expect(find(isEven, subject))
 				.toEqual(0)
+		})
+
+		it(`should return a number 1`, () => {
+			const subject = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
+
 			expect(find(isOdd, subject))
 				.toEqual(1)
 		})
 
-		it(`should return an undefined if no value passes a given predicate`, () => {
+		it(`should return an undefined`, () => {
 			const subjectA = [ 0, 2, 8, 34 ],
 				subjectB = [ 1, 1, 3, 5, 13, 21 ]
 
@@ -40,7 +45,7 @@ describe(`function find(predicate, xs: Array)`, () => {
 
 
 describe(`function find(predicate, xs: String)`, () => {
-	context(`case: isEmpty(xs)`, () => {
+	context(`xs is empty`, () => {
 		it(`should return an undefined`, () => {
 			const subject = ""
 
@@ -51,17 +56,22 @@ describe(`function find(predicate, xs: String)`, () => {
 		})
 	})
 
-	context(`case: not(isEmpty(xs))`, () => {
-		it(`should return a first value that passes a given predicate`, () => {
+	context(`xs is not empty`, () => {
+		it(`should return a number 0`, () => {
 			const subject = "0112358"
 
 			expect(find(isEven, subject))
 				.toEqual("0")
+		})
+
+		it(`should return a number 1`, () => {
+			const subject = "0112358"
+
 			expect(find(isOdd, subject))
 				.toEqual("1")
 		})
 
-		it(`should return an undefined if no value passes a given predicate`, () => {
+		it(`should return an undefined`, () => {
 			const subjectA = "028",
 				subjectB = "1135"
 
@@ -75,7 +85,7 @@ describe(`function find(predicate, xs: String)`, () => {
 
 
 describe(`function find(predicate, xs: Set)`, () => {
-	context(`case: isEmpty(xs)`, () => {
+	context(`xs is empty`, () => {
 		it(`should return an undefined`, () => {
 			const subject = new Set()
 
@@ -86,12 +96,17 @@ describe(`function find(predicate, xs: Set)`, () => {
 		})
 	})
 
-	context(`case: not(isEmpty(xs))`, () => {
-		it(`should return a first value that passes a given predicate`, () => {
+	context(`xs is not empty`, () => {
+		it(`should return a number 0`, () => {
 			const subject = new Set([ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ])
 
 			expect(find(isEven, subject))
 				.toEqual(0)
+		})
+
+		it(`should return a number 1`, () => {
+			const subject = new Set([ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ])
+
 			expect(find(isOdd, subject))
 				.toEqual(1)
 		})
@@ -110,7 +125,7 @@ describe(`function find(predicate, xs: Set)`, () => {
 
 
 describe(`function find(predicate, xs: Map)`, () => {
-	context(`case: isEmpty(xs)`, () => {
+	context(`xs is empty`, () => {
 		it(`should return an undefined`, () => {
 			const subject = new Map()
 
@@ -122,7 +137,7 @@ describe(`function find(predicate, xs: Map)`, () => {
 	})
 
 	context(`case: not(isEmpty(xs))`, () => {
-		it(`should return a first value that passes a given predicate`, () => {
+		it(`should return a tuple [ "A", 0 ]`, () => {
 			const subject = new Map([
 				[ "A", 0 ], [ "B", 1 ], [ "C", 1 ],  [ "D", 2 ],  [ "E", 3 ],
 				[ "F", 5 ], [ "G", 8 ], [ "H", 13 ], [ "I", 21 ], [ "J", 34 ]
@@ -130,11 +145,19 @@ describe(`function find(predicate, xs: Map)`, () => {
 
 			expect(find(([ k, x ]) => isEven(x), subject))
 				.toEqual([ "A", 0 ])
+		})
+
+		it(`should return a tuple [ "A", 1 ]`, () => {
+			const subject = new Map([
+				[ "A", 0 ], [ "B", 1 ], [ "C", 1 ],  [ "D", 2 ],  [ "E", 3 ],
+				[ "F", 5 ], [ "G", 8 ], [ "H", 13 ], [ "I", 21 ], [ "J", 34 ]
+			])
+
 			expect(find(([ k, x ]) => isOdd(x), subject))
 				.toEqual([ "B", 1 ])
 		})
 
-		it(`should return an undefined if no value passes a given predicate`, () => {
+		it(`should return an undefined`, () => {
 			const subjectA = new Map([
 				[ "A", 0 ], [ "D", 2 ],
 				[ "G", 8 ], [ "J", 34 ]

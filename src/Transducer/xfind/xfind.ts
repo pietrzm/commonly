@@ -3,10 +3,11 @@ import reduced from "Function/reduced/reduced"
 
 
 
-const xfind = (predicate, reducer) => (accumulator, x) =>
-    predicate(x) ?
-        reduced(x)
-        : reducer(undefined)
+const xfind = (predicate, reducer) =>
+	(accumulator, value) =>
+	    predicate(value) ?
+	        reduced(value)
+	        : undefined
 
 
 

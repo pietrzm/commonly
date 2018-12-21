@@ -2,10 +2,11 @@ import curry from "Function/curry/curry"
 
 
 
-const xfilter = (predicate, reducer) => (accumulator, x) =>
-    predicate(x) ?
-        reducer(accumulator, x)
-        : accumulator
+const xfilter = (predicate, reducer) =>
+	(accumulator, value) =>
+	    predicate(value) ?
+	        reducer(accumulator, value)
+	        : accumulator
 
 
 

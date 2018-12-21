@@ -5,7 +5,7 @@ import isOdd from "Math/isOdd/isOdd"
 
 
 describe(`function filter(mapper, xs: Array)`, () => {
-	context(`case: isEmpty(xs)`, () => {
+	context(`xs is empty`, () => {
 		it(`should return an empty Array`, () => {
 			const subject = []
 
@@ -16,8 +16,8 @@ describe(`function filter(mapper, xs: Array)`, () => {
 		})
 	})
 
-	context(`case: not(isEmpty(xs))`, () => {
-		it(`should return an Array, with every value "x" which passes a given predicate`, () => {
+	context(`xs is not empty`, () => {
+		it(`should return a filtered Array`, () => {
 			const subject = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
 
 			expect(filter(isEven, subject))
@@ -26,38 +26,11 @@ describe(`function filter(mapper, xs: Array)`, () => {
 				.toEqual([ 1, 1, 3, 5, 13, 21 ])
 		})
 	})
-
-	context(`case: in === out`, () => {
-		it(`should return a new Array`, () => {
-			const subjectA = [],
-				subjectB = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
-
-			expect(filter(() => false, subjectA))
-				.not.toBe(subjectA)
-			expect(filter(() => false, subjectB))
-				.not.toBe(subjectB)
-
-			expect(filter(() => true, subjectA))
-				.not.toBe(subjectA)
-			expect(filter(() => true, subjectB))
-				.not.toBe(subjectB)
-
-			expect(filter(isEven, subjectA))
-				.not.toBe(subjectA)
-            expect(filter(isEven, subjectB))
-	            .not.toBe(subjectB)
-
-			expect(filter(isOdd, subjectA))
-				.not.toBe(subjectA)
-			expect(filter(isOdd, subjectB))
-				.not.toBe(subjectB)
-		})
-	})
 })
 
 
 describe(`function filter(mapper, xs: String)`, () => {
-	context(`case: isEmpty(xs)`, () => {
+	context(`xs is empty`, () => {
 		it(`should return a empty String`, () => {
 			const subject = ""
 
@@ -68,8 +41,8 @@ describe(`function filter(mapper, xs: String)`, () => {
 		})
 	})
 
-	context(`case: not(isEmpty(xs))`, () => {
-		it(`should return a String, with every value "x" which passes a given predicate`, () => {
+	context(`xs is not empty`, () => {
+		it(`should return a filtered String`, () => {
 			const subject = "0112358"
 
 			expect(filter(isEven, subject))
@@ -78,42 +51,11 @@ describe(`function filter(mapper, xs: String)`, () => {
 				.toEqual("1135")
 		})
 	})
-
-	context(`case: in === out`, () => {
-		it(`should return a new String`, () => {
-			const subject = "0112358"
-
-			expect(filter(() => false, subject))
-				.not.toBe(subject)
-
-			expect(filter(isEven, subject))
-				.not.toBe(subject)
-			expect(filter(isOdd, subject))
-				.not.toBe(subject)
-		})
-
-		it(`should return the same String`, () => {
-			const subjectA = "",
-				subjectB = "0112358"
-
-			expect(filter(() => false, subjectA))
-				.toBe(subjectA)
-			expect(filter(() => true, subjectA))
-				.toBe(subjectA)
-			expect(filter(() => true, subjectB))
-				.toBe(subjectB)
-
-			expect(filter(isEven, subjectA))
-				.toBe(subjectA)
-			expect(filter(isOdd, subjectA))
-				.toBe(subjectA)
-		})
-	})
 })
 
 
 describe(`function filter(mapper, xs: Set)`, () => {
-	context(`case: isEmpty(xs)`, () => {
+	context(`xs is empty`, () => {
 		it(`should return an empty Set`, () => {
 			const subject = new Set()
 
@@ -124,8 +66,8 @@ describe(`function filter(mapper, xs: Set)`, () => {
 		})
 	})
 
-	context(`case: not(isEmpty(xs))`, () => {
-		it(`should return a String, with every value "x" which passes a given predicate`, () => {
+	context(`xs is not empty`, () => {
+		it(`should return a filtered Set`, () => {
 			const subject = new Set([ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ])
 
 			expect(filter(isEven, subject))
@@ -134,38 +76,11 @@ describe(`function filter(mapper, xs: Set)`, () => {
 				.toEqual(new Set([ 1, 1, 3, 5, 13, 21 ]))
 		})
 	})
-
-	context(`case: in === out`, () => {
-		it(`should return a new Set`, () => {
-			const subjectA = new Set(),
-				subjectB = new Set([ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ])
-
-			expect(filter(() => false, subjectA))
-				.not.toBe(subjectA)
-			expect(filter(() => false, subjectB))
-				.not.toBe(subjectB)
-
-			expect(filter(() => true, subjectA))
-				.not.toBe(subjectA)
-			expect(filter(() => true, subjectB))
-				.not.toBe(subjectB)
-
-			expect(filter(isEven, subjectA))
-				.not.toBe(subjectA)
-			expect(filter(isEven, subjectB))
-				.not.toBe(subjectB)
-
-			expect(filter(isOdd, subjectA))
-				.not.toBe(subjectA)
-			expect(filter(isOdd, subjectB))
-				.not.toBe(subjectB)
-		})
-	})
 })
 
 
 describe(`function filter(mapper, xs: Map)`, () => {
-	context(`case: isEmpty(xs)`, () => {
+	context(`xs is empty`, () => {
 		it(`should return an empty Set`, () => {
 			const subject = new Map()
 
@@ -176,8 +91,8 @@ describe(`function filter(mapper, xs: Map)`, () => {
 		})
 	})
 
-	context(`case: not(isEmpty(xs))`, () => {
-		it(`should return a String, with every value "x" which passes a given predicate`, () => {
+	context(`xs is not empty`, () => {
+		it(`should return a filtered Map`, () => {
 			const subject = new Map([
 				[ "A", 0 ], [ "B", 1 ], [ "C", 1 ],  [ "D", 2 ],  [ "E", 3 ],
 				[ "F", 5 ], [ "G", 8 ], [ "H", 13 ], [ "I", 21 ], [ "J", 34 ]
@@ -193,36 +108,6 @@ describe(`function filter(mapper, xs: Map)`, () => {
 					[ "B", 1 ], [ "C", 1 ],  [ "E", 3 ],
 					[ "F", 5 ], [ "H", 13 ], [ "I", 21 ]
 				]))
-		})
-	})
-
-	context(`case: in === out`, () => {
-		it(`should return a new Set`, () => {
-			const subjectA = new Map(),
-				subjectB = new Map([
-					[ "A", 0 ], [ "B", 1 ], [ "C", 1 ],  [ "D", 2 ],  [ "E", 3 ],
-					[ "F", 5 ], [ "G", 8 ], [ "H", 13 ], [ "I", 21 ], [ "J", 34 ]
-				])
-
-			expect(filter(() => false, subjectA))
-				.not.toBe(subjectA)
-			expect(filter(() => false, subjectB))
-				.not.toBe(subjectB)
-
-			expect(filter(() => true, subjectA))
-				.not.toBe(subjectA)
-			expect(filter(() => true, subjectB))
-				.not.toBe(subjectB)
-
-			expect(filter(([ k, x ]) => isEven(x), subjectA))
-				.not.toBe(subjectA)
-			expect(filter(([ k, x]) => isEven(x), subjectB))
-				.not.toBe(subjectB)
-
-			expect(filter(([ k, x ]) => isOdd(x), subjectA))
-				.not.toBe(subjectA)
-			expect(filter(([ k, x ]) => isOdd(x), subjectB))
-				.not.toBe(subjectB)
 		})
 	})
 })

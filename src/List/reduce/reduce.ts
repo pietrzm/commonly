@@ -3,11 +3,11 @@ import isReduced from "Function/isReduced/isReduced"
 
 
 
-const reduce = (xf, accumulator, xs) => {
+const reduce = (reducer, accumulator, xs) => {
     let i = 0
 
     for (const x of xs) {
-        accumulator = xf(accumulator, x, i++, xs)
+        accumulator = reducer(accumulator, x, i++, xs)
 
         if (isReduced(accumulator)) {
             return accumulator.value

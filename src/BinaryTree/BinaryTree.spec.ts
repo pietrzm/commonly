@@ -1,4 +1,4 @@
-import { BinaryTree } from "./BinaryTree";
+import BinaryTree from "./BinaryTree";
 
 describe('class Binarytree<T>', () => {
     context('BinaryTree with no elements', () => {
@@ -101,7 +101,7 @@ describe('class Binarytree<T>', () => {
             expect(tree.max()).toBe(num3)
         })
         it('should be sorted', () => {
-            let array = tree.toArray()
+            const array = tree.toArray()
             expect(array.length).toEqual(4)
             expect(array).toEqual([4, 6, 7, 10])
         })
@@ -112,8 +112,8 @@ describe('class Binarytree<T>', () => {
             expect(tree.root.left.right.value).toBe(num4)
         })
         it('should iterate in correct order', () => {
-            let i = 0;
-            let numSorted = [4, 6, 7, 10]
+            const numSorted = [4, 6, 7, 10]
+            let i = 0
             for(let x of tree) {
                 expect(x).toEqual(numSorted[i])
                 i++

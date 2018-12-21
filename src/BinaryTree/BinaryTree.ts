@@ -1,9 +1,7 @@
-import isNull from "Type/isNull/isNull";
-import { BinaryTreeNode } from "./BinaryTreeNode";
-import not from "Logic/not/not";
-import or from "Logic/or/or";
+import isNull from "Type/isNull/isNull"
+import BinaryTreeNode from "./BinaryTreeNode";
 
-export class BinaryTree<T> {
+export default class BinaryTree<T> {
     
     comparator: (a: T, b: T) => boolean
     root: BinaryTreeNode<T> = null
@@ -21,12 +19,12 @@ export class BinaryTree<T> {
     }
 
     remove(value: T) {
-        if (not(isNull(this.root))) {
+        if (!isNull(this.root)) {
             if (this.root.isValueEqual(value)) {
-                let leftDepth = not(isNull(this.root.left)) ? this.root.left.depth() : 0
-                let rightDepth = not(isNull(this.root.right)) ? this.root.right.depth() : 0
+                let leftDepth = !isNull(this.root.left) ? this.root.left.depth() : 0
+                let rightDepth = !isNull(this.root.right) ? this.root.right.depth() : 0
 
-                if (or(not(leftDepth), not(rightDepth))) {
+                if (!leftDepth || !rightDepth) {
                     this.root = leftDepth >= rightDepth ? this.root.left : this.root.right
                 } else {
                     let min = this.root.right.min()

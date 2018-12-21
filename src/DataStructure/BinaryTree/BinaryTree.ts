@@ -1,5 +1,5 @@
 import isNull from "Type/isNull/isNull"
-import BinaryTreeNode from "./BinaryTreeNode";
+import BinaryTreeNode from "./BinaryTreeNode"
 
 export default class BinaryTree<T> {
     

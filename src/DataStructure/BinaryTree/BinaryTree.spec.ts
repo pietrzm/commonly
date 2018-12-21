@@ -1,4 +1,4 @@
-import BinaryTree from "./BinaryTree";
+import BinaryTree from "./BinaryTree"
 
 describe('class Binarytree<T>', () => {
     context('BinaryTree with no elements', () => {
@@ -27,7 +27,7 @@ describe('class Binarytree<T>', () => {
             expect(array.length).toEqual(0)
         })
         it('should have zero iteration steps', () => {
-            let i = 0;
+            let i = 0
             for(let x of tree) {
                 i++
             }
@@ -37,7 +37,7 @@ describe('class Binarytree<T>', () => {
 
     context('BinaryTree with single element', () => {
         const tree = new BinaryTree<Date>()
-        const date = new Date();
+        const date = new Date()
         tree.add(date)
 
         it('should not be empty', () => {
@@ -68,7 +68,7 @@ describe('class Binarytree<T>', () => {
             expect(array[0]).toBe(date)
         })
         it('should have one iteration steps', () => {
-            let i = 0;
+            let i = 0
             for(let x of tree) {
                 expect(x).toBe(date)
                 i++
@@ -79,10 +79,10 @@ describe('class Binarytree<T>', () => {
 
     context('BinaryTree with multiple elements', () => {
         const tree = new BinaryTree<Number>()
-        const num1 = new Number(7);
-        const num2 = new Number(4);
-        const num3 = new Number(10);
-        const num4 = new Number(6);
+        const num1 = new Number(7)
+        const num2 = new Number(4)
+        const num3 = new Number(10)
+        const num4 = new Number(6)
         tree.add(num1)
         tree.add(num2)
         tree.add(num3)
@@ -124,10 +124,10 @@ describe('class Binarytree<T>', () => {
 
     context('BinaryTree with custom comparator', () => {
         const tree = new BinaryTree<Number>((a: number, b: number) => a % 5 > b % 5)
-        const num1 = new Number(7);
-        const num2 = new Number(4);
-        const num3 = new Number(10);
-        const num4 = new Number(6);
+        const num1 = new Number(7)
+        const num2 = new Number(4)
+        const num3 = new Number(10)
+        const num4 = new Number(6)
         tree.add(num1)
         tree.add(num2)
         tree.add(num3)

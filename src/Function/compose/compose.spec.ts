@@ -29,14 +29,14 @@ describe(`function compose(...functions)`, () => {
 	})
 
 	context(`functions is not empty`, () => {
-		it(`should return a composed function, reading from right to left`, () => {
-			const subjectA = compose(add(3), multiply(3), add(3)),
-				subjectB = compose(multiply(3), add(3), multiply(3))
+		it(`should return a composed function, reading from left to right`, () => {
+			const subjectA = compose(add(3), multiply(3)),
+				subjectB = compose(multiply(3), add(3))
 
 			expect(subjectA(2))
-				.toEqual(18)
+				.toEqual(9)
 			expect(subjectB(2))
-				.toEqual(27)
+				.toEqual(15)
 		})
 	})
 })

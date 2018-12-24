@@ -3,9 +3,11 @@ import identity from "Function/identity/identity"
 
 
 
-const compose = (...functions) =>
-    reduce((g, f) =>
-	    (...varargs) => g(f(...varargs)), identity, functions)
+const compose = (...functions) => {
+	const [ first = identity, ...rest ] = functions
+	return reduce((g, f) =>
+		(...varargs) => g(f(...varargs)), first, rest)
+}
 
 
 

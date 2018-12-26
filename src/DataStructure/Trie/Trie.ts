@@ -5,7 +5,7 @@ export default class Trie<T> {
 
     root: TrieNode<T> = new TrieNode<T>(undefined, '')
 
-    add(value, key: string): boolean {
+    add(value: T, key: string): boolean {
         return this.root.add(value, key)
     }
 

@@ -2,25 +2,30 @@ import Trie from "./Trie"
 
 describe('class Trie<T>', () => {
     context('Trie with no elements', () => {
-        const trie = new Trie<Number>()
 
         it('should be empty', () => {
+            const trie = new Trie<Number>()
             expect(trie.isEmpty()).toBeTruthy()
         })
         it('should have 0 elements', () => {
+            const trie = new Trie<Number>()
             expect(trie.size()).toEqual(0)
         })
         it('should return undefined on find()', () => {
+            const trie = new Trie<Number>()
             expect(trie.find('a')).toBeUndefined()
         })
         it('should not allow empty key', () => {
+            const trie = new Trie<Number>()
             expect(trie.add(0, '')).toBeFalsy()
             expect(trie.root.children).toEqual([])
         })
         it('should collapse to an empty array', () => {
+            const trie = new Trie<Number>()
             expect(trie.toArray()).toEqual([])
         })
         it('should have zero iteration steps', () => {
+            const trie = new Trie<Number>()
             let i = 0
             for(let x of trie) {
                 i++
@@ -28,6 +33,7 @@ describe('class Trie<T>', () => {
             expect(i).toEqual(0)
         })
         it('should add element correcly', () => {
+            const trie = new Trie<Number>()
             expect(trie.add(20, 'twenty')).toBeTruthy()
             expect(trie.root.children[0].keypart).toEqual('twenty')
             expect(trie.root.children[0].value).toEqual(20)
@@ -35,27 +41,36 @@ describe('class Trie<T>', () => {
     })
 
     context('Trie with one element', () => {
-        const trie = new Trie<Number>()
-        trie.add(1, '1')
+        const given = () => {
+            const trie = new Trie<Number>()
+            trie.add(1, '1')
+            return trie
+        }
 
         it('should not be empty', () => {
+            const trie = given()
             expect(trie.isEmpty()).toBeFalsy()
         })
         it('should have 1 element', () => {
+            const trie = given()
             expect(trie.size()).toEqual(1)
         })
         it('should find the element by key', () => {
+            const trie = given()
             expect(trie.find('1')).toEqual(1)
         })
         it('should not allow duplicate keys', () => {
+            const trie = given()
             expect(trie.add(11, '1')).toBeFalsy()
             expect(trie.root.children.length).toEqual(1)
             expect(trie.root.children[0].value).toEqual(1)
         })
         it('should collapse to an array with one element', () => {
+            const trie = given()
             expect(trie.toArray()).toEqual([{key: '1', value: 1}])
         })
         it('should have one iteration step', () => {
+            const trie = given()
             let i = 0
             for(let x of trie) {
                 expect(x).toEqual({key: '1', value: 1})
@@ -66,26 +81,33 @@ describe('class Trie<T>', () => {
     })
 
     context('Trie with multiple elements', () => {
-        const trie = new Trie<Number>()
-        trie.add(1, 'Lorem ipsum')
-        trie.add(2, 'Lorem')
-        trie.add(3, 'Lorem ip')
-        trie.add(4, 'Lore')
-        trie.add(5, 'ip')
-        trie.add(6, 'ipsum')
-        trie.add(7, 'Lorem sum')
-        trie.add(8, 'Lorem ipdum')
+        const given = () => {
+            const trie = new Trie<Number>()
+            trie.add(1, 'Lorem ipsum')
+            trie.add(2, 'Lorem')
+            trie.add(3, 'Lorem ip')
+            trie.add(4, 'Lore')
+            trie.add(5, 'ip')
+            trie.add(6, 'ipsum')
+            trie.add(7, 'Lorem sum')
+            trie.add(8, 'Lorem ipdum')
+            return trie
+        }
 
         it('should have correct number of elements', () => {
+            const trie = given()
             expect(trie.size()).toEqual(8)
         })
         it('should find nested element by key', () => {
+            const trie = given()
             expect(trie.find('Lorem ipsum')).toEqual(1)
         })
         it('trie element should construct its own key', () => {
+            const trie = given()
             expect(trie.root.find('Lorem ipsum').key()).toEqual('Lorem ipsum')
         })
         it('should have correct structure', () => {
+            const trie = given()
             expect(trie.root.keypart).toEqual('')
             expect(trie.root.children.map(c => c.keypart)).toEqual(['Lore', 'ip'])
             expect(trie.root.find('ip').children.map(c => c.keypart)).toEqual(['sum'])
@@ -95,6 +117,7 @@ describe('class Trie<T>', () => {
             expect(trie.root.find('Lorem ip').children.map(c => c.keypart)).toEqual(['sum', 'dum'])
         })
         it('should collapse to array', () => {
+            const trie = given()
             expect(trie.toArray().sort((a, b) => a.value.valueOf() - b.value.valueOf())).toEqual([
                 { key: 'Lorem ipsum', value: 1 },
                 { key: 'Lorem', value: 2 },
@@ -107,6 +130,7 @@ describe('class Trie<T>', () => {
             ])
         })
         it('should iterate over all elements', () => {
+            const trie = given()
             let i = 0
             let sum = 0
             for(let x of trie) {
@@ -117,9 +141,11 @@ describe('class Trie<T>', () => {
             expect(sum).toEqual(36)
         })
         it('should construct array of values', () => {
+            const trie = given()
             expect(trie.values().sort((a, b) => a.valueOf() - b.valueOf())).toEqual([1, 2, 3, 4, 5, 6, 7, 8])
         })
         it('should collapse array of keys', () => {
+            const trie = given()
             expect(trie.keys().sort((a, b) => a.localeCompare(b))).toEqual([
                 'ip',
                 'ipsum',
@@ -132,16 +158,19 @@ describe('class Trie<T>', () => {
             ])
         })
         it('should remove childless node', () => {
+            const trie = given()
             expect(trie.remove('ipsum')).toBeTruthy()
             expect(trie.find('ipsum')).toBeUndefined()
             expect(trie.root.find('ip').children).toEqual([])
         })
         it('should collapse node with one child', () => {
+            const trie = given()
             expect(trie.remove('Lorem')).toBeTruthy()
             expect(trie.find('Lorem')).toBeUndefined()
             expect(trie.root.find('Lore').children.map(c => c.keypart)).toEqual(['m '])
         })
         it('should clear value of node with many children', () => {
+            const trie = given()
             expect(trie.remove('Lorem ip')).toBeTruthy()
             expect(trie.find('Lorem ip')).toBeUndefined()
             expect(trie.root.find('Lorem ip').children.map(c => c.keypart)).toEqual(['sum', 'dum'])

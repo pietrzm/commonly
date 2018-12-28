@@ -3,7 +3,7 @@ namespace Reducible {
 }
 
 
-export interface Reducible {
+interface Reducible {
 	[ Reducible.reducer ]
 }
 

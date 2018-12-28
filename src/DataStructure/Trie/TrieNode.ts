@@ -21,7 +21,6 @@ export default class TrieNode<T> {
             return false
         }
         const common = this._commonPrefix(this.keypart, key)
-
         if (common.prefix === this.keypart) {
             const possible = this.children.filter(c => c.keypart[0] === common.keys[1][0])
             if (possible.length === 0) {
@@ -29,11 +28,9 @@ export default class TrieNode<T> {
             } else {
                 return possible[0].add(value, common.keys[1])
             }
-
         } else if (common.prefix === key) {
             this._insertParent(new TrieNode<T>(value, common.prefix, this.parent))
             this.keypart = common.keys[0]
-
         } else {
             this._insertParent(new TrieNode<T>(undefined, common.prefix, this.parent))
             this.parent.children.push(new TrieNode<T>(value, common.keys[1], this.parent))
@@ -47,10 +44,8 @@ export default class TrieNode<T> {
         if (!isUndefined(found)) {
             if (found.children.length === 1) {
                 found._collapse()
-
             } else if (found.children.length > 1) {
                 found.value = undefined
-
             } else {
                 found.parent.children = found.parent.children.filter(c => c !== found)
             }

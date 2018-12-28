@@ -4,28 +4,28 @@ describe('class Trie<T>', () => {
     context('Trie with no elements', () => {
 
         it('should be empty', () => {
-            const trie = new Trie<Number>()
+            const trie = new Trie<number>()
             expect(trie.isEmpty()).toBeTruthy()
         })
         it('should have 0 elements', () => {
-            const trie = new Trie<Number>()
+            const trie = new Trie<number>()
             expect(trie.size()).toEqual(0)
         })
         it('should return undefined on find()', () => {
-            const trie = new Trie<Number>()
+            const trie = new Trie<number>()
             expect(trie.find('a')).toBeUndefined()
         })
         it('should not allow empty key', () => {
-            const trie = new Trie<Number>()
+            const trie = new Trie<number>()
             expect(trie.add(0, '')).toBeFalsy()
             expect(trie.root.children).toEqual([])
         })
         it('should collapse to an empty array', () => {
-            const trie = new Trie<Number>()
+            const trie = new Trie<number>()
             expect(trie.toArray()).toEqual([])
         })
         it('should have zero iteration steps', () => {
-            const trie = new Trie<Number>()
+            const trie = new Trie<number>()
             let i = 0
             for(let x of trie) {
                 i++
@@ -33,7 +33,7 @@ describe('class Trie<T>', () => {
             expect(i).toEqual(0)
         })
         it('should add element correcly', () => {
-            const trie = new Trie<Number>()
+            const trie = new Trie<number>()
             expect(trie.add(20, 'twenty')).toBeTruthy()
             expect(trie.root.children[0].keypart).toEqual('twenty')
             expect(trie.root.children[0].value).toEqual(20)
@@ -42,7 +42,7 @@ describe('class Trie<T>', () => {
 
     context('Trie with one element', () => {
         const given = () => {
-            const trie = new Trie<Number>()
+            const trie = new Trie<number>()
             trie.add(1, '1')
             return trie
         }
@@ -82,7 +82,7 @@ describe('class Trie<T>', () => {
 
     context('Trie with multiple elements', () => {
         const given = () => {
-            const trie = new Trie<Number>()
+            const trie = new Trie<number>()
             trie.add(1, 'Lorem ipsum')
             trie.add(2, 'Lorem')
             trie.add(3, 'Lorem ip')
@@ -118,7 +118,7 @@ describe('class Trie<T>', () => {
         })
         it('should collapse to array', () => {
             const trie = given()
-            expect(trie.toArray().sort((a, b) => a.value.valueOf() - b.value.valueOf())).toEqual([
+            expect(trie.toArray().sort((a, b) => a.value - b.value)).toEqual([
                 { key: 'Lorem ipsum', value: 1 },
                 { key: 'Lorem', value: 2 },
                 { key: 'Lorem ip', value: 3 },
@@ -134,7 +134,7 @@ describe('class Trie<T>', () => {
             let i = 0
             let sum = 0
             for(let x of trie) {
-                sum += x.value.valueOf()
+                sum += x.value
                 i++
             }
             expect(i).toEqual(8)
@@ -142,7 +142,7 @@ describe('class Trie<T>', () => {
         })
         it('should construct array of values', () => {
             const trie = given()
-            expect(trie.values().sort((a, b) => a.valueOf() - b.valueOf())).toEqual([1, 2, 3, 4, 5, 6, 7, 8])
+            expect(trie.values().sort((a, b) => a - b)).toEqual([1, 2, 3, 4, 5, 6, 7, 8])
         })
         it('should collapse array of keys', () => {
             const trie = given()

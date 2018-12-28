@@ -3,7 +3,7 @@ namespace Iterable {
 }
 
 
-export interface Iterable {
+interface Iterable {
 	[ Iterable.iterator ]
 }
 

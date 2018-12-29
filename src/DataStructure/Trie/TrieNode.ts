@@ -10,7 +10,7 @@ export default class TrieNode<T> {
     parent: TrieNode<T>
     children: TrieNode<T>[] = []
 
-    constructor(value: T, keypart: string, parent: TrieNode<T> = undefined) {
+    constructor(value: T, keypart: string, parent?: TrieNode<T>) {
         this.value = value
         this.keypart = keypart
         this.parent = parent

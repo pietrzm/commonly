@@ -97,7 +97,7 @@ describe('abstract class Queue<T>', () => {
             expect(i).toEqual(3)
             expect(sum).toEqual(6)
         })
-        it('should have LIFO ordering', () => {
+        it('should have FIFO ordering', () => {
             const q = Queue.from(1, 2, 3)
             expect(q.dequeue()).toEqual(1)
             expect(q.dequeue()).toEqual(2)

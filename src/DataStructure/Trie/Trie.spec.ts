@@ -32,7 +32,7 @@ describe('class Trie<T>', () => {
             }
             expect(i).toEqual(0)
         })
-        it('should add element correcly', () => {
+        it('should add element correctly', () => {
             const trie = new Trie<number>()
             expect(trie.add(20, 'twenty')).toBeTruthy()
             expect(trie.root.children[0].keypart).toEqual('twenty')

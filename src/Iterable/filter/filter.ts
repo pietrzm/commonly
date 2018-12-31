@@ -1,5 +1,5 @@
-import curry from "Function/curry/curry"
-import seq from "List/seq/seq"
+import curry   from "Function/curry/curry"
+import seq     from "Iterable/seq/seq"
 import xfilter from "Transducer/xfilter/xfilter"
 
 

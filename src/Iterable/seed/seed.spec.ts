@@ -1,4 +1,4 @@
-import seed from "List/seed/seed"
+import seed from "Iterable/seed/seed"
 
 
 

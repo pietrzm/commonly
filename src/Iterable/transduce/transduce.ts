@@ -1,5 +1,5 @@
-import curry from "Function/curry/curry"
-import reduce from "List/reduce/reduce"
+import curry  from "Function/curry/curry"
+import reduce from "Iterable/reduce/reduce"
 
 
 

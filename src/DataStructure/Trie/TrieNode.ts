@@ -1,7 +1,7 @@
 import isUndefined from "Type/isUndefined/isUndefined"
-import add from "Math/add/add"
-import map from "List/map/map"
-import reduce from "List/reduce/reduce"
+import add         from "Math/add/add"
+import map         from "Iterable/map/map"
+import reduce      from "Iterable/reduce/reduce"
 
 export default class TrieNode<T> {
 

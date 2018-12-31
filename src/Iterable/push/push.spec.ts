@@ -1,4 +1,4 @@
-import push from "List/push/push"
+import push from "Iterable/push/push"
 
 
 

@@ -1,6 +1,6 @@
 import curry from "Function/curry/curry"
-import into from "List/into/into"
-import seed from "List/seed/seed"
+import into  from "Iterable/into/into"
+import seed  from "Iterable/seed/seed"
 
 
 

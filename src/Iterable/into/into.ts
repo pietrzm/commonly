@@ -1,7 +1,7 @@
 import curry       from "Function/curry/curry"
 
-import reducer     from "Function/reducer/reducer"
-import transduce   from "List/transduce/transduce"
+import reducer   from "Function/reducer/reducer"
+import transduce from "Iterable/transduce/transduce"
 
 
 

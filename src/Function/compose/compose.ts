@@ -1,4 +1,4 @@
-import reduce from "List/reduce/reduce"
+import reduce   from "Iterable/reduce/reduce"
 import identity from "Function/identity/identity"
 
 

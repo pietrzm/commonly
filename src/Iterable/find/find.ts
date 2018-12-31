@@ -1,5 +1,5 @@
 import curry from "Function/curry/curry"
-import into from "List/into/into"
+import into  from "Iterable/into/into"
 import xfind from "Transducer/xfind/xfind"
 
 

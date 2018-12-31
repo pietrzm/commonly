@@ -1,6 +1,6 @@
 import Queue from "./Queue"
 
-describe('abstract class Queue<T>', () => {
+describe('interface Queue<T>', () => {
     context('empty queue', () => {
         it('.enqueue()', () => {
             const q = Queue.from(...[] as number[])

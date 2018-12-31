@@ -1,16 +1,12 @@
-import reducer from "Function/reducer/reducer"
-
-
-
 /**
  * Adds an x to a given iterable.
  *
  * @param x
- * @param {Iterable} xs
+ * @param {Array} xs
  * @returns {*}
  */
 const push = (x, xs) =>
-	reducer(xs)(xs, x)
+	(xs.push(x), xs)
 
 
 

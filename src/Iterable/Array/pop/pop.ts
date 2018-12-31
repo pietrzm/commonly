@@ -1,8 +1,8 @@
 /**
- * Adds an x to a given iterable.
+ * Removes the last element from an Array, then returns that Array.
  *
  * @param {Array} xs
- * @returns {*}
+ * @returns {Array}
  */
 const pop = (xs) =>
 	(xs.pop(), xs)

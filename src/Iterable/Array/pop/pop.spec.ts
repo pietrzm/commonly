@@ -15,7 +15,7 @@ describe(`function pop(xs)`, () => {
 			const xs = []
 
 			expect(pop(xs))
-				.toBe([])
+				.toBe(xs)
 		})
 	})
 

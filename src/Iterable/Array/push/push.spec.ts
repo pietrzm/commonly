@@ -2,7 +2,7 @@ import push from "./push"
 
 
 
-describe(`function pop(xs)`, () => {
+describe(`function push(x, xs)`, () => {
 	context(`xs is empty`, () => {
 		it(`should return xs`, () => {
 			const xs = []

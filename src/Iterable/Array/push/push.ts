@@ -1,9 +1,9 @@
 /**
- * Adds an x to a given iterable.
+ * Adds an element to the end of an Array, then returns that Array.
  *
  * @param x
  * @param {Array} xs
- * @returns {*}
+ * @returns {Array}
  */
 const push = (x, xs) =>
 	(xs.push(x), xs)

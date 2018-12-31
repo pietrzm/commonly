@@ -2,37 +2,36 @@ import push from "./push"
 
 
 
-describe(`function push(x, xs: Array)`, () => {
-	context(`x is undefined`, () => {
-		it(`should add a x at the end of xs`, () => {
-			expect(push(undefined, [ 0, 1, 1, 2, 3 ]))
-				.toEqual([ 0, 1, 1, 2, 3, undefined ])
+describe(`function pop(xs)`, () => {
+	context(`xs is empty`, () => {
+		it(`should return xs`, () => {
+			const xs = []
+
+			expect(push(0, xs))
+				.toEqual([ 0 ])
+		})
+
+		it(`should mutate xs`, () => {
+			const xs = []
+
+			expect(push(0, xs))
+				.toBe(xs)
 		})
 	})
 
-	context(`x is null`, () => {
-		it(`should add a x at the end of xs`, () => {
-			expect(push(null, [ 0, 1, 1, 2, 3 ]))
-				.toEqual([ 0, 1, 1, 2, 3, null ])
+	context(`xs is not empty`, () => {
+		it(`should remove last item from xs`, () => {
+			const xs = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
+
+			expect(push(55, xs))
+				.toEqual([ 0, 1, 1, 2, 3, 5, 8, 13, 21, 55 ])
 		})
-	})
 
-	context(`x is anything`, () => {
-		it(`should add a x at the end of xs`, () => {
-			expect(push(5, [ 0, 1, 1, 2, 3 ]))
-				.toEqual([ 0, 1, 1, 2, 3, 5 ])
+		it(`should mutate xs`, () => {
+			const xs = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
 
-			expect(push([ 5 ], [ 0, 1, 1, 2, 3 ]))
-				.toEqual([ 0, 1, 1, 2, 3, [ 5 ] ])
+			expect(push(55, xs))
+				.toBe(xs)
 		})
-	})
-
-	it(`should mutate xs`, () => {
-		const xs = [ 0, 1, 1, 2, 3 ]
-
-		expect(push(NaN, xs))
-			.toBe(xs)
-		expect(xs)
-			.toEqual([ 0, 1, 1, 2, 3, NaN ])
 	})
 })

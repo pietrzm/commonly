@@ -61,9 +61,9 @@ export default class BinaryTree<T> {
         return isNull(this.root)? [] : this.root.toArray([])
     }
 
-    [Symbol.iterator]() {
+    [Symbol.iterator](): Iterator<T> {
         if (isNull(this.root)) {
-            return { next() { return { done: true } } }
+            return { next() { return { done: true, value: undefined } } }
         } else {
             return this.root.toArray([])[Symbol.iterator]()
         }

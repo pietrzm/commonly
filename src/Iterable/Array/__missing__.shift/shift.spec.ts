@@ -2,7 +2,7 @@ import shift from "./shift"
 
 
 
-describe(`function shift(xs)`, () => {
+describe.skip(`function shift(xs)`, () => {
 	context(`xs is empty`, () => {
 		it(`should return xs`, () => {
 			const xs = []

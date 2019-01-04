@@ -2,7 +2,7 @@ import unshift from "./unshift"
 
 
 
-describe(`function unshift(x, xs)`, () => {
+describe.skip(`function unshift(x, xs)`, () => {
 	context(`xs is empty`, () => {
 		it(`should return xs`, () => {
 			const xs = []

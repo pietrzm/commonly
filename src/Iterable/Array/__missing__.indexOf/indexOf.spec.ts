@@ -2,7 +2,7 @@ import indexOf from "./indexOf"
 
 
 
-describe(`function indexOf(x, xs)`, () => {
+describe.skip(`function indexOf(x, xs)`, () => {
 	context(`xs is empty`, () => {
 		it(`should return -1`, () => {
 			const xs = []

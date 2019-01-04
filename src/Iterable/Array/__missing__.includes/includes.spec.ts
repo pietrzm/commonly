@@ -2,7 +2,7 @@ import includes from "./includes"
 
 
 
-describe(`function includes(x, xs)`, () => {
+describe.skip(`function includes(x, xs)`, () => {
 	context(`xs is empty`, () => {
 		it(`should return false`, () => {
 			const xs = []

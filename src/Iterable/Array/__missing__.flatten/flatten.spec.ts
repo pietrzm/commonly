@@ -39,14 +39,14 @@ describe.skip(`function flatten(xs)`, () => {
 		it(`should flatten xs a single level deep`, () => {
 			const xs = [ 0, 1, [ 1, 2, 3 ], 5, [ 8, 13 ], 21, 34 ]
 
-			expect(xs)
+			expect(flatten(xs))
 				.toEqual([ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ])
 		})
 
 		it(`should not mutate xs`, () => {
 			const xs = [ 0, 1, [ 1, 2, 3 ], 5, [ 8, 13 ], 21, 34 ]
 
-			expect(xs)
+			expect(flatten(xs))
 				.not.toBe(xs)
 		})
 	})
@@ -55,14 +55,14 @@ describe.skip(`function flatten(xs)`, () => {
 		it(`should flatten xs a single level deep`, () => {
 			const xs = [ 0, [ 1, [ 1, 2, 3 ], 5, [ 8, 13 ], 21 ], 34 ]
 
-			expect(xs)
+			expect(flatten(xs))
 				.toEqual([ 0, 1, [ 1, 2, 3 ], 5, [ 8, 13 ], 21, 34 ])
 		})
 
 		it(`should not mutate xs`, () => {
 			const xs = [ 0, [ 1, [ 1, 2, 3 ], 5, [ 8, 13 ], 21 ], 34 ]
 
-			expect(xs)
+			expect(flatten(xs))
 				.not.toBe(xs)
 		})
 	})

@@ -1,4 +1,4 @@
-import clamp from "Number/__missing__.clamp/clamp"
+import clamp from "./clamp"
 
 
 

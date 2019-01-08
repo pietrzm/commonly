@@ -1,4 +1,4 @@
-import random from "Number/__missing__.random/random"
+import random from "./random"
 
 
 

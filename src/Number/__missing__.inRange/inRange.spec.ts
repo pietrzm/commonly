@@ -1,4 +1,4 @@
-import inRange from "Number/__missing__.inRange/inRange"
+import inRange from "./inRange"
 
 
 

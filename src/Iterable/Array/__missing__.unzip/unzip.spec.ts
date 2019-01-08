@@ -20,7 +20,7 @@ describe.skip(`function unzip(xs)`, () => {
 	})
 
 	context(`xs has 2 elements, each is an Array with 5 elements`, () => {
-		it(`should return a zipped Array`, () => {
+		it(`should return an unzipped Array`, () => {
 			const xs = [ [ 0, 1, 3, 8, 21 ], [ 1, 2, 5, 13, 34 ] ]
 
 			expect(unzip(xs))
@@ -36,7 +36,7 @@ describe.skip(`function unzip(xs)`, () => {
 	})
 
 	context(`xs has 5 elements, each is an Array with 2 elements`, () => {
-		it(`should return a zipped Array`, () => {
+		it(`should return an unzipped Array`, () => {
 			const xs = [ [ 0, 5 ], [ 1, 8 ], [ 1, 13 ],  [ 2, 21 ], [ 3, 34 ] ]
 
 			expect(unzip(xs))

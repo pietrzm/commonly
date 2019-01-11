@@ -1,6 +1,7 @@
 import Reducible   from "Protocol/Reducible"
 
 import identity    from "Function/identity/identity"
+import isBoolean from "Type/isBoolean/isBoolean"
 
 import isUndefined from "Type/isUndefined/isUndefined"
 import isArray     from "Type/isArray/isArray"
@@ -28,6 +29,9 @@ const reducer = (xs) => {
 		case isUndefined(xs):
 			return reducer.undefined
 
+		case isBoolean(xs):
+			return reducer.boolean
+
 		case isArray(xs):
 			return reducer.array
 
@@ -47,6 +51,8 @@ const reducer = (xs) => {
 
 
 reducer.undefined = identity
+
+reducer.boolean = identity
 
 reducer.array = (xs, x) => (xs.push(x), xs)
 

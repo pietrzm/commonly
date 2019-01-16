@@ -2,28 +2,28 @@ import Queue from "./Queue"
 
 describe('interface Queue<T>', () => {
     context('empty queue', () => {
-        it('.enqueue()', () => {
+        it('should add new element at the end', () => {
             const q = Queue.from(...[] as number[])
             expect(q.enqueue(2)).toEqual(1)
             expect(q.peek()).toEqual(2)
         })
-        it('.dequeue()', () => {
+        it('should remove the first element', () => {
             const q = Queue.from(...[] as number[])
             expect(q.dequeue()).toBeUndefined()
         })
-        it('.peek()', () => {
+        it('should return the first element without removing it', () => {
             const q = Queue.from(...[] as number[])
             expect(q.peek()).toBeUndefined()
         })
-        it('.isEmpty()', () => {
+        it('should be empty', () => {
             const q = Queue.from(...[] as number[])
             expect(q.isEmpty()).toBeTruthy()
         })
-        it('.size()', () => {
+        it('should have size of 0', () => {
             const q = Queue.from(...[] as number[])
             expect(q.size()).toEqual(0)
         })
-        it('[Symbol.iterator]()', () => {
+        it('should be iterable with zero iteration steps', () => {
             const q = Queue.from(...[] as number[])
             let i = 0
             for(let x of q) {
@@ -33,28 +33,28 @@ describe('interface Queue<T>', () => {
         })
     })
     context('queue with one element', () => {
-        it('.enqueue()', () => {
+        it('should add new element at the end', () => {
             const q = Queue.from(10)
             expect(q.enqueue(5)).toEqual(2)
             expect(q.peek()).toEqual(10)
         })
-        it('.dequeue()', () => {
+        it('should remove the first element', () => {
             const q = Queue.from(10)
             expect(q.dequeue()).toEqual(10)
         })
-        it('.peek()', () => {
+        it('should return the first element without removing it', () => {
             const q = Queue.from(10)
             expect(q.peek()).toEqual(10)
         })
-        it('.isEmpty()', () => {
+        it('should not be empty', () => {
             const q = Queue.from(10)
             expect(q.isEmpty()).toBeFalsy()
         })
-        it('.size()', () => {
+        it('should have size of 1', () => {
             const q = Queue.from(10)
             expect(q.size()).toEqual(1)
         })
-        it('[Symbol.iterator]()', () => {
+        it('should be iterable with one iteration step', () => {
             const q = Queue.from(10)
             let i = 0
             for(let x of q) {
@@ -65,28 +65,28 @@ describe('interface Queue<T>', () => {
         })
     })
     context('queue with multiple elements', () => {
-        it('.enqueue()', () => {
+        it('should add new element at the end', () => {
             const q = Queue.from(1, 2, 3)
             expect(q.enqueue(5)).toEqual(4)
             expect(q.peek()).toEqual(1)
         })
-        it('.dequeue()', () => {
+        it('should remove the first element', () => {
             const q = Queue.from(1, 2, 3)
             expect(q.dequeue()).toEqual(1)
         })
-        it('.peek()', () => {
+        it('should return the first element without removing it', () => {
             const q = Queue.from(1, 2, 3)
             expect(q.peek()).toEqual(1)
         })
-        it('.isEmpty()', () => {
+        it('should not be empty', () => {
             const q = Queue.from(1, 2, 3)
             expect(q.isEmpty()).toBeFalsy()
         })
-        it('.size()', () => {
+        it('should have size equal to the number of elements', () => {
             const q = Queue.from(1, 2, 3)
             expect(q.size()).toEqual(3)
         })
-        it('[Symbol.iterator]()', () => {
+        it('should iterate over all elements', () => {
             const q = Queue.from(1, 2, 3)
             let i = 0
             let sum = 0

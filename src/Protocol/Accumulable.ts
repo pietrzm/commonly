@@ -3,8 +3,8 @@ namespace Accumulable {
 }
 
 
-interface Accumulable {
-    [ Accumulable.accumulator ]: Accumulable | string | any[]
+interface Accumulable<T> {
+    [ Accumulable.accumulator ](): Iterable<T>
 }
 
 

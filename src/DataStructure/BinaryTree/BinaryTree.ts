@@ -3,7 +3,7 @@ import BinaryTreeNode from "./BinaryTreeNode"
 import Reducible from "Protocol/Reducible"
 import Accumulable from "Protocol/Accumulable"
 
-export default class BinaryTree<T> implements Iterable<T>, Accumulable, Reducible<BinaryTree<T>, T> {
+export default class BinaryTree<T> implements Iterable<T>, Accumulable<T>, Reducible<BinaryTree<T>,T> {
         
     comparator: (a: T, b: T) => boolean
     root: BinaryTreeNode<T> = null
@@ -71,11 +71,11 @@ export default class BinaryTree<T> implements Iterable<T>, Accumulable, Reducibl
         }
     }
 
-    [Accumulable.accumulator](): Accumulable {
+    [Accumulable.accumulator](): Iterable<T> {
         return new BinaryTree<T>()
     }
 
-    [Reducible.reducer](akumulator: BinaryTree<T>, value: T) {
+    [Reducible.reducer](akumulator: BinaryTree<T>, value: T): BinaryTree<T> {
         akumulator.add(value)
         return akumulator
     }

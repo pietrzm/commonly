@@ -4,7 +4,7 @@ import Reducible from "Protocol/Reducible"
 import Accumulable from "Protocol/Accumulable"
 
 export default class Trie<T> implements Iterable<{value: T, key: string}>,
-                                        Accumulable,
+                                        Accumulable<{value: T, key: string}>,
                                         Reducible<Trie<T>, {value: T, key: string}> {
 
     root = new TrieNode<T>(undefined, '')
@@ -46,11 +46,11 @@ export default class Trie<T> implements Iterable<{value: T, key: string}>,
         return this.toArray()[Symbol.iterator]()
     }
 
-    [Accumulable.accumulator](): Accumulable {
+    [Accumulable.accumulator](): Iterable<{value: T, key: string}> {
         return new Trie<T>()
     }
 
-    [Reducible.reducer](akumulator: Trie<T>, value: {value: T, key: string}) {
+    [Reducible.reducer](akumulator: Trie<T>, value: {value: T, key: string}): Trie<T> {
         akumulator.add(value.value, value.key)
         return akumulator
     }

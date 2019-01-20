@@ -1,4 +1,5 @@
 import Trie from "./Trie"
+import map from "Iterable/map/map"
 
 describe('class Trie<T>', () => {
     context('Trie with no elements', () => {
@@ -37,6 +38,11 @@ describe('class Trie<T>', () => {
             expect(trie.add(20, 'twenty')).toBeTruthy()
             expect(trie.root.children[0].keypart).toEqual('twenty')
             expect(trie.root.children[0].value).toEqual(20)
+        })
+        it('should be reducible', () => {
+            const trie = new Trie<number>()
+            const trie2: Trie<number> = map(entry => ({value: entry.value() * 2, key: entry.key()}), trie)
+            expect(trie2.toArray()).toEqual([])
         })
     })
 
@@ -77,6 +83,11 @@ describe('class Trie<T>', () => {
                 i++
             }
             expect(i).toEqual(1)
+        })
+        it('should be reducible', () => {
+            const trie = given()
+            const trie2: Trie<number> = map(entry => ({value: entry.value * 2, key: entry.key}), trie)
+            expect(trie2.toArray()).toEqual([{value: 2, key: '1'}])
         })
     })
 
@@ -139,6 +150,20 @@ describe('class Trie<T>', () => {
             }
             expect(i).toEqual(8)
             expect(sum).toEqual(36)
+        })
+        it('should be reducible', () => {
+            const trie = given()
+            const trie2: Trie<number> = map(entry => ({value: entry.value * 2, key: entry.key}), trie)
+            expect(trie2.toArray().sort((a, b) => a.value - b.value)).toEqual([
+                { key: 'Lorem ipsum', value: 2 },
+                { key: 'Lorem', value: 4 },
+                { key: 'Lorem ip', value: 6 },
+                { key: 'Lore', value: 8 },
+                { key: 'ip', value: 10 },
+                { key: 'ipsum', value: 12 },
+                { key: 'Lorem sum', value: 14 },
+                { key: 'Lorem ipdum', value: 16 }
+            ])
         })
         it('should construct array of values', () => {
             const trie = given()

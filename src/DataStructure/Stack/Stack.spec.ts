@@ -1,4 +1,6 @@
 import Stack from "./Stack"
+import add from "Math/add/add"
+import map from "Iterable/map/map"
 
 describe('interface Stack<T>', () => {
     context('empty stack', () => {
@@ -23,6 +25,10 @@ describe('interface Stack<T>', () => {
             const q = Stack.from(...[] as number[])
             expect(q.size()).toEqual(0)
         })
+        it('should return empty array', () => {
+            const q = Stack.from(...[] as number[])
+            expect(q.toArray()).toEqual([])
+        })
         it('should be iterable with zero iteration steps', () => {
             const q = Stack.from(...[] as number[])
             let i = 0
@@ -30,6 +36,11 @@ describe('interface Stack<T>', () => {
                 i++
             }
             expect(i).toEqual(0)
+        })
+        it('should be reducible', () => {
+            const q = Stack.from(...[] as number[])
+            const q2: Stack<number> = map(add(1), q)
+            expect(q2.toArray()).toEqual([])
         })
     })
     context('stack with one element', () => {
@@ -54,6 +65,10 @@ describe('interface Stack<T>', () => {
             const q = Stack.from(10)
             expect(q.size()).toEqual(1)
         })
+        it('should return array with given element', () => {
+            const q = Stack.from(10)
+            expect(q.toArray()).toEqual([10])
+        })
         it('should be iterable with one iteration step', () => {
             const q = Stack.from(10)
             let i = 0
@@ -62,6 +77,11 @@ describe('interface Stack<T>', () => {
                 i++
             }
             expect(i).toEqual(1)
+        })
+        it('should be reducible', () => {
+            const q = Stack.from(10)
+            const q2: Stack<number> = map(add(1), q)
+            expect(q2.toArray()).toEqual([11])
         })
     })
     context('stack with multiple elements', () => {
@@ -86,6 +106,10 @@ describe('interface Stack<T>', () => {
             const q = Stack.from(1, 2, 3)
             expect(q.size()).toEqual(3)
         })
+        it('should return array with all of its elements', () => {
+            const q = Stack.from(1, 2, 3)
+            expect(q.toArray()).toEqual([1, 2, 3])
+        })
         it('should iterate over all of its elements', () => {
             const q = Stack.from(1, 2, 3)
             let i = 0
@@ -96,6 +120,11 @@ describe('interface Stack<T>', () => {
             }
             expect(i).toEqual(3)
             expect(sum).toEqual(6)
+        })
+        it('should be reducible', () => {
+            const q = Stack.from(1, 2, 3)
+            const q2: Stack<number> = map(add(1), q)
+            expect(q2.toArray()).toEqual([2, 3, 4])
         })
         it('should have LIFO ordering', () => {
             const q = Stack.from(1, 2, 3)

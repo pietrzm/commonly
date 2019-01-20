@@ -1,12 +1,14 @@
-import identity from "Function/identity/identity";
+import identity from "Function/identity/identity"
+import Reducible from "Protocol/Reducible"
+import Accumulable from "Protocol/Accumulable"
 
-interface Stack<T> {
+interface Stack<T> extends Iterable<T>, Accumulable, Reducible<Stack<T>,T> {
     push(value: T): number
     pop(): T
     peek(): T
     isEmpty(): boolean
     size(): number
-    [Symbol.iterator](): Iterator<T>
+    toArray(): T[]
 }
 
 namespace Stack {
@@ -18,7 +20,13 @@ namespace Stack {
             peek: () => array[array.length - 1],
             isEmpty: () => array.length === 0,
             size: () => array.length,
-            [Symbol.iterator]: () => array[Symbol.iterator]()
+            toArray: () => array,
+            [Symbol.iterator]: () => array[Symbol.iterator](),
+            [Accumulable.accumulator]: () => Stack.from(...[] as K[]),
+            [Reducible.reducer](akumulator: Stack<K>, value: K) {
+                akumulator.push(value)
+                return akumulator
+            }
         }
     }
 }

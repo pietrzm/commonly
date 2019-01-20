@@ -1,5 +1,7 @@
 import Queue from "DataStructure/Queue/Queue"
 import BinaryTree from "DataStructure/BinaryTree/BinaryTree"
+import Reducible from "Protocol/Reducible"
+import Accumulable from "Protocol/Accumulable"
 
 interface PriorityQueue<T> extends Queue<T> { }
 
@@ -21,7 +23,13 @@ namespace PriorityQueue {
                 peek: () => binaryTree.max(),
                 isEmpty: () => binaryTree.isEmpty(),
                 size: () => binaryTree.size(),
-                [Symbol.iterator]: () => binaryTree[Symbol.iterator]()
+                toArray: () => binaryTree.toArray(),
+                [Symbol.iterator]: () => binaryTree[Symbol.iterator](),
+                [Accumulable.accumulator]: () => PriorityQueue.from(...[] as K[])(),
+                [Reducible.reducer](akumulator: PriorityQueue<K>, value: K) {
+                    akumulator.enqueue(value)
+                    return akumulator
+                }
             }
         }
     }

@@ -1,5 +1,6 @@
 import isArray from "Type/isArray/isArray"
 import isString from "Type/isString/isString"
+import Accumulable from 'Protocol/Accumulable'
 
 
 
@@ -9,6 +10,8 @@ const seed = xs => {
             return []
         case isString(xs):
             return ""
+        case Accumulable.accumulator in xs:
+            return xs[Accumulable.accumulator]()
         default:
             return new (xs.constructor)()
     }

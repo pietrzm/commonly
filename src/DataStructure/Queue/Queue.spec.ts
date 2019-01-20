@@ -1,4 +1,6 @@
 import Queue from "./Queue"
+import map from "Iterable/map/map"
+import add from "Math/add/add"
 
 describe('interface Queue<T>', () => {
     context('empty queue', () => {
@@ -23,6 +25,10 @@ describe('interface Queue<T>', () => {
             const q = Queue.from(...[] as number[])
             expect(q.size()).toEqual(0)
         })
+        it('should return empty array', () => {
+            const q = Queue.from(...[] as number[])
+            expect(q.toArray()).toEqual([])
+        })
         it('should be iterable with zero iteration steps', () => {
             const q = Queue.from(...[] as number[])
             let i = 0
@@ -30,6 +36,11 @@ describe('interface Queue<T>', () => {
                 i++
             }
             expect(i).toEqual(0)
+        })
+        it('should be reducible', () => {
+            const q = Queue.from(...[] as number[])
+            const q2: Queue<number> = map(add(1), q)
+            expect(q2.toArray()).toEqual([])
         })
     })
     context('queue with one element', () => {
@@ -54,6 +65,10 @@ describe('interface Queue<T>', () => {
             const q = Queue.from(10)
             expect(q.size()).toEqual(1)
         })
+        it('should return array with given element', () => {
+            const q = Queue.from(10)
+            expect(q.toArray()).toEqual([10])
+        })
         it('should be iterable with one iteration step', () => {
             const q = Queue.from(10)
             let i = 0
@@ -62,6 +77,11 @@ describe('interface Queue<T>', () => {
                 i++
             }
             expect(i).toEqual(1)
+        })
+        it('should be reducible', () => {
+            const q = Queue.from(10)
+            const q2: Queue<number> = map(add(1), q)
+            expect(q2.toArray()).toEqual([11])
         })
     })
     context('queue with multiple elements', () => {
@@ -86,6 +106,10 @@ describe('interface Queue<T>', () => {
             const q = Queue.from(1, 2, 3)
             expect(q.size()).toEqual(3)
         })
+        it('should return array with all of its elements', () => {
+            const q = Queue.from(1, 2, 3)
+            expect(q.toArray()).toEqual([1, 2, 3])
+        })
         it('should iterate over all elements', () => {
             const q = Queue.from(1, 2, 3)
             let i = 0
@@ -96,6 +120,11 @@ describe('interface Queue<T>', () => {
             }
             expect(i).toEqual(3)
             expect(sum).toEqual(6)
+        })
+        it('should be reducible', () => {
+            const q = Queue.from(1, 2, 3)
+            const q2: Queue<number> = map(add(1), q)
+            expect(q2.toArray()).toEqual([2, 3, 4])
         })
         it('should have FIFO ordering', () => {
             const q = Queue.from(1, 2, 3)

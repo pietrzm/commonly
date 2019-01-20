@@ -3,8 +3,8 @@ namespace Reducible {
 }
 
 
-interface Reducible {
-	[ Reducible.reducer ]
+interface Reducible<T, V> {
+	[ Reducible.reducer ]: (akumulator: T, value: V) => T
 }
 
 

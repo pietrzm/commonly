@@ -23,9 +23,9 @@ namespace Queue {
             toArray: () => array,
             [Symbol.iterator]: () => array[Symbol.iterator](),
             [Accumulable.accumulator]: () => Queue.from(...[] as K[]),
-            [Reducible.reducer](akumulator: Queue<K>, value: K) {
-                akumulator.enqueue(value)
-                return akumulator
+            [Reducible.reducer](accumulator: Queue<K>, value: K) {
+                accumulator.enqueue(value)
+                return accumulator
             }
         }
     }

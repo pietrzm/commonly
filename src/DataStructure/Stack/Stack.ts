@@ -23,9 +23,9 @@ namespace Stack {
             toArray: () => array,
             [Symbol.iterator]: () => array[Symbol.iterator](),
             [Accumulable.accumulator]: () => Stack.from(...[] as K[]),
-            [Reducible.reducer](akumulator: Stack<K>, value: K) {
-                akumulator.push(value)
-                return akumulator
+            [Reducible.reducer](accumulator: Stack<K>, value: K) {
+                accumulator.push(value)
+                return accumulator
             }
         }
     }

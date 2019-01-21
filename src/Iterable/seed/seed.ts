@@ -12,6 +12,8 @@ const seed = xs => {
             return ""
         case Accumulable.accumulator in xs:
             return xs[Accumulable.accumulator]()
+        case Symbol.species in xs:
+            return xs[Symbol.species]()
         default:
             return new (xs.constructor)()
     }

@@ -50,8 +50,8 @@ export default class Trie<T> implements Iterable<{value: T, key: string}>,
         return new Trie<T>()
     }
 
-    [Reducible.reducer](akumulator: Trie<T>, value: {value: T, key: string}): Trie<T> {
-        akumulator.add(value.value, value.key)
-        return akumulator
+    [Reducible.reducer](accumulator: Trie<T>, value: {value: T, key: string}): Trie<T> {
+        accumulator.add(value.value, value.key)
+        return accumulator
     }
 }

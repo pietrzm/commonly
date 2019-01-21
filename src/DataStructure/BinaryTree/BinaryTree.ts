@@ -75,8 +75,8 @@ export default class BinaryTree<T> implements Iterable<T>, Accumulable<T>, Reduc
         return new BinaryTree<T>()
     }
 
-    [Reducible.reducer](akumulator: BinaryTree<T>, value: T): BinaryTree<T> {
-        akumulator.add(value)
-        return akumulator
+    [Reducible.reducer](accumulator: BinaryTree<T>, value: T): BinaryTree<T> {
+        accumulator.add(value)
+        return accumulator
     }
 }

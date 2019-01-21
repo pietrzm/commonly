@@ -26,9 +26,9 @@ namespace PriorityQueue {
                 toArray: () => binaryTree.toArray(),
                 [Symbol.iterator]: () => binaryTree[Symbol.iterator](),
                 [Accumulable.accumulator]: () => PriorityQueue.from(...[] as K[])(),
-                [Reducible.reducer](akumulator: PriorityQueue<K>, value: K) {
-                    akumulator.enqueue(value)
-                    return akumulator
+                [Reducible.reducer](accumulator: PriorityQueue<K>, value: K) {
+                    accumulator.enqueue(value)
+                    return accumulator
                 }
             }
         }

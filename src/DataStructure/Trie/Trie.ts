@@ -1,7 +1,11 @@
 import TrieNode from "./TrieNode"
 import isUndefined from "Type/isUndefined/isUndefined"
+import Reducible from "Protocol/Reducible"
+import Accumulable from "Protocol/Accumulable"
 
-export default class Trie<T> {
+export default class Trie<T> implements Iterable<{value: T, key: string}>,
+                                        Accumulable<{value: T, key: string}>,
+                                        Reducible<Trie<T>, {value: T, key: string}> {
 
     root = new TrieNode<T>(undefined, '')
 
@@ -38,7 +42,16 @@ export default class Trie<T> {
         return this.root.toArray([]).map(e => e.key())
     }
 
-    [Symbol.iterator]() {
+    [Symbol.iterator](): Iterator<{value: T, key: string}> {
         return this.toArray()[Symbol.iterator]()
+    }
+
+    [Accumulable.accumulator](): Iterable<{value: T, key: string}> {
+        return new Trie<T>()
+    }
+
+    [Reducible.reducer](accumulator: Trie<T>, value: {value: T, key: string}): Trie<T> {
+        accumulator.add(value.value, value.key)
+        return accumulator
     }
 }

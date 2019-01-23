@@ -1,12 +1,14 @@
-import identity from "Function/identity/identity";
+import identity from "Function/identity/identity"
+import Reducible from "Protocol/Reducible"
+import Accumulable from 'Protocol/Accumulable'
 
-interface Queue<T> {
+interface Queue<T> extends Iterable<T>, Accumulable<T>, Reducible<Queue<T>,T> {
     enqueue(value: T): number
     dequeue(): T
     peek(): T
     isEmpty(): boolean
     size(): number
-    [Symbol.iterator](): Iterator<T>
+    toArray(): T[]
 }
 
 namespace Queue {
@@ -18,7 +20,13 @@ namespace Queue {
             peek: () => array[0],
             isEmpty: () => array.length === 0,
             size: () => array.length,
-            [Symbol.iterator]: () => array[Symbol.iterator]()
+            toArray: () => array,
+            [Symbol.iterator]: () => array[Symbol.iterator](),
+            [Accumulable.accumulator]: () => Queue.from(...[] as K[]),
+            [Reducible.reducer](accumulator: Queue<K>, value: K) {
+                accumulator.enqueue(value)
+                return accumulator
+            }
         }
     }
 }

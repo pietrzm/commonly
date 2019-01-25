@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 import into  from "Iterable/into/into"
 import seed  from "Iterable/seed/seed"
 
@@ -9,4 +9,4 @@ const seq = (xf, xs) =>
 
 
 
-export default curry(seq)
+export default autocurry(seq)

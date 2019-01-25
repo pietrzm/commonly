@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 import maximum from "Number/maximum/maximum"
 import minimum from "Number/minimum/minimum"
 
@@ -16,4 +16,4 @@ const clamp = ([ lower, upper ], value) =>
 
 
 
-export default curry(clamp)
+export default autocurry(clamp)

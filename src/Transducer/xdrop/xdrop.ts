@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 import xslice from "Transducer/xslice/xslice"
 
 
@@ -8,4 +8,4 @@ const xdrop = (n, reducer) =>
 
 
 
-export default curry(xdrop)
+export default autocurry(xdrop)

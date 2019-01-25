@@ -1,4 +1,4 @@
-import curry   from "Function/curry/curry"
+import autocurry   from "Function/autocurry/autocurry"
 import seq     from "Iterable/seq/seq"
 import xfilter from "Transducer/xfilter/xfilter"
 
@@ -9,4 +9,4 @@ const filter = (predicate, xs) =>
 
 
 
-export default curry(filter)
+export default autocurry(filter)

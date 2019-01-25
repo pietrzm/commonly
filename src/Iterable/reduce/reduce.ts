@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 import isReduced from "Function/isReduced/isReduced"
 
 
@@ -19,4 +19,4 @@ const reduce = (reducer, accumulator, xs) => {
 
 
 
-export default curry(reduce)
+export default autocurry(reduce)

@@ -2,7 +2,7 @@ import size from "Iterable/size/size"
 
 
 
-const curry = (f, thisArg = this) => {
+const autocurry = (f, thisArg = this) => {
 	if (size(f) < MINIMUM_ARITY) {
 		return f
 	}
@@ -23,4 +23,4 @@ const curried = function (f, ...varargs) {
 
 
 
-export default curry
+export default autocurry

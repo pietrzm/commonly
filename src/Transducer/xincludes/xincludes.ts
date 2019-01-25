@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 import reduced from "Function/reduced/reduced"
 
 
@@ -11,4 +11,4 @@ const xincludes = (x, reducer) =>
 
 
 
-export default curry(xincludes)
+export default autocurry(xincludes)

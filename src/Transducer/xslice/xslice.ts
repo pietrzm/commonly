@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 import reduced from "Function/reduced/reduced"
 
 
@@ -21,4 +21,4 @@ const xslice = (i, j, reducer) => {
 
 
 
-export default curry(xslice)
+export default autocurry(xslice)

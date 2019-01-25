@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 
 
 
@@ -14,4 +14,4 @@ const push = (x, xs) =>
 
 
 
-export default curry(push)
+export default autocurry(push)

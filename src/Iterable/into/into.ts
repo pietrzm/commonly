@@ -1,4 +1,4 @@
-import curry       from "Function/curry/curry"
+import autocurry       from "Function/autocurry/autocurry"
 
 import reducer   from "Function/reducer/reducer"
 import transduce from "Iterable/transduce/transduce"
@@ -10,4 +10,4 @@ const into = (accumulator, xf, xs) =>
 
 
 
-export default curry(into)
+export default autocurry(into)

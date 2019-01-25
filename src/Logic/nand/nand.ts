@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 import and from "Logic/and/and"
 import not from "Logic/not/not"
 
@@ -9,4 +9,4 @@ const nand = (a, b) =>
 
 
 
-export default curry(nand)
+export default autocurry(nand)

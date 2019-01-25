@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 
 
 
@@ -7,4 +7,4 @@ const multiply = (multiplier, multiplicand) =>
 
 
 
-export default curry(multiply)
+export default autocurry(multiply)

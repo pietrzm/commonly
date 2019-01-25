@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 import castArray from "Type/castArray/castArray"
 
 
@@ -14,4 +14,4 @@ const xchain = (mapper, reducer) =>
 
 
 
-export default curry(xchain)
+export default autocurry(xchain)

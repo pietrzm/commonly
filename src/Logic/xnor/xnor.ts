@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 import not from "Logic/not/not"
 import xor from "Logic/xor/xor"
 
@@ -9,4 +9,4 @@ const xnor = (a, b) =>
 
 
 
-export default curry(xnor)
+export default autocurry(xnor)

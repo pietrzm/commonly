@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 
 
 
@@ -14,4 +14,4 @@ const inRange = ([ lower, upper ], value) =>
 
 
 
-export default curry(inRange)
+export default autocurry(inRange)

@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 
 
 
@@ -10,4 +10,4 @@ const xfilter = (predicate, reducer) =>
 
 
 
-export default curry(xfilter)
+export default autocurry(xfilter)

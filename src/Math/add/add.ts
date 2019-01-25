@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 
 
 
@@ -7,4 +7,4 @@ const add = (augend, addend) =>
 
 
 
-export default curry(add)
+export default autocurry(add)

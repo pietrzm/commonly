@@ -1,4 +1,4 @@
-import curry from "./curry"
+import autocurry from "./autocurry"
 
 
 
@@ -11,7 +11,7 @@ describe(`function autocurry(f)`, () => {
 
 	context(`case: nullary function`, () => {
 		it(`should return a reference to the passed in function`, () => {
-			const subject = curry(nullary)
+			const subject = autocurry(nullary)
 
 			expect(subject)
 				.toBe(nullary)
@@ -20,7 +20,7 @@ describe(`function autocurry(f)`, () => {
 
 	context(`case: unary function`, () => {
 		it(`should return a reference to the passed in function`, () => {
-			const subject = curry(unary)
+			const subject = autocurry(unary)
 
 			expect(subject)
 				.toBe(unary)
@@ -29,8 +29,8 @@ describe(`function autocurry(f)`, () => {
 
 	context(`case: n-ary function`, () => {
 		it(`should return a new function`, () => {
-			const subjectA = curry(binary),
-				subjectB = curry(ternary)
+			const subjectA = autocurry(binary),
+				subjectB = autocurry(ternary)
 
 			expect(subjectA)
 				.not.toBe(binary)
@@ -39,8 +39,8 @@ describe(`function autocurry(f)`, () => {
 		})
 
 		it(`should create a curried "f" function`, () => {
-			const subjectA = curry(binary),
-				subjectB = curry(ternary)
+			const subjectA = autocurry(binary),
+				subjectB = autocurry(ternary)
 
 			expect(subjectA(1)(2))
 				.toEqual(binary(1, 2))

@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 
 
 
@@ -7,4 +7,4 @@ const and = (a, b) =>
 
 
 
-export default curry(and)
+export default autocurry(and)

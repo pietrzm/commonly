@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 import into from "Iterable/into/into"
 import xincludes from "Transducer/xincludes/xincludes"
 
@@ -16,4 +16,4 @@ const includes = (x, xs) =>
 
 
 
-export default curry(includes)
+export default autocurry(includes)

@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 
 
 
@@ -8,4 +8,4 @@ const xmap = (mapper, reducer) =>
 
 
 
-export default curry(xmap)
+export default autocurry(xmap)

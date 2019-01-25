@@ -1,4 +1,4 @@
-import curry from "Function/curry/curry"
+import autocurry from "Function/autocurry/autocurry"
 
 
 
@@ -14,4 +14,4 @@ const sort = (comparator, xs) =>
 
 
 
-export default curry(sort)
+export default autocurry(sort)

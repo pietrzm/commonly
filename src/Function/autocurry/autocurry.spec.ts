@@ -9,8 +9,8 @@ describe(`function autocurry(f)`, () => {
 		ternary = (a, b, c) => a + b * c
 
 
-	context(`case: nullary function`, () => {
-		it(`should return a reference to the passed in function`, () => {
+	context(`f is a nullary function`, () => {
+		it(`should return f`, () => {
 			const subject = autocurry(nullary)
 
 			expect(subject)
@@ -18,8 +18,8 @@ describe(`function autocurry(f)`, () => {
 		})
 	})
 
-	context(`case: unary function`, () => {
-		it(`should return a reference to the passed in function`, () => {
+	context(`f is an unary function`, () => {
+		it(`should return f`, () => {
 			const subject = autocurry(unary)
 
 			expect(subject)
@@ -27,25 +27,117 @@ describe(`function autocurry(f)`, () => {
 		})
 	})
 
-	context(`case: n-ary function`, () => {
-		it(`should return a new function`, () => {
-			const subjectA = autocurry(binary),
-				subjectB = autocurry(ternary)
-
-			expect(subjectA)
+	context(`f is a binary function`, () => {
+		it(`should not return f`, () => {
+			expect(autocurry(binary))
 				.not.toBe(binary)
-			expect(subjectB)
+		})
+
+		it(`should return curried f function`, () => {
+			const f = binary,
+				df = autocurry(f)
+
+			expect(df(0)(1))
+				.toEqual(f(0, 1))
+			expect(df(0, 1))
+				.toEqual(f(0, 1))
+		})
+
+		context(`autocurry(f) carries the same metadata as f`, () => {
+			it(`should persist name property`, () => {
+				const f = binary,
+					df = autocurry(f)
+
+				expect(df.name)
+					.toEqual(f.name)
+				expect(df(1).name)
+					.toEqual(f.name)
+			})
+
+			it(`should persist toString() call result`, () => {
+				const f = binary,
+					df = autocurry(f)
+
+				expect(df.toString())
+					.toEqual(f.toString())
+				expect(df(1).toString())
+					.toEqual(f.toString())
+			})
+
+			it(`should correctly calculate length property`, () => {
+				const f = binary,
+					df = autocurry(f)
+
+				expect(df.length)
+					.toEqual(f.length)
+				expect(df(1).length)
+					.toEqual(f.length - 1)
+			})
+		})
+	})
+
+	context(`f is a ternary function`, () => {
+		it(`should not return f`, () => {
+			expect(autocurry(ternary))
 				.not.toBe(ternary)
 		})
 
-		it(`should create a curried "f" function`, () => {
-			const subjectA = autocurry(binary),
-				subjectB = autocurry(ternary)
+		it(`should return curried f function`, () => {
+			const f = ternary,
+				df = autocurry(f)
 
-			expect(subjectA(1)(2))
-				.toEqual(binary(1, 2))
-			expect(subjectB(1)(2)(3))
-				.toEqual(ternary(1, 2, 3))
+			expect(df(0, 1, 1))
+				.toEqual(f(0, 1, 1))
+			expect(df(0, 1)(1))
+				.toEqual(f(0, 1, 1))
+			expect(df(0)(1, 1))
+				.toEqual(f(0, 1, 1))
+			expect(df(0)(1)(1))
+				.toEqual(f(0, 1, 1))
+		})
+
+		context(`autocurry(f) carries the same metadata as f`, () => {
+			it(`should persist name property`, () => {
+				const f = ternary,
+					df = autocurry(f)
+
+				expect(df.name)
+					.toEqual(f.name)
+				expect(df(1).name)
+					.toEqual(f.name)
+				expect(df(1, 2).name)
+					.toEqual(f.name)
+				expect(df(1)(2).name)
+					.toEqual(f.name)
+			})
+
+			it(`should persist toString() call result`, () => {
+				const f = ternary,
+					df = autocurry(f)
+
+				expect(df.toString())
+					.toEqual(f.toString())
+				expect(df(1).toString())
+					.toEqual(f.toString())
+				expect(df(1, 2).toString())
+					.toEqual(f.toString())
+				expect(df(1)(2).toString())
+					.toEqual(f.toString())
+			})
+
+			it(`should correctly calculate length property`, () => {
+				const f = ternary,
+					df = autocurry(f)
+
+				expect(df.length)
+					.toEqual(f.length)
+				expect(df(1).length)
+					.toEqual(f.length - 1)
+				expect(df(1, 2).length)
+					.toEqual(f.length - 2)
+				expect(df(1)(2).length)
+					.toEqual(f.length - 2)
+			})
 		})
 	})
 })

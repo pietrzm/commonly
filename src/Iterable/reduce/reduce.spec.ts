@@ -53,12 +53,12 @@ describe(`function reduce(reducer, accumulator, xs: String)`, () => {
                 .toEqual("00112358")
         })
 
-        xit(`should return an early reduced number`, () => {
+        it(`should return an early reduced number`, () => {
             const xs = "0112358"
             const reducer = compose((x) => ((x > 7) ? reduced(x) : x), add)
 
             expect(reduce(reducer, 0, xs))
-                .toEqual(12)
+                .toEqual("0011")
         })
     })
 })
@@ -114,15 +114,15 @@ describe(`function reduce(reducer, accumulator, xs: Map)`, () => {
                 .toEqual([ null, 88 ])
         })
 
-        xit(`should return an early reduced number`, () => {
+        it(`should return an early reduced number`, () => {
             const xs = new Map([
                 [ "A", 0 ], [ "B", 1 ], [ "C", 1 ],  [ "D", 2 ],  [ "E", 3 ],
                 [ "F", 5 ], [ "G", 8 ], [ "H", 13 ], [ "I", 21 ], [ "J", 34 ]
             ])
             const reducer = compose((
-                [, x ]) =>
+                [__, x ]) =>
                     (x > 7) ?
-                        reduced(x) : x,
+                        reduced([__, x ]) : [__, x ],
                 ([, x ], [, y ]) =>
                     [ null, add(x, y) ]
             )

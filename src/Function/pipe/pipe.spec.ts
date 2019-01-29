@@ -15,8 +15,7 @@ describe(`function pipe(...functions)`, () => {
 		})
 	})
 
-	// TODO: Implementation needs functions: head, tail
-	context.skip(`functions has only one element`, () => {
+	context(`functions has only one element`, () => {
 		it(`should return passed in function`, () => {
 			const subjectA = pipe(add),
 				subjectB = pipe(multiply)

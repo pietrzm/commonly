@@ -15,8 +15,7 @@ describe(`function compose(...functions)`, () => {
 		})
 	})
 
-	// TODO: Implementation needs functions: head, tail
-	context.skip(`functions has only one element`, () => {
+	context(`functions has only one element`, () => {
 		it(`should return passed in function`, () => {
 			const subjectA = compose(add),
 				subjectB = compose(multiply)

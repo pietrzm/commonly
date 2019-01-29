@@ -1,0 +1,32 @@
+{
+    "rules": {
+        "indent": [ true, "spaces", 4 ],
+        "eofline": true,
+        "prefer-const": true,
+        "trailing-comma": [ true, { "multiline": "never", "singleline": "never" } ],
+        "arrow-parens": true,
+        "arrow-return-shorthand": true,
+        "no-consecutive-blank-lines": [ true, 3 ],
+        "no-irregular-whitespace": true,
+        "no-trailing-whitespace": true,
+        "quotemark": [ true, "double" ],
+        "semicolon": [ true, "never" ],
+        "no-var-keyword": true,
+        "space-before-function-paren": [ true, { "anonymous":  "always" } ],
+        "one-line": [ true, "check-catch", "check-finally", "check-else", "check-open-brace", "check-whitespace" ],
+        "whitespace": [ true,
+            "check-operator",
+            "check-separator",
+            "check-rest-spread",
+            "check-type",
+            "check-type-operator"
+        ],
+        "ordered-imports": [ true,
+            {
+                "import-sources-order": "lowercase-last",
+                "named-imports-order": "lowercase-first",
+                "module-source-path": "full"
+            }
+        ]
+    }
+}

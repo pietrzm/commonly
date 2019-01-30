@@ -1,6 +1,7 @@
 const { execSync } = require("child_process")
 const { Linter, Configuration } = require("tslint")
 const fs = require("fs")
+const chalk = require("chalk")
 
 
 
@@ -45,3 +46,11 @@ exports.frisk = () => {
 	)
 }
 
+
+exports.level = (str, n = str) => {
+	switch (true) {
+		case n > 7: return chalk`{red ${str}}`
+		case n > 3: return chalk`{yellow ${str}}`
+		default: return chalk`{green ${str}}`
+	}
+}

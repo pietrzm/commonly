@@ -15,7 +15,9 @@ if (failures.length > 0) {
 		)
 	}
 } else {
-	console.log(chalk`{bold.blue Lint} {green (Frisk)}{bold.blue :} No issues found.`)
+	console.log(
+		chalk`{bold.blue Lint} {green (Frisk)}{bold.blue :} {green Nothing} to manually correct.`
+	)
 }
 
 

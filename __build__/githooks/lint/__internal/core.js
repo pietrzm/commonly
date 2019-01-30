@@ -2,15 +2,10 @@ const { execSync } = require("child_process")
 const { Linter, Configuration } = require("tslint")
 const fs = require("fs")
 const chalk = require("chalk")
+const { getStagedFiles } = require("../../__internal/core")
 
 
 
-const getStagedFiles = () => {
-	return execSync("git diff --name-only --cached --diff-filter=d")
-		.toString()
-		.split("\n")
-		.filter(x => !!x)
-}
 
 const lint = (configuration, files = [], options) => {
 	const FORMATTER = "msbuild",

@@ -15,7 +15,9 @@ if (fixes.length > 0) {
 		)
 	}
 } else {
-	console.log(chalk`{bold.blue Lint} {green (Frisk)}{bold.blue :} No files needed to be auto corrected.`)
+	console.log(
+		chalk`{bold.blue Lint} {green (Autofix)}{bold.blue :} {green Nothing} to auto correct.`
+	)
 }
 
 

@@ -6,7 +6,7 @@ import transduce from "Iterable/transduce/transduce"
 
 
 const into = (accumulator, xf, xs) =>
-	transduce(xf, reducer(accumulator), accumulator, xs)
+    transduce(xf, reducer(accumulator), accumulator, xs)
 
 
 

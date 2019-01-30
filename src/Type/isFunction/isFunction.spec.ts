@@ -1,5 +1,5 @@
-import isFunction from "./isFunction"
 import identity from "Function/identity/identity"
+import isFunction from "./isFunction"
 
 
 

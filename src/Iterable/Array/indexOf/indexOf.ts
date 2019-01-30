@@ -10,7 +10,7 @@ import autocurry from "Function/autocurry/autocurry"
  * @returns {number}
  */
 const indexOf = (n, xs) =>
-	xs.indexOf(n)
+    xs.indexOf(n)
 
 
 

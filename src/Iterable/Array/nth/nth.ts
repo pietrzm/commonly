@@ -10,11 +10,11 @@ import autocurry from "Function/autocurry/autocurry"
  * @returns {*}
  */
 const nth = (i, xs) => {
-	if (i < 0) {
-		i = xs.length + i
-	}
+    if (i < 0) {
+        i = xs.length + i
+    }
 
-	return xs[i]
+    return xs[i]
 }
 
 

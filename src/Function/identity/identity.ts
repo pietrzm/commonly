@@ -1,4 +1,4 @@
-const identity = x =>
+const identity = (x) =>
     x
 
 

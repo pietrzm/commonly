@@ -12,7 +12,7 @@ import minimum from "Number/minimum/minimum"
  * @returns {number}
  */
 const clamp = ([ lower, upper ], value) =>
-	maximum(minimum(value, upper), lower)
+    maximum(minimum(value, upper), lower)
 
 
 

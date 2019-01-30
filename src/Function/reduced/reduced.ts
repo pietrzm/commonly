@@ -1,5 +1,5 @@
 const reduced = (x) =>
-	({ [ "@@reduce/reduced" ]: true, value: x })
+    ({ [ "@@reduce/reduced" ]: true, value: x })
 
 
 

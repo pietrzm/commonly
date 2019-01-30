@@ -5,7 +5,7 @@
  * @returns {Array}
  */
 const pop = (xs) =>
-	(xs.pop(), xs)
+    (xs.pop(), xs)
 
 
 

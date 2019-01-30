@@ -1,4 +1,4 @@
-import divide from "./divide";
+import divide from "./divide"
 
 
 
@@ -8,7 +8,7 @@ describe(`function divide(dividend, divisor)`, () => {
             expect(divide(2, 2))
                 .toBe(1)
             expect(divide(25, 75))
-                .toBe(1/3)
+                .toBe(1 / 3)
             expect(divide(75, 25))
                 .toBe(3)
         })
@@ -19,7 +19,7 @@ describe(`function divide(dividend, divisor)`, () => {
             expect(divide("2", "2"))
                 .toBe(1)
             expect(divide(25, "75"))
-                .toBe(1/3)
+                .toBe(1 / 3)
             expect(divide("75", 25))
                 .toBe(3)
         })

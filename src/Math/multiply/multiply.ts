@@ -3,7 +3,7 @@ import autocurry from "Function/autocurry/autocurry"
 
 
 const multiply = (multiplier, multiplicand) =>
-    multiplier * multiplicand;
+    multiplier * multiplicand
 
 
 

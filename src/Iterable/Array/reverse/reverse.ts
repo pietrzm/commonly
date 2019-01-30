@@ -5,7 +5,7 @@
  * @returns {Array<*>}
  */
 const reverse = (xs) =>
-	xs.slice().reverse()
+    xs.slice().reverse()
 
 
 

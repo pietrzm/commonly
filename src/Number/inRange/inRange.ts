@@ -10,7 +10,7 @@ import autocurry from "Function/autocurry/autocurry"
  * @returns {number}
  */
 const inRange = ([ lower, upper ], value) =>
-	value >= lower && value < upper
+    value >= lower && value < upper
 
 
 

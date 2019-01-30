@@ -1,4 +1,4 @@
-import xor from "./xor";
+import xor from "./xor"
 
 
 

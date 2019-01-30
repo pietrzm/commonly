@@ -1,10 +1,10 @@
 namespace Iterable {
-	export const iterator = "@@iterator"
+    export const iterator = "@@iterator"
 }
 
 
 interface Iterable {
-	[ Iterable.iterator ]
+    [ Iterable.iterator ]
 }
 
 

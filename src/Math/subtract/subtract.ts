@@ -3,7 +3,7 @@ import autocurry from "Function/autocurry/autocurry"
 
 
 const subtract = (minuend, subtrahend) =>
-    minuend - subtrahend;
+    minuend - subtrahend
 
 
 

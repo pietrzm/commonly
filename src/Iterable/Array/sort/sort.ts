@@ -10,7 +10,7 @@ import autocurry from "Function/autocurry/autocurry"
  * @returns {Array<*>}
  */
 const sort = (comparator, xs) =>
-	xs.slice().sort(comparator)
+    xs.slice().sort(comparator)
 
 
 

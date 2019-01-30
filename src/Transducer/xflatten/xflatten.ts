@@ -4,7 +4,7 @@ import xchain from "Transducer/xchain/xchain"
 
 
 const xflatten = (xs) =>
-	xchain(identity, xs)
+    xchain(identity, xs)
 
 
 

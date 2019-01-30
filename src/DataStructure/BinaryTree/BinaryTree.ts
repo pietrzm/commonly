@@ -1,10 +1,10 @@
+import Accumulable from "Protocol/Accumulable"
+import Reducible from "Protocol/Reducible"
 import isNull from "Type/isNull/isNull"
 import BinaryTreeNode from "./BinaryTreeNode"
-import Reducible from "Protocol/Reducible"
-import Accumulable from "Protocol/Accumulable"
 
-export default class BinaryTree<T> implements Iterable<T>, Accumulable<T>, Reducible<BinaryTree<T>,T> {
-        
+export default class BinaryTree<T> implements Iterable<T>, Accumulable<T>, Reducible<BinaryTree<T>, T> {
+
     comparator: (a: T, b: T) => boolean
     root: BinaryTreeNode<T> = null
 
@@ -23,13 +23,13 @@ export default class BinaryTree<T> implements Iterable<T>, Accumulable<T>, Reduc
     remove(value: T) {
         if (!isNull(this.root)) {
             if (this.root.isValueEqual(value)) {
-                let leftDepth = !isNull(this.root.left) ? this.root.left.depth() : 0
-                let rightDepth = !isNull(this.root.right) ? this.root.right.depth() : 0
+                const leftDepth = !isNull(this.root.left) ? this.root.left.depth() : 0
+                const rightDepth = !isNull(this.root.right) ? this.root.right.depth() : 0
 
                 if (!leftDepth || !rightDepth) {
                     this.root = leftDepth >= rightDepth ? this.root.left : this.root.right
                 } else {
-                    let min = this.root.right.min()
+                    const min = this.root.right.min()
                     this.root.value = min.value
                     min.parent.remove(min.value)
                 }
@@ -40,11 +40,11 @@ export default class BinaryTree<T> implements Iterable<T>, Accumulable<T>, Reduc
     }
 
     min(): T {
-        return isNull(this.root)? null : this.root.min().value
+        return isNull(this.root) ? null : this.root.min().value
     }
 
     max(): T {
-        return isNull(this.root)? null : this.root.max().value
+        return isNull(this.root) ? null : this.root.max().value
     }
 
     isEmpty(): boolean {
@@ -52,15 +52,15 @@ export default class BinaryTree<T> implements Iterable<T>, Accumulable<T>, Reduc
     }
 
     size(): number {
-        return isNull(this.root)? 0 : this.root.size()
+        return isNull(this.root) ? 0 : this.root.size()
     }
 
     depth(): number {
-        return isNull(this.root)? 0 : this.root.depth()
+        return isNull(this.root) ? 0 : this.root.depth()
     }
 
     toArray(): T[] {
-        return isNull(this.root)? [] : this.root.toArray([])
+        return isNull(this.root) ? [] : this.root.toArray([])
     }
 
     [Symbol.iterator](): Iterator<T> {

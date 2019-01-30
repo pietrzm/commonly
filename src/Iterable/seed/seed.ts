@@ -1,10 +1,10 @@
+import Accumulable from "Protocol/Accumulable"
 import isArray from "Type/isArray/isArray"
 import isString from "Type/isString/isString"
-import Accumulable from 'Protocol/Accumulable'
 
 
 
-const seed = xs => {
+const seed = (xs) => {
     switch (true) {
         case isArray(xs):
             return []

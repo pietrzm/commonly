@@ -3,7 +3,7 @@ import autocurry from "Function/autocurry/autocurry"
 
 
 const divide = (dividend, divisor) =>
-    dividend / divisor;
+    dividend / divisor
 
 
 

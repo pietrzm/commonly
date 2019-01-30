@@ -5,7 +5,7 @@ import xchain from "Transducer/xchain/xchain"
 
 
 const chain = (mapper, xs) =>
-	seq(xchain(mapper), xs)
+    seq(xchain(mapper), xs)
 
 
 

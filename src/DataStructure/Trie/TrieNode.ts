@@ -1,7 +1,7 @@
-import isUndefined from "Type/isUndefined/isUndefined"
-import add         from "Math/add/add"
 import map         from "Iterable/map/map"
 import reduce      from "Iterable/reduce/reduce"
+import add         from "Math/add/add"
+import isUndefined from "Type/isUndefined/isUndefined"
 
 export default class TrieNode<T> {
 
@@ -22,7 +22,7 @@ export default class TrieNode<T> {
         }
         const common = this._commonPrefix(this.keypart, key)
         if (common.prefix === this.keypart) {
-            const possible = this.children.filter(c => c.keypart[0] === common.keys[1][0])
+            const possible = this.children.filter((c) => c.keypart[0] === common.keys[1][0])
             if (possible.length === 0) {
                 this.children.push(new TrieNode<T>(value, common.keys[1], this))
             } else {
@@ -47,7 +47,7 @@ export default class TrieNode<T> {
             } else if (found.children.length > 1) {
                 found.value = undefined
             } else {
-                found.parent.children = found.parent.children.filter(c => c !== found)
+                found.parent.children = found.parent.children.filter((c) => c !== found)
             }
             return true
         }
@@ -60,7 +60,7 @@ export default class TrieNode<T> {
         }
         const common = this._commonPrefix(this.keypart, key)
         if (common.prefix === this.keypart) {
-            const possible = this.children.filter(c => c.keypart[0] === common.keys[1][0])
+            const possible = this.children.filter((c) => c.keypart[0] === common.keys[1][0])
             return possible.length === 0 ? undefined : possible[0].find(common.keys[1])
         }
         return undefined
@@ -68,7 +68,7 @@ export default class TrieNode<T> {
 
     size(): number {
         return reduce(add, isUndefined(this.value) ? 0 : 1) (
-            map(c => c.size()) (
+            map((c) => c.size()) (
                 this.children
             )
         )
@@ -82,20 +82,20 @@ export default class TrieNode<T> {
         if (!isUndefined(this.value)) {
             currentArray.push(this)
         }
-        this.children.forEach( c => c.toArray(currentArray))
+        this.children.forEach( (c) => c.toArray(currentArray))
         return currentArray
     }
 
     private _collapse() {
         this.children[0].keypart = this.keypart + this.children[0].keypart
         this.children[0].parent = this.parent
-        this.parent.children = this.parent.children.filter(c => c !== this)
+        this.parent.children = this.parent.children.filter((c) => c !== this)
         this.parent.children.push(this.children[0])
     }
 
     private _insertParent(newParent: TrieNode<T>) {
         newParent.parent = this.parent
-        this.parent.children = this.parent.children.filter(c => c !== this)
+        this.parent.children = this.parent.children.filter((c) => c !== this)
         this.parent.children.push(newParent)
         this.parent = newParent
         this.parent.children.push(this)
@@ -111,7 +111,7 @@ export default class TrieNode<T> {
             }
         }
         return {
-            prefix: '',
+            prefix: "",
             keys: [key1, key2]
         }
     }

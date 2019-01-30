@@ -4,7 +4,7 @@ import isEven from "Math/isEven/isEven"
 
 
 const isOdd = (number) =>
-    not(isEven(number));
+    not(isEven(number))
 
 
 

@@ -1,5 +1,5 @@
 const maximum = (...xs) =>
-	Math.max(...xs)
+    Math.max(...xs)
 
 
 

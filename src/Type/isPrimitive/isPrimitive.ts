@@ -6,7 +6,7 @@ import isSymbol from "Type/isSymbol/isSymbol"
 
 
 
-const isPrimitive = x =>
+const isPrimitive = (x) =>
     isNil(x) || isBoolean(x) || isNumber(x) || isString(x) || isSymbol(x)
 
 

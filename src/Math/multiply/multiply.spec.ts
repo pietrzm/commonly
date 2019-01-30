@@ -1,4 +1,4 @@
-import multiply from "./multiply";
+import multiply from "./multiply"
 
 
 

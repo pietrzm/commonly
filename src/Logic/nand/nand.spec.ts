@@ -1,4 +1,4 @@
-import nand from "./nand";
+import nand from "./nand"
 
 
 

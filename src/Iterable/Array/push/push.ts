@@ -10,7 +10,7 @@ import autocurry from "Function/autocurry/autocurry"
  * @returns {Array}
  */
 const push = (x, xs) =>
-	(xs.push(x), xs)
+    (xs.push(x), xs)
 
 
 

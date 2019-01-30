@@ -1,8 +1,8 @@
 import identity from "Function/identity/identity"
+import Accumulable from "Protocol/Accumulable"
 import Reducible from "Protocol/Reducible"
-import Accumulable from 'Protocol/Accumulable'
 
-interface Queue<T> extends Iterable<T>, Accumulable<T>, Reducible<Queue<T>,T> {
+interface Queue<T> extends Iterable<T>, Accumulable<T>, Reducible<Queue<T>, T> {
     enqueue(value: T): number
     dequeue(): T
     peek(): T

@@ -10,7 +10,7 @@ import autocurry from "Function/autocurry/autocurry"
  * @returns {Array}
  */
 const append = (x, xs) =>
-	[ ...xs, x ]
+    [ ...xs, x ]
 
 
 

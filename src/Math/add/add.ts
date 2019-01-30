@@ -3,7 +3,7 @@ import autocurry from "Function/autocurry/autocurry"
 
 
 const add = (augend, addend) =>
-    augend + addend;
+    augend + addend
 
 
 

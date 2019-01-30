@@ -1,8 +1,8 @@
 import identity from "Function/identity/identity"
-import Reducible from "Protocol/Reducible"
 import Accumulable from "Protocol/Accumulable"
+import Reducible from "Protocol/Reducible"
 
-interface Stack<T> extends Iterable<T>, Accumulable<T>, Reducible<Stack<T>,T> {
+interface Stack<T> extends Iterable<T>, Accumulable<T>, Reducible<Stack<T>, T> {
     push(value: T): number
     pop(): T
     peek(): T

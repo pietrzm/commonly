@@ -1,4 +1,4 @@
-import and from "./and";
+import and from "./and"
 
 
 

@@ -4,10 +4,10 @@ import reduced from "Function/reduced/reduced"
 
 
 const xincludes = (x, reducer) =>
-	(accumulator, value) =>
-		x === value ?
-			reduced(true)
-			: false
+    (accumulator, value) =>
+        x === value ?
+            reduced(true)
+            : false
 
 
 

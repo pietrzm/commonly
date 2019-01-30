@@ -1,7 +1,7 @@
 import isNull from "Type/isNull/isNull"
 
 export default class BinaryTreeNode<T> {
-    
+
     comparator: (a: T, b: T) => boolean
     value: T
     parent: BinaryTreeNode<T> = null
@@ -34,13 +34,13 @@ export default class BinaryTreeNode<T> {
     remove(value: T) {
         if (!isNull(this.left)) {
             if (this.left.isValueEqual(value)) {
-                let leftDepth = !isNull(this.left.left) ? this.left.left.depth() : 0
-                let rightDepth = !isNull(this.left.right) ? this.left.right.depth() : 0
+                const leftDepth = !isNull(this.left.left) ? this.left.left.depth() : 0
+                const rightDepth = !isNull(this.left.right) ? this.left.right.depth() : 0
 
                 if (!leftDepth || !rightDepth) {
                     this.left = leftDepth >= rightDepth ? this.left.left : this.left.right
                 } else {
-                    let min = this.left.right.min()
+                    const min = this.left.right.min()
                     this.left.value = min.value
                     min.parent.remove(min.value)
                 }
@@ -50,13 +50,13 @@ export default class BinaryTreeNode<T> {
         }
         if (!isNull(this.right)) {
             if (this.right.isValueEqual(value)) {
-                let leftDepth = !isNull(this.right.left) ? this.right.left.depth() : 0
-                let rightDepth = !isNull(this.right.right) ? this.right.right.depth() : 0
+                const leftDepth = !isNull(this.right.left) ? this.right.left.depth() : 0
+                const rightDepth = !isNull(this.right.right) ? this.right.right.depth() : 0
 
                 if (!leftDepth || !rightDepth) {
                     this.right = leftDepth >= rightDepth ? this.right.left : this.right.right
                 } else {
-                    let min = this.right.right.min()
+                    const min = this.right.right.min()
                     this.right.value = min.value
                     min.parent.remove(min.value)
                 }
@@ -71,23 +71,23 @@ export default class BinaryTreeNode<T> {
     }
 
     size(): number {
-        let leftSize = !isNull(this.left) ? this.left.size() : 0
-        let rightSize = !isNull(this.right) ? this.right.size() : 0
+        const leftSize = !isNull(this.left) ? this.left.size() : 0
+        const rightSize = !isNull(this.right) ? this.right.size() : 0
         return leftSize + 1 + rightSize
     }
 
     depth(): number {
-        let leftDepth = !isNull(this.left) ? this.left.depth() : 0
-        let rightDepth = !isNull(this.right) ? this.right.depth() : 0
+        const leftDepth = !isNull(this.left) ? this.left.depth() : 0
+        const rightDepth = !isNull(this.right) ? this.right.depth() : 0
         return Math.max(leftDepth, rightDepth) + 1
     }
 
     min(): BinaryTreeNode<T> {
-        return isNull(this.left)? this : this.left.min()
+        return isNull(this.left) ? this : this.left.min()
     }
 
     max(): BinaryTreeNode<T> {
-        return isNull(this.right)? this : this.right.max()
+        return isNull(this.right) ? this : this.right.max()
     }
 
     toArray(currentArray: T[]): T[] {

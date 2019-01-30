@@ -12,7 +12,7 @@ import xincludes from "Transducer/xincludes/xincludes"
  * @returns {null}
  */
 const includes = (x, xs) =>
-	into(false, xincludes(x), xs)
+    into(false, xincludes(x), xs)
 
 
 

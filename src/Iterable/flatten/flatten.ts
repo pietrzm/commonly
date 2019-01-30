@@ -10,7 +10,7 @@ import xflatten from "Transducer/xflatten/xflatten"
  * @returns {null}
  */
 const flatten = (xs) =>
-	seq(xflatten, xs)
+    seq(xflatten, xs)
 
 
 

@@ -3,11 +3,11 @@ import Reducible   from "Protocol/Reducible"
 import identity    from "Function/identity/identity"
 import isBoolean from "Type/isBoolean/isBoolean"
 
-import isUndefined from "Type/isUndefined/isUndefined"
 import isArray     from "Type/isArray/isArray"
-import isString    from "Type/isString/isString"
 import isMap       from "Type/isMap/isMap"
 import isSet       from "Type/isSet/isSet"
+import isString    from "Type/isString/isString"
+import isUndefined from "Type/isUndefined/isUndefined"
 
 
 
@@ -25,28 +25,28 @@ import isSet       from "Type/isSet/isSet"
  * @returns {(accumulator, value) => *}
  */
 const reducer = (xs) => {
-	switch (true) {
-		case isUndefined(xs):
-			return reducer.undefined
+    switch (true) {
+        case isUndefined(xs):
+            return reducer.undefined
 
-		case isBoolean(xs):
-			return reducer.boolean
+        case isBoolean(xs):
+            return reducer.boolean
 
-		case isArray(xs):
-			return reducer.array
+        case isArray(xs):
+            return reducer.array
 
-		case isString(xs):
-			return reducer.string
+        case isString(xs):
+            return reducer.string
 
-		case isSet(xs):
-			return reducer.set
+        case isSet(xs):
+            return reducer.set
 
-		case isMap(xs):
-			return reducer.map
+        case isMap(xs):
+            return reducer.map
 
-		case Reducible.reducer in xs:
-			return xs[ Reducible.reducer ]
-	}
+        case Reducible.reducer in xs:
+            return xs[ Reducible.reducer ]
+    }
 }
 
 

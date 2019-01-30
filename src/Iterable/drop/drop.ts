@@ -5,7 +5,7 @@ import xdrop from "Transducer/xdrop/xdrop"
 
 
 const drop = (n, xs) =>
-	seq(xdrop(n), xs)
+    seq(xdrop(n), xs)
 
 
 

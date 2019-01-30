@@ -1,4 +1,4 @@
-import or from "./or";
+import or from "./or"
 
 
 

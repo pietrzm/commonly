@@ -1,5 +1,5 @@
 const minimum = (...xs) =>
-	Math.min(...xs)
+    Math.min(...xs)
 
 
 

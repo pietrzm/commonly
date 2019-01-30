@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "no-debugger": true,
+    "no-console": [ true, "log", "error" ],
+    "no-duplicate-super": true,
+    "no-eval": true,
+    "no-unsafe-finally": true,
+    "unnecessary-constructor": true,
+    "no-require-imports": true
+  }
+}

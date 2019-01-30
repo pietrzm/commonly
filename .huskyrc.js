@@ -1,5 +1,5 @@
 module.exports = {
 	"hooks": {
-		"pre-commit": "node __build__/tslint-check.js && npm test && node __build__/tslint-autofix.js"
+		"pre-commit": "node __build__/githooks/lint/frisk.js && npm test && node __build__/githooks/lint/autofix.js"
 	}
 }

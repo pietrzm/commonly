@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch",
-    "lint:autofix": "tslint --fix -c \"tslint.autofix.json\" \"./src/**/*.ts\""
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",

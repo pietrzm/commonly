@@ -7,4 +7,7 @@ const subtract = (minuend, subtrahend) =>
 
 
 
-export default autocurry(subtract)
+export default autocurry(subtract) as {
+    (minuend: number, subtrahend: number): number
+    (minuend: number): (subtrahend: number) => number
+}

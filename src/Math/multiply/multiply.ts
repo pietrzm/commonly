@@ -7,4 +7,7 @@ const multiply = (multiplier, multiplicand) =>
 
 
 
-export default autocurry(multiply)
+export default autocurry(multiply) as {
+    (multiplier: number, multiplicand: number): number
+    (multiplier: number): (multiplicand: number) => number
+}

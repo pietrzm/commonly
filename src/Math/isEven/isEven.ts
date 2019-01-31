@@ -7,4 +7,6 @@ const isEven = (number) =>
 
 
 
-export default isEven
+export default isEven as {
+    (number: number): boolean
+}

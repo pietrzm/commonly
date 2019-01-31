@@ -8,4 +8,6 @@ const isOdd = (number) =>
 
 
 
-export default isOdd
+export default isOdd as {
+    (number: number): boolean
+}

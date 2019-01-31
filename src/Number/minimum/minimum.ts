@@ -3,4 +3,6 @@ const minimum = (...xs) =>
 
 
 
-export default minimum
+export default minimum as {
+    (...xs: number[]): number
+}

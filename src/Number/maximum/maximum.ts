@@ -3,4 +3,6 @@ const maximum = (...xs) =>
 
 
 
-export default maximum
+export default maximum as {
+    (...xs: number[]): number
+}

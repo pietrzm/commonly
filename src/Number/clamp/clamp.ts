@@ -16,4 +16,7 @@ const clamp = ([ lower, upper ], value) =>
 
 
 
-export default autocurry(clamp)
+export default autocurry(clamp) as {
+    ([ lower, upper ]: [ number, number ], value: number): number
+    ([ lower, upper ]: [ number, number ]): (value: number) => number
+}

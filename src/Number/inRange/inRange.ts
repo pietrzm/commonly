@@ -14,4 +14,7 @@ const inRange = ([ lower, upper ], value) =>
 
 
 
-export default autocurry(inRange)
+export default autocurry(inRange) as {
+    ([ lower, upper ]: [ number, number ], value: number): boolean
+    ([ lower, upper ]: [ number, number ]): (value: number) => boolean
+}

@@ -1,4 +1,6 @@
 import autocurry from "Function/autocurry/autocurry"
+import Mapper from "Type/Mapper/Mapper"
+import Reducer from "Type/Reducer/Reducer"
 import castArray from "Type/castArray/castArray"
 
 
@@ -14,4 +16,7 @@ const xchain = (mapper, reducer) =>
 
 
 
-export default autocurry(xchain)
+export default autocurry(xchain) as {
+    <T, U, R>(mapper: Mapper<T, R>, reducer: Reducer<U, T>): Reducer<U, R>
+    <T, U, R>(mapper: Mapper<T, R>): (reducer: Reducer<U, T>) => Reducer<U, R>
+}

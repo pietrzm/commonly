@@ -1,5 +1,6 @@
 import autocurry from "Function/autocurry/autocurry"
 import reduced from "Function/reduced/reduced"
+import Reducer from "Type/Reducer/Reducer"
 
 
 
@@ -21,4 +22,9 @@ const xslice = (i, j, reducer) => {
 
 
 
-export default autocurry(xslice)
+export default autocurry(xslice) as {
+    <T, U>(i: number, j: number, reducer: Reducer<U, T>): U
+    <T, U>(i: number): (j: number, reducer: Reducer<U, T>) => U
+    <T, U>(i: number, j: number): (reducer: Reducer<U, T>) => U
+    <T, U>(i: number): (j: number) => (reducer: Reducer<U, T>) => U
+}

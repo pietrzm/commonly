@@ -2,7 +2,7 @@ import isArray from "Type/isArray/isArray"
 
 
 
-const castArray = <T>(x: T | T[]): T[] =>
+const castArray = (x) =>
     isArray(x) ?
         x : [ x ]
 

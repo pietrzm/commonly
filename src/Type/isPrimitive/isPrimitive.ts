@@ -1,3 +1,4 @@
+import Primitive from "Type/Primitive/Primitive"
 import isBoolean from "Type/isBoolean/isBoolean"
 import isNil from "Type/isNil/isNil"
 import isNumber from "Type/isNumber/isNumber"
@@ -11,4 +12,7 @@ const isPrimitive = (x) =>
 
 
 
-export default isPrimitive
+export default isPrimitive as {
+    <T>(x: T | Primitive): x is Primitive
+}
+

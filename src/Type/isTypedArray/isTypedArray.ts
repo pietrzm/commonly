@@ -1,3 +1,7 @@
+import TypedArray from "Type/TypedArray/TypedArray"
+
+
+
 const isTypedArray = (x) =>
     x instanceof Int8Array          ||
     x instanceof Uint8Array         ||
@@ -11,4 +15,6 @@ const isTypedArray = (x) =>
 
 
 
-export default isTypedArray
+export default isTypedArray as {
+    <T>(x: T | TypedArray): x is TypedArray
+}

@@ -3,4 +3,6 @@ const isString = (x) =>
 
 
 
-export default isString
+export default isString as {
+    <T>(x: T | string): x is string
+}

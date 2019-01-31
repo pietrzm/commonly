@@ -3,4 +3,6 @@ const isError = (x) =>
 
 
 
-export default isError
+export default isError as {
+    <T>(x: T | Error): x is Error
+}

@@ -7,4 +7,6 @@ const isObject = (x) =>
 
 
 
-export default isObject
+export default isObject as {
+    <T>(x: T | Object): x is Object
+}

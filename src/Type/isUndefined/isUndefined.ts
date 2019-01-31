@@ -3,4 +3,6 @@ const isUndefined = (x) =>
 
 
 
-export default isUndefined
+export default isUndefined as {
+    <T>(x: T | undefined): x is undefined
+}

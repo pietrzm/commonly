@@ -3,4 +3,6 @@ const isSymbol = (x) =>
 
 
 
-export default isSymbol
+export default isSymbol as {
+    <T>(x: T | Symbol): x is Symbol
+}

@@ -3,4 +3,7 @@ const isFunction = (x) =>
 
 
 
-export default isFunction
+export default isFunction as {
+    <T>(x: T | Function): x is Function
+}
+

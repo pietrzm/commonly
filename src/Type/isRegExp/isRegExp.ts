@@ -3,4 +3,6 @@ const isRegExp = (x) =>
 
 
 
-export default isRegExp
+export default isRegExp as {
+    <T>(x: T | RegExp): x is RegExp
+}

@@ -3,4 +3,6 @@ const isArrayBuffer = (x) =>
 
 
 
-export default isArrayBuffer
+export default isArrayBuffer as {
+    <T>(x: T | ArrayBuffer): x is ArrayBuffer
+}

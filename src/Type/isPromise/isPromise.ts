@@ -3,4 +3,6 @@ const isPromise = (x) =>
 
 
 
-export default isPromise
+export default isPromise as {
+    <T>(x: T | Promise<T>): x is Promise<T>
+}

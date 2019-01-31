@@ -1,4 +1,4 @@
-const isArray = <T>(x: T | T[]) =>
+const isArray = (x) =>
     Array.isArray(x)
 
 

@@ -3,4 +3,6 @@ const isBoolean = (x) =>
 
 
 
-export default isBoolean
+export default isBoolean as {
+    <T>(x: T | boolean): x is boolean
+}

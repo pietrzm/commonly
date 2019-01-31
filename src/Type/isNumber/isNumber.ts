@@ -3,4 +3,6 @@ const isNumber = (x) =>
 
 
 
-export default isNumber
+export default isNumber as {
+    <T>(x: T | number): x is number
+}

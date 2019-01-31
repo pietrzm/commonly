@@ -3,4 +3,6 @@ const isNull = (x) =>
 
 
 
-export default isNull
+export default isNull as {
+    <T>(x: T | null): x is null
+}

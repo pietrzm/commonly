@@ -3,4 +3,6 @@ const isMap = (x) =>
 
 
 
-export default isMap
+export default isMap as {
+    <K, V>(x: V | Map<K, V>): x is Map<K, V>
+}

@@ -32,4 +32,6 @@ const seed = (xs) => {
 
 
 
-export default seed
+export default seed as {
+    <T>(xs: T): T
+}

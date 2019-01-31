@@ -9,4 +9,7 @@ const drop = (n, xs) =>
 
 
 
-export default autocurry(drop)
+export default autocurry(drop) as {
+    <T>(n: number, xs: T): T
+    <T>(n: number): (xs: T) => T
+}

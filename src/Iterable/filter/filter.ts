@@ -5,11 +5,12 @@ import Predicate from "Type/Predicate/Predicate"
 
 
 
-const filter = <T, U extends Iterable<T>>(predicate: Predicate<T>, xs: U): U =>
+const filter = (predicate, xs) =>
     seq(xfilter(predicate), xs)
 
 
 
 export default autocurry(filter) as {
-    <T, U>(transformer: Predicate<T>, xs: U): U
+    <T, U extends Iterable<T>>(transformer: Predicate<T>, xs: U): U
+    <T, U extends Iterable<T>>(transformer: Predicate<T>): (xs: U) => U
 }

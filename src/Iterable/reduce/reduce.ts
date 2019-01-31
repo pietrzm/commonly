@@ -1,5 +1,6 @@
 import autocurry from "Function/autocurry/autocurry"
 import isReduced from "Function/isReduced/isReduced"
+import Reducer from "Type/Reducer/Reducer"
 
 
 
@@ -19,4 +20,9 @@ const reduce = (reducer, accumulator, xs) => {
 
 
 
-export default autocurry(reduce)
+export default autocurry(reduce) as {
+    <T, U>(reducer: Reducer<T, U>, accumulator: U, xs: Iterable<T>): U
+    <T, U>(reducer: Reducer<T, U>, accumulator: U): (xs: Iterable<T>) => U
+    <T, U>(reducer: Reducer<T, U>): (accumulator: U, xs: Iterable<T>) => U
+    <T, U>(reducer: Reducer<T, U>): (accumulator: U) => (xs: Iterable<T>) => U
+}

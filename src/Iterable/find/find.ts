@@ -5,11 +5,12 @@ import Predicate from "Type/Predicate/Predicate"
 
 
 
-const find = <T>(predicate: Predicate<T>, xs: Iterable<T>): T | undefined =>
+const find = (predicate, xs) =>
     into(undefined, xfind(predicate), xs)
 
 
 
 export default autocurry(find) as {
     <T>(transformer: Predicate<T>, xs: Iterable<T>): T | undefined
+    <T>(transformer: Predicate<T>): (xs: Iterable<T>) => T | undefined
 }

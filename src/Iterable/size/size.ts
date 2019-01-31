@@ -9,4 +9,6 @@ const size = (xs) => {
 
 
 
-export default size
+export default size as {
+    <T>(xs: Iterable<T> | Function): number
+}

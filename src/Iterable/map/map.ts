@@ -5,7 +5,7 @@ import Mapper from "Type/Mapper/Mapper"
 
 
 
-const map = <T, R>(transformer: Mapper<T, R>, xs: Iterable<T>): Iterable<R> =>
+const map = (transformer, xs) =>
     seq(xmap(transformer), xs)
 
 

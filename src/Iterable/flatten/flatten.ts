@@ -14,4 +14,6 @@ const flatten = (xs) =>
 
 
 
-export default flatten
+export default flatten as {
+    <T>(xs: T): T
+}

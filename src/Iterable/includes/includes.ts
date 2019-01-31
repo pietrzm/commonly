@@ -16,4 +16,7 @@ const includes = (x, xs) =>
 
 
 
-export default autocurry(includes)
+export default autocurry(includes) as {
+    <T>(x: T, xs: Iterable<T>): boolean
+    <T>(x: T): (xs: Iterable<T>) => boolean
+}

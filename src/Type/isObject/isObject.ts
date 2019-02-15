@@ -2,11 +2,9 @@ import isNull from "Type/isNull/isNull"
 
 
 
-const isObject = (x) =>
-    typeof x === "object" && !isNull(x)
+const isObject = <T>(value: T | object): value is object =>
+    typeof value === "object" && !isNull(value)
 
 
 
-export default isObject as {
-    <T>(x: T | Object): x is Object
-}
+export default isObject

@@ -11,8 +11,8 @@ import xincludes from "Transducer/xincludes/xincludes"
  * @param xs
  * @returns {null}
  */
-const includes = (x, xs) =>
-    into(false, xincludes(x), xs)
+const includes = <T>(x: T, xs: Iterable<T>) =>
+    into<any, boolean>(false, xincludes(x), xs)
 
 
 

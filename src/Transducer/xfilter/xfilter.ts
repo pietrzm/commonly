@@ -1,18 +1,17 @@
-import autocurry from "Function/autocurry/autocurry"
 import Predicate from "Type/Predicate/Predicate"
 import Reducer from "Type/Reducer/Reducer"
+import Transducer from "Type/Transducer/Transducer"
 
 
 
-const xfilter = (predicate, reducer) =>
-    (accumulator, value) =>
-        predicate(value) ?
-            reducer(accumulator, value)
-            : accumulator
+const xfilter = <TValue, TAccumulator>
+    (predicate: Predicate<TValue>): Transducer<TValue, TValue, TAccumulator, TAccumulator> =>
+        (reducer: Reducer<TValue, TAccumulator, TAccumulator>): Reducer<TValue, TAccumulator, TAccumulator> =>
+            (accumulator: TAccumulator, value: TValue, i: number): TAccumulator  =>
+                predicate(value) ?
+                    reducer(accumulator, value, i)
+                    : accumulator
 
 
 
-export default autocurry(xfilter) as {
-    <T, U>(predicate: Predicate<T>, reducer: Reducer<any, T>): Reducer<U, T>
-    <T, U>(predicate: Predicate<T>): (reducer: Reducer<any, T>) => Reducer<U, T>
-}
+export default xfilter

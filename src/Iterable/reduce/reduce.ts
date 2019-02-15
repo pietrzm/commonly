@@ -4,13 +4,13 @@ import Reducer from "Type/Reducer/Reducer"
 
 
 
-const reduce = (reducer, accumulator, xs) => {
+const reduce = <TValue, TAccumulator>(reducer: Reducer<TValue, TAccumulator>, accumulator: TAccumulator, xs: Iterable<TValue>): TAccumulator => {
     let i = 0
 
     for (const x of xs) {
-        accumulator = reducer(accumulator, x, i++, xs)
+        accumulator = reducer(accumulator, x, i++)
 
-        if (isReduced(accumulator)) {
+        if (isReduced<TAccumulator>(accumulator)) {
             return accumulator.value
         }
     }
@@ -21,8 +21,8 @@ const reduce = (reducer, accumulator, xs) => {
 
 
 export default autocurry(reduce) as {
-    <T, U>(reducer: Reducer<T, U>, accumulator: U, xs: Iterable<T>): U
-    <T, U>(reducer: Reducer<T, U>, accumulator: U): (xs: Iterable<T>) => U
-    <T, U>(reducer: Reducer<T, U>): (accumulator: U, xs: Iterable<T>) => U
-    <T, U>(reducer: Reducer<T, U>): (accumulator: U) => (xs: Iterable<T>) => U
+    <TValue, TAccumulator>(reducer: Reducer<TValue, TAccumulator>, accumulator: TAccumulator, xs: Iterable<TValue>): TAccumulator
+    <TValue, TAccumulator>(reducer: Reducer<TValue, TAccumulator>, accumulator: TAccumulator): (xs: Iterable<TValue>) => TAccumulator
+    <TValue, TAccumulator>(reducer: Reducer<TValue, TAccumulator>): (accumulator: TAccumulator, xs: Iterable<TValue>) => TAccumulator
+    <TValue, TAccumulator>(reducer: Reducer<TValue, TAccumulator>): (accumulator: TAccumulator) => (xs: Iterable<TValue>) => TAccumulator
 }

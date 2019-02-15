@@ -2,19 +2,17 @@ import TypedArray from "Type/TypedArray/TypedArray"
 
 
 
-const isTypedArray = (x) =>
-    x instanceof Int8Array          ||
-    x instanceof Uint8Array         ||
-    x instanceof Uint8ClampedArray  ||
-    x instanceof Int16Array         ||
-    x instanceof Uint16Array        ||
-    x instanceof Int32Array         ||
-    x instanceof Uint32Array        ||
-    x instanceof Float32Array       ||
-    x instanceof Float64Array
+const isTypedArray = <T>(value: T | TypedArray): value is TypedArray =>
+    value instanceof Int8Array          ||
+    value instanceof Uint8Array         ||
+    value instanceof Uint8ClampedArray  ||
+    value instanceof Int16Array         ||
+    value instanceof Uint16Array        ||
+    value instanceof Int32Array         ||
+    value instanceof Uint32Array        ||
+    value instanceof Float32Array       ||
+    value instanceof Float64Array
 
 
 
-export default isTypedArray as {
-    <T>(x: T | TypedArray): x is TypedArray
-}
+export default isTypedArray

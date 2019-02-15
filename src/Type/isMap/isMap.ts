@@ -1,5 +1,5 @@
-const isMap = (x) =>
-    x instanceof Map
+const isMap = <K, V>(value: V | Map<K, V>): value is Map<K, V> =>
+    value instanceof Map
 
 
 

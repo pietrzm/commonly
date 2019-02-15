@@ -1,8 +1,6 @@
-const isNumber = (x) =>
-    typeof x === "number"
+const isNumber = <T>(value: T | number): value is number =>
+    typeof value === "number"
 
 
 
-export default isNumber as {
-    <T>(x: T | number): x is number
-}
+export default isNumber

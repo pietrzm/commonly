@@ -16,7 +16,7 @@
     },
 
 
-    "strictNullChecks": true,
+    "strict": true,
     "strictFunctionTypes": true
   },
   "exclude": [

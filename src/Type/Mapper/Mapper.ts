@@ -1,4 +1,6 @@
-type Mapper<T, R> = (value: T) => R
+type Mapper<TValueA, TValueB> =
+    (value: TValueA) =>
+        TValueB
 
 
 

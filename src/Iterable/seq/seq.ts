@@ -1,16 +1,16 @@
 import autocurry from "Function/autocurry/autocurry"
 import into  from "Iterable/into/into"
 import seed  from "Iterable/seed/seed"
-import Reducer from "Type/Reducer/Reducer"
+import Transducer from "Type/Transducer/Transducer"
 
 
 
-const seq = (xf, xs) =>
-    into(seed(xs), xf, xs)
+const seq = <TValue, TAccumulator>(xf: Transducer<TValue, TAccumulator>, xs: Iterable<TValue>): TAccumulator =>
+    into(seed(xs) as any, xf, xs)
 
 
 
 export default autocurry(seq) as {
-    <T, U, W>(xf: Reducer<T, U>, xs: U): W
-    <T, U, W>(xf: Reducer<T, U>): (xs: U) => W
+    <TValue, TAccumulator>(xf: Transducer<TValue, TAccumulator>, xs: Iterable<TValue>): TAccumulator
+    //<T, U, W>(xf: Reducer<T, U>): (xs: U) => W
 }

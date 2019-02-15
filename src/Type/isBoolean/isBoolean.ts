@@ -1,8 +1,6 @@
-const isBoolean = (x) =>
-    typeof x === "boolean"
+const isBoolean = <T>(value: T | boolean): value is boolean =>
+    typeof value === "boolean"
 
 
 
-export default isBoolean as {
-    <T>(x: T | boolean): x is boolean
-}
+export default isBoolean

@@ -1,8 +1,6 @@
-const isRegExp = (x) =>
-    x instanceof RegExp
+const isRegExp = <T>(value: T | RegExp): value is RegExp =>
+    value instanceof RegExp
 
 
 
-export default isRegExp as {
-    <T>(x: T | RegExp): x is RegExp
-}
+export default isRegExp

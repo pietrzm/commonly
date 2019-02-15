@@ -1,8 +1,6 @@
-const isUndefined = (x) =>
-    x === undefined
+const isUndefined = <T>(value: T | undefined): value is undefined =>
+    value === undefined
 
 
 
-export default isUndefined as {
-    <T>(x: T | undefined): x is undefined
-}
+export default isUndefined

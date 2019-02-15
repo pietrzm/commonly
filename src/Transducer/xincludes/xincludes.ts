@@ -1,18 +1,18 @@
-import autocurry from "Function/autocurry/autocurry"
 import reduced from "Function/reduced/reduced"
+import Reduced from "Protocol/Reduced"
 import Reducer from "Type/Reducer/Reducer"
+import Transducer from "Type/Transducer/Transducer"
 
 
 
-const xincludes = (x, reducer) =>
-    (accumulator, value) =>
-        x === value ?
-            reduced(true)
-            : false
+const xincludes = <TValue, TAccumulator>
+    (x: TValue): Transducer<TValue, TValue, false, Reduced<true>> =>
+        (reducer: Reducer<TValue, false, TAccumulator>): Reducer<TValue, false, Reduced<true>> =>
+            (accumulator: false, value: TValue, i: number): false | Reduced<true> =>
+                x === value ?
+                    reduced(true)
+                    : false
 
 
 
-export default autocurry(xincludes) as {
-    <T>(x: T, reducer: Reducer<any, T>): Reducer<T, boolean>
-    <T>(x: T): (reducer: Reducer<any, T>) => Reducer<T, boolean>
-}
+export default xincludes

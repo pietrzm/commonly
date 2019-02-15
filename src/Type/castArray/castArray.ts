@@ -2,12 +2,10 @@ import isArray from "Type/isArray/isArray"
 
 
 
-const castArray = (x) =>
-    isArray(x) ?
-        x : [ x ]
+const castArray = <T>(value: T | T[]): T[] =>
+    isArray(value) ?
+        value : [ value ]
 
 
 
-export default castArray as {
-    <T>(x: T | T[]): T[]
-}
+export default castArray

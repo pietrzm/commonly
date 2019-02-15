@@ -1,9 +1,7 @@
-const isElement = (x) =>
-    x instanceof Element
+const isElement = <T>(value: T | Element): value is Element =>
+    value instanceof Element
 
 
 
-export default isElement as {
-    <T>(x: T | Element): x is Element
-}
+export default isElement
 

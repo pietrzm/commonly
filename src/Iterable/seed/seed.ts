@@ -20,18 +20,5 @@ const seed = (xs) => {
 }
 
 
-// TODO: Rethink this implementation
-    // cases([
-    //     when(isArray,
-    //         () => []),
-    //     when(isString,
-    //         () => ""),
-    //     xs =>
-    //         new xs.constructor()
-    // ], xs)
 
-
-
-export default seed as {
-    <T>(xs: T): T
-}
+export default seed

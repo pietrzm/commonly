@@ -1,8 +1,6 @@
-const isArrayBuffer = (x) =>
-    x instanceof ArrayBuffer
+const isArrayBuffer = <T>(value: T | ArrayBuffer): value is ArrayBuffer =>
+    value instanceof ArrayBuffer
 
 
 
-export default isArrayBuffer as {
-    <T>(x: T | ArrayBuffer): x is ArrayBuffer
-}
+export default isArrayBuffer

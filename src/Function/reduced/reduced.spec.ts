@@ -1,4 +1,5 @@
 import reduced from "Function/reduced/reduced"
+import Reduced from "Protocol/Reduced"
 
 
 
@@ -8,7 +9,7 @@ describe(`function reduced(x)`, () => {
             const subject = undefined
 
             expect(reduced(subject))
-                .toEqual({ [ "@@reduce/reduced" ]: true, value: subject })
+                .toEqual({ [ Reduced.reduced ]: true, value: subject })
         })
     })
 
@@ -17,7 +18,7 @@ describe(`function reduced(x)`, () => {
             const subject = null
 
             expect(reduced(subject))
-                .toEqual({ [ "@@reduce/reduced" ]: true, value: subject })
+                .toEqual({ [ Reduced.reduced ]: true, value: subject })
         })
     })
 
@@ -28,11 +29,11 @@ describe(`function reduced(x)`, () => {
                 symbol = Symbol()
 
             expect(reduced(object))
-                .toEqual({ [ "@@reduce/reduced" ]: true, value: object })
+                .toEqual({ [ Reduced.reduced ]: true, value: object })
             expect(reduced(array))
-                .toEqual({ [ "@@reduce/reduced" ]: true, value: array })
+                .toEqual({ [ Reduced.reduced ]: true, value: array })
             expect(reduced(symbol))
-                .toEqual({ [ "@@reduce/reduced" ]: true, value: symbol })
+                .toEqual({ [ Reduced.reduced ]: true, value: symbol })
         })
     })
 })

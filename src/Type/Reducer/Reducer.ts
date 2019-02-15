@@ -1,4 +1,6 @@
-type Reducer<T, U> = (accumulator: U, x: T, i: number, xs: Iterable<T>) => U
+type Reducer<TValue, TAccumulator, TReduced> =
+    (accumulator: TAccumulator, x: TValue, i: number) =>
+        TAccumulator | TReduced
 
 
 

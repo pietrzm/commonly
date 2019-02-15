@@ -1,5 +1,9 @@
-const reduced = (x) =>
-    ({ [ "@@reduce/reduced" ]: true, value: x })
+import Reduced from "Protocol/Reduced"
+
+
+
+const reduced = <T>(value: T): Reduced<T> =>
+    ({ [ Reduced.reduced ]: true, value })
 
 
 

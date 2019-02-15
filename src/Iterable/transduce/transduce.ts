@@ -1,18 +1,15 @@
 import autocurry  from "Function/autocurry/autocurry"
 import reduce from "Iterable/reduce/reduce"
 import Reducer from "Type/Reducer/Reducer"
+import Transducer from "Type/Transducer/Transducer"
 
 
 
-const transduce = (xf, reducer, accumulator, xs) =>
+const transduce = <TValue, TAccumulator>(xf: Transducer<TValue, TAccumulator>, reducer: Reducer<TValue, TAccumulator>, accumulator: TAccumulator, xs: Iterable<TValue>): TAccumulator =>
     reduce(xf(reducer), accumulator, xs)
 
 
 
 export default autocurry(transduce) as {
-    <T, U>(xf: Reducer<U, T>, reducer: Reducer<U, T>, accumulator: U, xs: Iterable<T>): U
-    <T, U>(xf: Reducer<U, T>, reducer: Reducer<U, T>, accumulator: U): (xs: Iterable<T>) => U
-    <T, U>(xf: Reducer<U, T>, reducer: Reducer<U, T>): (accumulator: U, xs: Iterable<T>) => U
-    <T, U>(xf: Reducer<U, T>): (reducer: Reducer<U, T>, accumulator: U, xs: Iterable<T>) => U
-    <T, U>(xf: Reducer<U, T>): (reducer: Reducer<U, T>, accumulator: U, xs: Iterable<T>) => U
+    <TValue, TAccumulator>(xf: Transducer<TValue, TAccumulator>, reducer: Reducer<TValue, TAccumulator>, accumulator: TAccumulator, xs: Iterable<TValue>): TAccumulator
 }

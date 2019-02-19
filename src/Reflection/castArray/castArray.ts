@@ -1,4 +1,4 @@
-import isArray from "Type/isArray/isArray"
+import isArray from "Reflection/isArray/isArray"
 
 
 

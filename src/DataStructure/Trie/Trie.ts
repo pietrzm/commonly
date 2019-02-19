@@ -1,6 +1,6 @@
 import Accumulable from "Protocol/Accumulable"
 import Reducible from "Protocol/Reducible"
-import isUndefined from "Type/isUndefined/isUndefined"
+import isUndefined from "Reflection/isUndefined/isUndefined"
 import TrieNode from "./TrieNode"
 
 export default class Trie<T> implements Iterable<{value: T, key: string}>,

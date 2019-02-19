@@ -1,6 +1,6 @@
+import isNull from "Reflection/isNull/isNull"
+import isUndefined from "Reflection/isUndefined/isUndefined"
 import Nil from "Type/Nil/Nil"
-import isNull from "Type/isNull/isNull"
-import isUndefined from "Type/isUndefined/isUndefined"
 
 
 

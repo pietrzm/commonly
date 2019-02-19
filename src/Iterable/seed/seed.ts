@@ -1,6 +1,6 @@
 import Accumulable from "Protocol/Accumulable"
-import isArray from "Type/isArray/isArray"
-import isString from "Type/isString/isString"
+import isArray from "Reflection/isArray/isArray"
+import isString from "Reflection/isString/isString"
 
 
 

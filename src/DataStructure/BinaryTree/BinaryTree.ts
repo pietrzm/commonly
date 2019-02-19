@@ -1,6 +1,6 @@
 import Accumulable from "Protocol/Accumulable"
 import Reducible from "Protocol/Reducible"
-import isNull from "Type/isNull/isNull"
+import isNull from "Reflection/isNull/isNull"
 import BinaryTreeNode from "./BinaryTreeNode"
 
 export default class BinaryTree<T> implements Iterable<T>, Accumulable<T>, Reducible<BinaryTree<T>, T> {

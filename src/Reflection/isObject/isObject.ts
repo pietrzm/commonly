@@ -1,4 +1,4 @@
-import isNull from "Type/isNull/isNull"
+import isNull from "Reflection/isNull/isNull"
 
 
 

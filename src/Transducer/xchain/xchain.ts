@@ -1,7 +1,7 @@
 import autocurry from "Function/autocurry/autocurry"
+import castArray from "Reflection/castArray/castArray"
 import Mapper from "Type/Mapper/Mapper"
 import Reducer from "Type/Reducer/Reducer"
-import castArray from "Type/castArray/castArray"
 
 
 

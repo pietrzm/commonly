@@ -1,4 +1,4 @@
-import isObject from "Type/isObject/isObject"
+import isObject from "Reflection/isObject/isObject"
 
 
 

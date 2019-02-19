@@ -1,13 +1,13 @@
 import Reducible   from "Protocol/Reducible"
 
 import identity    from "Function/identity/identity"
-import isBoolean from "Type/isBoolean/isBoolean"
+import isBoolean from "Reflection/isBoolean/isBoolean"
 
-import isArray     from "Type/isArray/isArray"
-import isMap       from "Type/isMap/isMap"
-import isSet       from "Type/isSet/isSet"
-import isString    from "Type/isString/isString"
-import isUndefined from "Type/isUndefined/isUndefined"
+import isArray     from "Reflection/isArray/isArray"
+import isMap       from "Reflection/isMap/isMap"
+import isSet       from "Reflection/isSet/isSet"
+import isString    from "Reflection/isString/isString"
+import isUndefined from "Reflection/isUndefined/isUndefined"
 
 
 

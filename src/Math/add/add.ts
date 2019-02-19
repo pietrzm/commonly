@@ -10,4 +10,5 @@ const add = (augend, addend) =>
 export default autocurry(add) as {
     (augend: number, addend: number): number
     (augend: number): (addend: number) => number
+
 }

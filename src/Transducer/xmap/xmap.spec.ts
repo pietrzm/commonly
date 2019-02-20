@@ -1,51 +1,37 @@
 import xmap from "./xmap"
 
 import compose  from "Function/compose/compose"
+import seq      from "Iterable/seq/seq"
 import add      from "Math/add/add"
+import isEven   from "Math/isEven/isEven"
 import multiply from "Math/multiply/multiply"
+import xfilter  from "Transducer/xfilter/xfilter"
 
 
 
-describe(`function xmap(mapper, reducer)`, () => {
-    context(`transducer's step function'`, () => {
-        it(`should return a valid result with add(2) as a mapper`, () => {
-            const subject = xmap(add(2), add)
+describe(`function xmap(mapper)`, () => {
+    context(`xmap is composed with other transducer`, () => {
+        const pipeline = compose(
+            xmap(multiply(2)),
+            xfilter(isEven)
+        )
 
-            expect(subject(0, 5))
-                .toEqual(7)
-        })
+        context(`xs is type of Array`, () => {
+            context(`xs is empty`, () => {
+                it(`should return an empty xs`, () => {
+                    const xs = []
+                    expect(seq(compose(pipeline, xmap(add(1))), xs))
+                        .toEqual([])
+                })
+            })
 
-        it(`should return a valid result with multiply(2) as a mapper`, () => {
-            const subject = xmap(multiply(2), add)
-
-            expect(subject(0, 5))
-                .toEqual(10)
-        })
-    })
-
-    context(`transducer's composition`, () => {
-        it(`should return a number 7`, () => {
-            const subject =
-                compose(
-                    xmap(add(1)),
-                    xmap(multiply(2)),
-                    xmap(add(3))
-                )(add)
-
-            expect(subject(0, 1))
-                .toEqual(7)
-        })
-
-        it(`should return a number 9`, () => {
-            const subject =
-                compose(
-                    xmap(multiply(1)),
-                    xmap(add(2)),
-                    xmap(multiply(3))
-                )(add)
-
-            expect(subject(0, 1))
-                .toEqual(9)
+            context(`xs is not empty`, () => {
+                it(`should return a mapped xs`, () => {
+                    const xs = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
+                    expect(seq(compose(pipeline, xmap(add(1))), xs))
+                        .toEqual([ 1, 3, 3, 5, 7, 11, 17, 27, 43, 69 ])
+                })
+            })
         })
     })
 })

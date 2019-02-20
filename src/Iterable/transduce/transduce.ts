@@ -1,11 +1,12 @@
 import autocurry  from "Function/autocurry/autocurry"
+import completing from "Function/completing/completing"
 import reduce from "Iterable/reduce/reduce"
 import Reducer from "Type/Reducer/Reducer"
 
 
 
 const transduce = (xf, reducer, accumulator, xs) =>
-    reduce(xf(reducer), accumulator, xs)
+    reduce(xf(completing(reducer)), accumulator, xs)
 
 
 

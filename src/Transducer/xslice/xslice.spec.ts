@@ -1,37 +1,37 @@
-import xslice from "Transducer/xslice/xslice"
+import xslice from "./xslice"
 
-import compose from "Function/compose/compose"
-import reduced from "Function/reduced/reduced"
-import add     from "Math/add/add"
+import compose  from "Function/compose/compose"
+import seq      from "Iterable/seq/seq"
+import isEven   from "Math/isEven/isEven"
+import multiply from "Math/multiply/multiply"
+import xfilter from "Transducer/xfilter/xfilter"
+import xmap     from "Transducer/xmap/xmap"
 
 
 
-describe(`function xslice(i, j, reducer)`, () => {
-    context(`transducer's step function'`, () => {
-        it(`should return a number 7`, () => {
-            const subject = xslice(0, 1, add)
+describe(`function xslice(i, j)`, () => {
+    context(`xslice is composed with other transducer`, () => {
+        const pipeline = compose(
+            xmap(multiply(2)),
+            xfilter(isEven)
+        )
 
-            expect(subject(0, 7))
-                .toEqual(7)
-        })
+        context(`xs is type of Array`, () => {
+            context(`xs is empty`, () => {
+                it(`should return an empty xs`, () => {
+                    const xs = []
+                    expect(seq(compose(pipeline, xslice(3, 7)), xs))
+                        .toEqual([])
+                })
+            })
 
-        it(`should return an early reduced number 7`, () => {
-            const subject = xslice(0, 1, add)
-
-            expect(subject(subject(0, 7), 5))
-                .toEqual(reduced(7))
-        })
-    })
-
-    context(`transducer's composition'`, () => {
-        it(`should return a number 7`, () => {
-            const subject = compose(
-                xslice(0, 2),
-                xslice(0, 1)
-            )(add)
-
-            expect(subject(0, 7))
-                .toEqual(7)
+            context(`xs is not empty`, () => {
+                it(`should return a sliced xs`, () => {
+                    const xs = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
+                    expect(seq(compose(pipeline, xslice(3, 7)), xs))
+                        .toEqual([ 4, 6, 10, 16 ])
+                })
+            })
         })
     })
 })

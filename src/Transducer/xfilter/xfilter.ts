@@ -1,18 +1,17 @@
-import autocurry from "Function/autocurry/autocurry"
-import Predicate from "Type/Predicate/Predicate"
-import Reducer from "Type/Reducer/Reducer"
+const xfilter = (predicate) =>
+    (xf) => {
+        const transducer = (accumulator, value) =>
+            predicate(value) ?
+                xf(accumulator, value)
+                : accumulator
+
+        transducer.completion = (accumulator) =>
+            xf.completion(accumulator)
+
+
+        return transducer
+    }
 
 
 
-const xfilter = (predicate, reducer) =>
-    (accumulator, value) =>
-        predicate(value) ?
-            reducer(accumulator, value)
-            : accumulator
-
-
-
-export default autocurry(xfilter) as {
-    <T, U>(predicate: Predicate<T>, reducer: Reducer<any, T>): Reducer<U, T>
-    <T, U>(predicate: Predicate<T>): (reducer: Reducer<any, T>) => Reducer<U, T>
-}
+export default xfilter

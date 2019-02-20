@@ -4,8 +4,8 @@ import Reducer from "Type/Reducer/Reducer"
 
 
 
-const xtake = (n, reducer) =>
-    xslice(0, n, reducer)
+const xtake = (n) =>
+    xslice(0, n)
 
 
 

@@ -1,16 +1,15 @@
-import autocurry from "Function/autocurry/autocurry"
-import Mapper from "Type/Mapper/Mapper"
-import Reducer from "Type/Reducer/Reducer"
+const xmap = (mapper) =>
+    (reducer) => {
+        const transducer = (accumulator, value) =>
+            reducer(accumulator, mapper(value))
+
+        transducer.completion = (accumulator) =>
+            reducer.completion(accumulator)
+
+
+        return transducer
+    }
 
 
 
-const xmap = (mapper, reducer) =>
-    (accumulator, value) =>
-        reducer(accumulator, mapper(value))
-
-
-
-export default autocurry(xmap) as {
-    <T, U, R>(mapper: Mapper<T, R>, reducer: Reducer<U, T>): Reducer<U, R>
-    <T, U, R>(mapper: Mapper<T, R>): (reducer: Reducer<U, T>) => Reducer<U, R>
-}
+export default xmap

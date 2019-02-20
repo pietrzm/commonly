@@ -1,22 +1,24 @@
-import autocurry from "Function/autocurry/autocurry"
 import castArray from "Reflection/castArray/castArray"
-import Mapper from "Type/Mapper/Mapper"
-import Reducer from "Type/Reducer/Reducer"
 
 
 
-const xchain = (mapper, reducer) =>
-    (accumulator, value) => {
-        for (const x of castArray(mapper(value))) {
-            reducer(accumulator, x)
+const xchain = (mapper) =>
+    (xf) => {
+        const transducer = (accumulator, value) => {
+            for (const x of castArray(mapper(value))) {
+                xf(accumulator, x)
+            }
+
+            return accumulator
         }
 
-        return accumulator
+        transducer.completion = (accumulator) =>
+            xf.completion(accumulator)
+
+
+        return transducer
     }
 
 
 
-export default autocurry(xchain) as {
-    <T, U, R>(mapper: Mapper<T, R>, reducer: Reducer<U, T>): Reducer<U, R>
-    <T, U, R>(mapper: Mapper<T, R>): (reducer: Reducer<U, T>) => Reducer<U, R>
-}
+export default xchain

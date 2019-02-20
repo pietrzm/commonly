@@ -1,16 +1,16 @@
-import xfind from "./xfind"
+import xflatten from "./xflatten"
 
 import compose  from "Function/compose/compose"
 import seq      from "Iterable/seq/seq"
 import isEven   from "Math/isEven/isEven"
 import multiply from "Math/multiply/multiply"
-import xfilter from "Transducer/xfilter/xfilter"
-import xmap     from "Transducer/xmap/xmap"
+import xfilter  from "Transducer/xfilter/xfilter"
+import xmap from "Transducer/xmap/xmap"
 
 
 
-describe(`function xfind(predicate)`, () => {
-    context(`xfind is composed with other transducer`, () => {
+describe(`function xflatten`, () => {
+    context(`xflatten is composed with other transducer`, () => {
         const pipeline = compose(
             xmap(multiply(2)),
             xfilter(isEven)
@@ -18,18 +18,18 @@ describe(`function xfind(predicate)`, () => {
 
         context(`xs is type of Array`, () => {
             context(`xs is empty`, () => {
-                it(`should return an undefined`, () => {
+                it(`should return an empty xs`, () => {
                     const xs = []
-                    expect(seq(compose(pipeline, xfind((x) => x % 3)), xs))
-                        .toEqual(undefined)
+                    expect(seq(compose(pipeline, xflatten), xs))
+                        .toEqual([])
                 })
             })
 
             context(`xs is not empty`, () => {
-                it(`should return a first element from xs which passes a predicate`, () => {
+                it(`should return a flattened xs`, () => {
                     const xs = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
-                    expect(seq(compose(pipeline, xfind((x) => x % 3)), xs))
-                        .toEqual(2)
+                    expect(seq(compose(pipeline, xflatten), xs))
+                        .toEqual([ 0, 2, 2, 4, 6, 10, 16, 26, 42, 68 ])
                 })
             })
         })

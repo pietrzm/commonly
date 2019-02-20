@@ -1,5 +1,7 @@
 import autocurry from "Function/autocurry/autocurry"
+import completing from "Function/completing/completing"
 import isReduced from "Function/isReduced/isReduced"
+import isUndefined from "Reflection/isUndefined/isUndefined"
 import Reducer from "Type/Reducer/Reducer"
 
 
@@ -15,7 +17,11 @@ const reduce = (reducer, accumulator, xs) => {
         }
     }
 
-    return accumulator
+    if (isUndefined(reducer.completion)) {
+        reducer = completing(reducer)
+    }
+
+    return reducer.completion(accumulator)
 }
 
 

@@ -26,7 +26,7 @@ describe(`function xnth(i)`, () => {
             })
 
             context(`xs is not empty`, () => {
-                it(`should return n nth element`, () => {
+                it(`should return the n nth element`, () => {
                     const xs = [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
                     expect(seq(compose(pipeline, xnth(3)), xs))
                         .toEqual(4)

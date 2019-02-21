@@ -1,23 +1,11 @@
-import castArray from "Reflection/castArray/castArray"
+import compose from "Function/compose/compose"
+import xflatten from "Transducer/xflatten/xflatten"
+import xmap from "Transducer/xmap/xmap"
 
 
 
 const xchain = (mapper) =>
-    (xf) => {
-        const transducer = (accumulator, value) => {
-            for (const x of castArray(mapper(value))) {
-                xf(accumulator, x)
-            }
-
-            return accumulator
-        }
-
-        transducer.completion = (accumulator) =>
-            xf.completion(accumulator)
-
-
-        return transducer
-    }
+    compose(xmap(mapper), xflatten)
 
 
 

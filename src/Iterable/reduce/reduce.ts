@@ -13,7 +13,8 @@ const reduce = (reducer, accumulator, xs) => {
         accumulator = reducer(accumulator, x, i++, xs)
 
         if (isReduced(accumulator)) {
-            return accumulator.value
+            accumulator = accumulator.value
+            break
         }
     }
 

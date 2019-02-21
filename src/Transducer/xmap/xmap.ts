@@ -1,10 +1,10 @@
 const xmap = (mapper) =>
-    (reducer) => {
+    (xf) => {
         const transducer = (accumulator, value) =>
-            reducer(accumulator, mapper(value))
+            xf(accumulator, mapper(value))
 
         transducer.completion = (accumulator) =>
-            reducer.completion(accumulator)
+            xf.completion(accumulator)
 
 
         return transducer

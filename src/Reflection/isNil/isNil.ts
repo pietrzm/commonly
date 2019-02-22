@@ -4,11 +4,9 @@ import Nil from "Type/Nil/Nil"
 
 
 
-const isNil = (x) =>
-    isUndefined(x) || isNull(x)
+const isNil = <T>(value: T | Nil): value is Nil =>
+    isUndefined(value) || isNull(value)
 
 
 
-export default isNil as {
-    <T>(x: T | Nil): x is Nil
-}
+export default isNil

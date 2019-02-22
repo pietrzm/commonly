@@ -1,8 +1,6 @@
-const isArray = (x) =>
-    Array.isArray(x)
+const isArray = <T>(value: T | T[]): value is T[] =>
+    Array.isArray(value)
 
 
 
-export default isArray as {
-    <T>(x: T | T[]): x is T[]
-}
+export default isArray

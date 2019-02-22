@@ -1,8 +1,6 @@
-const isError = (x) =>
-    x instanceof Error
+const isError = <T>(value: T | Error): value is Error =>
+    value instanceof Error
 
 
 
-export default isError as {
-    <T>(x: T | Error): x is Error
-}
+export default isError

@@ -1,9 +1,6 @@
-const isFunction = (x) =>
-    typeof x === "function"
+const isFunction = <T>(value: T | Function): value is Function =>
+    typeof value === "function"
 
 
 
-export default isFunction as {
-    <T>(x: T | Function): x is Function
-}
-
+export default isFunction

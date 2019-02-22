@@ -1,9 +1,7 @@
-const isSet = (x) =>
-    x instanceof Set
+const isSet = <T>(value: T | Set<T>): value is Set<T> =>
+    value instanceof Set
 
 
 
-export default isSet as {
-    <T>(x: T | Set<T>): x is Set<T>
-}
+export default isSet
 

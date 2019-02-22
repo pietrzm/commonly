@@ -1,8 +1,6 @@
-const isPromise = (x) =>
-    x === Promise.resolve(x)
+const isPromise = <T>(value: T | Promise<T>): value is Promise<T> =>
+    value === Promise.resolve(value)
 
 
 
-export default isPromise as {
-    <T>(x: T | Promise<T>): x is Promise<T>
-}
+export default isPromise

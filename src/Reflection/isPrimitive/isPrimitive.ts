@@ -7,12 +7,10 @@ import Primitive from "Type/Primitive/Primitive"
 
 
 
-const isPrimitive = (x) =>
-    isNil(x) || isBoolean(x) || isNumber(x) || isString(x) || isSymbol(x)
+const isPrimitive = <T>(value: T | Primitive): value is Primitive =>
+    isNil(value) || isBoolean(value) || isNumber(value) || isString(value) || isSymbol(value)
 
 
 
-export default isPrimitive as {
-    <T>(x: T | Primitive): x is Primitive
-}
+export default isPrimitive
 

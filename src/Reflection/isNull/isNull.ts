@@ -1,8 +1,6 @@
-const isNull = (x) =>
-    x === null
+const isNull = <T>(value: T | null): value is null =>
+    value === null
 
 
 
-export default isNull as {
-    <T>(x: T | null): x is null
-}
+export default isNull

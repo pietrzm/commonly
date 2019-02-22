@@ -1,8 +1,6 @@
-const isString = (x) =>
-    typeof x === "string"
+const isString = <T>(value: T | string): value is string =>
+    typeof value === "string"
 
 
 
-export default isString as {
-    <T>(x: T | string): x is string
-}
+export default isString

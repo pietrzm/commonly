@@ -5,11 +5,12 @@ import reduced from "Function/reduced/reduced"
 const xnth = (i) =>
     (xf) => {
         const state = {
-            found: false
+            found: false,
+            index: i
         }
 
         const transducer = (accumulator, value) =>
-            i-- === 0 ?
+            state.index-- === 0 ?
                 (state.found = true, reduced(value))
                 : accumulator
 

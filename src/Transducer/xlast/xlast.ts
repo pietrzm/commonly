@@ -1,14 +1,14 @@
 const xlast =
     (xf) => {
         const state = {
-            item: undefined
+            element: undefined
         }
 
         const transducer = (accumulator, value) =>
-            xf(accumulator, state.item = value)
+            xf(accumulator, state.element = value)
 
         transducer.completion = (accumulator) =>
-                xf.completion(state.item)
+                xf.completion(state.element)
 
 
         return transducer

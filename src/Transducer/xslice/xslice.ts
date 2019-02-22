@@ -4,13 +4,16 @@ import reduced from "Function/reduced/reduced"
 
 const xslice = (i, j) =>
     (xf) => {
-        j = j - i
+        const state = {
+           begin: i,
+           end: j - i
+        }
 
         const transducer = (accumulator, value) => {
-            if (i-- > 0) {
+            if (state.begin-- > 0) {
                 return accumulator
             } else {
-                if (j-- === 0) {
+                if (state.end-- === 0) {
                     return reduced(accumulator)
                 }
 

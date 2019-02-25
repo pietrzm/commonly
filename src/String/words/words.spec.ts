@@ -13,9 +13,9 @@ describe(`function words(string)`, () => {
 
     context(`string is a regular sentence`, () => {
         it(`should return an array containing words from string`, () => {
-            const string = "The quick brown fox jumps over the lazy dog"
+            const string = "The quick brown FOX jumps over the lazy DOG"
             expect(words(string))
-                .toEqual([ "The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog" ])
+                .toEqual([ "The", "quick", "brown", "FOX", "jumps", "over", "the", "lazy", "DOG" ])
         })
     })
 
@@ -30,9 +30,9 @@ describe(`function words(string)`, () => {
 
         context(`string does contains abbreviations`, () => {
             it(`should return an array containing words from string`, () => {
-                const string = "theQUICKBrownFoxJumpsOverTheLAZYDog"
+                const string = "theQuickBrownFOXJumpsOverTheLazyDOG"
                 expect(words(string))
-                    .toEqual([ "the", "QUICK", "Brown", "Fox", "Jumps", "Over", "The", "LAZY", "Dog" ])
+                    .toEqual([ "the", "Quick", "Brown", "FOX", "Jumps", "Over", "The", "Lazy", "DOG" ])
             })
         })
     })
@@ -48,26 +48,34 @@ describe(`function words(string)`, () => {
 
         context(`string does contains abbreviations`, () => {
             it(`should return an array containing words from string`, () => {
-                const string = "TheQUICKBrownFoxJumpsOverTheLAZYDog"
+                const string = "TheQuickBrownFOXJumpsOverTheLazyDOG"
                 expect(words(string))
-                    .toEqual([ "The", "QUICK", "Brown", "Fox", "Jumps", "Over", "The", "LAZY", "Dog" ])
+                    .toEqual([ "The", "Quick", "Brown", "FOX", "Jumps", "Over", "The", "Lazy", "DOG" ])
             })
         })
     })
 
     context(`string is a dash case sentence`, () => {
         it(`should return an array containing words from string`, () => {
-            const string = "the-quick-brown-fox-jumps-over-the-lazy-dog"
+            const string = "the-quick-brown-FOX-jumps-over-the-lazy-DOG"
             expect(words(string))
-                .toEqual([ "the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog" ])
+                .toEqual([ "the", "quick", "brown", "FOX", "jumps", "over", "the", "lazy", "DOG" ])
+        })
+    })
+
+    context(`string is a train case sentence`, () => {
+        it(`should return an array containing words from string`, () => {
+            const string = "The-Quick-Brown-FOX-Jumps-Over-The-Lazy-DOG"
+            expect(words(string))
+                .toEqual([ "The", "Quick", "Brown", "FOX", "Jumps", "Over", "The", "Lazy", "DOG" ])
         })
     })
 
     context(`string is a snake case sentence`, () => {
         it(`should return an array containing words from string`, () => {
-            const string = "the_quick_brown_fox_jumps_over_the_lazy_dog"
+            const string = "the_quick_brown_FOX_jumps_over_the_lazy_DOG"
             expect(words(string))
-                .toEqual([ "the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog" ])
+                .toEqual([ "the", "quick", "brown", "FOX", "jumps", "over", "the", "lazy", "DOG" ])
         })
     })
 })

@@ -2,7 +2,7 @@ import slice from "./slice"
 
 
 
-describe(`function take(i: number, j: number, xs: [])`, () => {
+describe(`function slice(i: number, j: number, xs: [])`, () => {
     context(`xs is empty`, () => {
         it(`should return an empty xs`, () => {
             const xs: unknown[] = []
@@ -20,7 +20,7 @@ describe(`function take(i: number, j: number, xs: [])`, () => {
     })
 })
 
-describe(`function take(i: number, j: number, xs: string)`, () => {
+describe(`function slice(i: number, j: number, xs: string)`, () => {
     context(`xs is empty`, () => {
         it(`should return an empty xs`, () => {
             const xs = ""
@@ -38,7 +38,7 @@ describe(`function take(i: number, j: number, xs: string)`, () => {
     })
 })
 
-describe(`function take(i: number, j: number, xs: Set)`, () => {
+describe(`function slice(i: number, j: number, xs: Set)`, () => {
     context(`xs is empty`, () => {
         it(`should return an empty xs`, () => {
             const xs = new Set()

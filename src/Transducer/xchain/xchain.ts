@@ -6,8 +6,9 @@ import Transducer from "Type/Transducer/Transducer"
 
 
 
-const xchain = <TAccumulator, TValueA, TValueB>(mapper: Mapper<TValueA, TValueB>): Transducer<TAccumulator, TAccumulator, TValueA, TAccumulator, TAccumulator, TValueB> =>
-    compose(xmap(mapper), xflatten)
+const xchain = <TAccumulator, TValueA, TValueB>
+    (mapper: Mapper<TValueA, TValueB>): Transducer<TAccumulator, TAccumulator, TValueA, TAccumulator, TAccumulator, TValueB> =>
+        compose(xmap(mapper), xflatten)
 
 
 

@@ -2,8 +2,9 @@ import xslice from "Transducer/xslice/xslice"
 
 
 
-const xdrop = (n: number) =>
-    xslice(n, Infinity)
+const xdrop =
+    (n: number) =>
+        xslice(n, Infinity)
 
 
 

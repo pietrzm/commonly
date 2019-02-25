@@ -3,7 +3,7 @@ import xhead from "Transducer/xhead/xhead"
 
 
 
-const head = (xs) =>
+const head = <T>(xs: Iterable<T>): T | undefined =>
     seq(xhead, xs)
 
 

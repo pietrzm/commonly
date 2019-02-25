@@ -8,7 +8,7 @@ describe(`function reduced(x)`, () => {
             const subject = undefined
 
             expect(reduced(subject))
-                .toEqual({ [ "@@reduce/reduced" ]: true, value: subject })
+                .toEqual({ reduced: true, value: subject })
         })
     })
 
@@ -17,7 +17,7 @@ describe(`function reduced(x)`, () => {
             const subject = null
 
             expect(reduced(subject))
-                .toEqual({ [ "@@reduce/reduced" ]: true, value: subject })
+                .toEqual({ reduced: true, value: subject })
         })
     })
 
@@ -28,11 +28,11 @@ describe(`function reduced(x)`, () => {
                 symbol = Symbol()
 
             expect(reduced(object))
-                .toEqual({ [ "@@reduce/reduced" ]: true, value: object })
+                .toEqual({ reduced: true, value: object })
             expect(reduced(array))
-                .toEqual({ [ "@@reduce/reduced" ]: true, value: array })
+                .toEqual({ reduced: true, value: array })
             expect(reduced(symbol))
-                .toEqual({ [ "@@reduce/reduced" ]: true, value: symbol })
+                .toEqual({ reduced: true, value: symbol })
         })
     })
 })

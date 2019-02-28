@@ -1,25 +1,27 @@
-import { RFunction, RNumber, RString } from "RuntimeType/index"
+import autocurry from "Function/autocurry/autocurry"
+import map from "Iterable/map/map"
+import { def, evaluate, rfunction, rnumber, rstring } from "./index"
 
 
 
-it(`RuntimeType`, () => {
-    const definition = new RFunction(new RNumber(), new RFunction(new RString(), new RNumber()))
+const add = autocurry(
+    (a: number, b: number) =>
+        "a + b"
+)
 
-    const df = () => {
-        try {
-            definition
-                .evaluate(1)
-                .evaluate("1")
-                .evaluate(1)
-        } catch (e) {
-            e.message = `${e.message}
-					${definition.toString()}
-					${definition.toUnderline()}
-			`
-            throw e
-        }
-    }
 
-    expect(df)
+
+xit (`runtime type`, () => {
+    const df = def(add, rfunction(rnumber(), rfunction(rstring(), rnumber())))
+
+    expect(() => df(1)("1"))
+        .not.toThrow()
+})
+
+
+it (`runtime type2`, () => {
+    const df = def(map, rfunction(rfunction(rstring(), rstring()), rfunction(rstring(), rstring())))
+
+    expect(() => df((x: number) => +x)( "12345"))
         .not.toThrow()
 })
